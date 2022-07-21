@@ -1,5 +1,6 @@
 {
   "name": "apx2digital",
+  "homepage": "http://apx2digital.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
