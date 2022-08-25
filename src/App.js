@@ -1,13 +1,12 @@
-import './App.css';
+import './App.scss';
+import Home from './components/Home';
+import TopBar from './components/TopBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          APX2 Digital
-        </p>
-      </header>
+      <TopBar/>
+      <Home/>
     </div>
   );
 }
