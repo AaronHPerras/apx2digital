@@ -3,6 +3,8 @@ import Logo from "./Logo";
 import FrontPageBox from "./FrontPageBox";
 
 const Home = () => {
+    
+
     return (
         <div>
             <Logo/>
