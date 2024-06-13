@@ -44,34 +44,22 @@ $white: #fff;
   border-bottom: thin solid $base-dark;
 }
 
-.App {
-  text-align: center;
+.logo-container {
+  position: absolute;
+  top: 30vh;
+  left: 15vw;
+  border: red thin solid;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo-text {
+  color: #900101;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.front-page-box-container {
+  position:absolute;
+  right:30vw;
+  top:40vh;
 }
 
 @keyframes App-logo-spin {

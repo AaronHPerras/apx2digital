@@ -1,9 +1,12 @@
 import React from "react";
+import Logo from "./Logo";
+import FrontPageBox from "./FrontPageBox";
 
 const Home = () => {
     return (
         <div>
-            this is the home page
+            <Logo/>
+            <FrontPageBox/>
         </div>
     );
 }

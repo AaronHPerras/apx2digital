@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOY_DIR=/home/vc6swn8a8di6/public_html/apx2digital.com
+    - npm ci
+    - npm run build
+    - rsync -avz --delete build/ $DEPLOY_DIR
