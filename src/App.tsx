@@ -2,11 +2,13 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './context/AuthContext'
 import { ErrorBoundary } from './components/common/ErrorBoundary'
 import { ProtectedRoute } from './components/common/ProtectedRoute'
+import { LandingPage } from './components/LandingPage'
 import { LoginForm } from './components/auth/LoginForm'
 import { RegisterForm } from './components/auth/RegisterForm'
 import { Dashboard } from './components/Dashboard'
 import { useAuth } from './hooks/useAuth'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles/main.scss'
 import './App.css'
 
 function PublicRoute({ children }: { children: React.ReactNode }) {
@@ -28,7 +30,7 @@ function PublicRoute({ children }: { children: React.ReactNode }) {
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/" element={<LandingPage />} />
       <Route
         path="/login"
         element={
@@ -64,7 +66,7 @@ function AppRoutes() {
           <div className="text-center">
             <h1>404 - Page Not Found</h1>
             <p>The page you're looking for doesn't exist.</p>
-            <a href="/login" className="btn btn-primary">Go to Login</a>
+            <a href="/" className="btn btn-primary">Go to Home</a>
           </div>
         </div>
       } />

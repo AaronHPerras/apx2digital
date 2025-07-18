@@ -1,0 +1,574 @@
+/* APX2Digital Main Styles */
+/* Mobile-First Design with Custom Theme Integration */
+
+@use "sass:color";
+
+/* ==========================================================================
+   Theme Variables (Embedded)
+   ========================================================================== */
+
+// Primary Colors (SCSS HEX)
+$jet: #2a2b2a;
+$dim-gray: #706c61;
+$cosmic-latte: #f8f4e3;
+$claret: #6c0f26;
+$misty-rose: #ffe0d6;
+
+// Color Semantic Mapping (Mobile-First)
+$primary: $claret;
+$secondary: $dim-gray;
+$success: #28a745;
+$danger: $claret;
+$warning: #ffc107;
+$info: $dim-gray;
+$light: $cosmic-latte;
+$dark: $jet;
+$body-bg: $cosmic-latte;
+$body-color: $jet;
+
+// Text Colors
+$text-primary: $jet;
+$text-secondary: $dim-gray;
+$text-light: $cosmic-latte;
+$text-accent: $claret;
+$text-muted: $dim-gray;
+
+// Background Colors
+$bg-primary: $claret;
+$bg-secondary: $dim-gray;
+$bg-light: $cosmic-latte;
+$bg-dark: $jet;
+$bg-accent: $misty-rose;
+
+// Border Colors
+$border-color: $dim-gray;
+$border-light: rgba($dim-gray, 0.3);
+$border-dark: $jet;
+
+// Spacing
+$spacer-xs: 0.25rem;
+$spacer-sm: 0.5rem;
+$spacer: 1rem;
+$spacer-lg: 1.5rem;
+$spacer-xl: 3rem;
+$spacer-xxl: 4.5rem;
+
+// Touch-Friendly Sizing
+$touch-target-min: 44px;
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+$btn-font-size: 1rem;
+$btn-border-radius: 0.375rem;
+
+// Typography
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-sm: 0.875rem;
+
+$h1-font-size: 2rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 1rem;
+
+// Box Shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($jet, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba($jet, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba($jet, 0.175);
+
+// Transitions
+$transition-base: all 0.3s ease-in-out;
+$transition-fade: opacity 0.3s ease-in-out;
+
+/* ==========================================================================
+   Button Styles (Mobile-First)
+   ========================================================================== */
+
+.btn {
+  min-height: $touch-target-min;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  border-radius: $btn-border-radius;
+  font-weight: 500;
+  transition: $transition-base;
+  border: 2px solid transparent;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary, 0.25);
+  }
+}
+
+.btn-primary {
+  background: $primary;
+  border-color: $primary;
+  color: $light;
+  
+  &:hover, &:focus {
+    background: color.adjust($primary, $lightness: -10%);
+    border-color: color.adjust($primary, $lightness: -10%);
+    color: $light;
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background: $secondary;
+  border-color: $secondary;
+  color: $light;
+  
+  &:hover, &:focus {
+    background: color.adjust($secondary, $lightness: -10%);
+    border-color: color.adjust($secondary, $lightness: -10%);
+    color: $light;
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+}
+
+.btn-outline-primary {
+  background: transparent;
+  border-color: $primary;
+  color: $primary;
+  
+  &:hover, &:focus {
+    background: $primary;
+    border-color: $primary;
+    color: $light;
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+}
+
+/* ==========================================================================
+   Navigation Styles (Mobile-First)
+   ========================================================================== */
+
+.navbar {
+  background: $dark !important;
+  padding: $spacer-sm $spacer;
+  box-shadow: $box-shadow-sm;
+  
+  .navbar-brand {
+    color: $light !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+    &:hover {
+      color: $misty-rose !important;
+    }
+  }
+  
+  .navbar-nav .nav-link {
+    color: $light !important;
+    font-weight: 500;
+    padding: $spacer-sm $spacer;
+    margin: 0 $spacer-xs;
+    border-radius: $btn-border-radius;
+    transition: $transition-base;
+    min-height: $touch-target-min;
+    display: flex;
+    align-items: center;
+    
+    &:hover, &:focus {
+      color: $misty-rose !important;
+      background: rgba($misty-rose, 0.1);
+    }
+    
+    &.active {
+      color: $primary !important;
+      background: rgba($primary, 0.1);
+    }
+  }
+  
+  .navbar-toggler {
+    border-color: $secondary;
+    padding: $spacer-xs;
+    
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($misty-rose, 0.25);
+    }
+  }
+}
+
+/* ==========================================================================
+   Card Styles (Mobile-First)
+   ========================================================================== */
+
+.card {
+  background: $light;
+  border: 1px solid $border-light;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow-sm;
+  margin-bottom: $spacer-lg;
+  transition: $transition-base;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba($primary, 0.15);
+  }
+  
+  .card-header {
+    background: $misty-rose;
+    border-bottom: 1px solid $border-light;
+    padding: $spacer;
+  }
+  
+  .card-body {
+    padding: $spacer-lg;
+  }
+  
+  .card-title {
+    color: $text-primary;
+    margin-bottom: $spacer;
+  }
+  
+  .card-text {
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}
+
+/* ==========================================================================
+   Section Styles (Mobile-First)
+   ========================================================================== */
+
+.section {
+  padding: $spacer-xl 0;
+  
+  @media (min-width: 768px) {
+    padding: $spacer-xxl 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacer-xl;
+  
+  h2 {
+    color: $text-primary;
+    margin-bottom: $spacer;
+  }
+  
+  p {
+    color: $text-secondary;
+    font-size: $font-size-lg;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Section Height Utilities */
+.min-section-height {
+  min-height: 60vh; // Enough content without forcing full height
+}
+
+.min-content-height {
+  min-height: 50vh; // For sections with more content
+}
+
+.full-height-section {
+  min-height: 80vh; // For hero-like sections
+}
+
+/* Vertical Centering Utilities */
+.v-center {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: inherit;
+}
+
+/* ==========================================================================
+   Hero Section (Mobile-First)
+   ========================================================================== */
+
+.hero {
+  background: linear-gradient(135deg, $dark, $secondary);
+  color: $light;
+  padding: $spacer-xxl 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  
+  h1 {
+    color: $light;
+    margin-bottom: $spacer-lg;
+    font-size: $h1-font-size;
+    
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+    
+    @media (min-width: 1200px) {
+      font-size: 3rem;
+    }
+  }
+  
+  .lead {
+    color: $misty-rose;
+    font-size: $font-size-lg;
+    margin-bottom: $spacer-xl;
+  }
+  
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: $spacer;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
+
+/* ==========================================================================
+   Footer Styles (Mobile-First)
+   ========================================================================== */
+
+.footer {
+  background: $dark;
+  color: $light;
+  padding: $spacer-xl 0 $spacer-lg;
+  
+  h5 {
+    color: $light;
+    margin-bottom: $spacer;
+  }
+  
+  p, li {
+    color: $light;
+    line-height: 1.6;
+  }
+  
+  a {
+    color: $misty-rose;
+    
+    &:hover, &:focus {
+      color: $light;
+    }
+  }
+  
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: $spacer-sm;
+    }
+    
+    button {
+      background: none;
+      border: none;
+      color: $misty-rose;
+      padding: 0;
+      font-size: inherit;
+      cursor: pointer;
+      transition: $transition-base;
+      min-height: $touch-target-min;
+      
+      &:hover, &:focus {
+        color: $light;
+      }
+    }
+  }
+  
+  .footer-divider {
+    border-color: $secondary;
+    margin: $spacer-lg 0;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    color: $secondary;
+    font-size: $font-size-sm;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes (Mobile-First)
+   ========================================================================== */
+
+.text-primary-custom { color: $text-primary !important; }
+.text-secondary-custom { color: $text-secondary !important; }
+.text-accent { color: $text-accent !important; }
+.text-light-custom { color: $text-light !important; }
+
+.bg-primary-custom { background-color: $bg-primary !important; }
+.bg-secondary-custom { background-color: $bg-secondary !important; }
+.bg-light-custom { background-color: $bg-light !important; }
+.bg-dark-custom { background-color: $bg-dark !important; }
+.bg-accent { background-color: $bg-accent !important; }
+
+.bg-gradient-primary { 
+  background: linear-gradient(135deg, $primary, color.adjust($primary, $lightness: -15%)) !important; 
+}
+
+.bg-gradient-secondary { 
+  background: linear-gradient(135deg, $secondary, color.adjust($secondary, $lightness: -10%)) !important; 
+}
+
+.bg-gradient-hero { 
+  background: linear-gradient(135deg, $dark, $secondary) !important; 
+}
+
+.bg-gradient-accent { 
+  background: linear-gradient(45deg, $misty-rose, $light) !important; 
+}
+
+/* ==========================================================================
+   Animation & Transitions (Mobile Performance Optimized)
+   ========================================================================== */
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Respect reduced motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    animation: none;
+  }
+  
+  .btn:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Gap Prevention Utilities
+   ========================================================================== */
+
+// Eliminate any unwanted gaps in layout
+.no-gap {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+// Ensure tight navigation
+.navbar {
+  margin-bottom: 0 !important;
+}
+
+// Ensure tight footer
+footer {
+  margin-top: 0 !important;
+}
+
+// Landing page specific gap fixes
+.landing-page {
+  .navbar,
+  .section-wrapper,
+  footer {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+// Navbar brand consistent color (darker grey)
+.navbar-brand.text-secondary {
+  color: $dim-gray !important;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dim-gray !important;
+  }
+}
+
+// Navbar brand button dark grey background
+.navbar-brand.btn.btn-link {
+  background-color: $jet !important;
+  color: $light !important;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $jet !important;
+    color: $light !important;
+  }
+}
+
+/* ==========================================================================
+   Spacing Utilities (Remove Gaps)
+   ========================================================================== */
+
+// Remove default margin/padding that could cause gaps
+.no-gap {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// Consistent section spacing
+.section-spacing {
+  padding-top: $spacer-xl !important;
+  padding-bottom: $spacer-xl !important;
+  margin: 0 !important;
+  
+  @media (min-width: 992px) {
+    padding-top: $spacer-xxl !important;
+    padding-bottom: $spacer-xxl !important;
+  }
+}
+
+// Navigation spacing fix
+.navbar-fixed {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  margin-bottom: 0 !important;
+}
+
+// Footer spacing fix
+.footer-fixed {
+  margin-top: 0 !important;
+}
+
+/* ==========================================================================
+   Mobile-First Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: $spacer;
+    padding-right: $spacer;
+  }
+  
+  .section {
+    padding: $spacer-lg 0;
+  }
+  
+  .hero {
+    padding: $spacer-xl 0;
+    min-height: 80vh;
+  }
+}

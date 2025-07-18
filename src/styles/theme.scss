@@ -1,0 +1,220 @@
+// APX2Digital Custom Theme Variables
+// Mobile-first design with custom color palette
+
+/* ==========================================================================
+   Custom Color Palette
+   ========================================================================== */
+
+// Primary Colors (SCSS HEX)
+$jet: #2a2b2a;
+$dim-gray: #706c61;
+$cosmic-latte: #f8f4e3;
+$claret: #6c0f26;
+$misty-rose: #ffe0d6;
+
+// Color Semantic Mapping (Mobile-First)
+$primary: $claret;           // Primary brand color
+$secondary: $dim-gray;       // Secondary actions
+$success: #28a745;          // Keep Bootstrap success green
+$danger: $claret;           // Use claret for danger/error states
+$warning: #ffc107;          // Keep Bootstrap warning yellow
+$info: $dim-gray;           // Use dim-gray for info
+$light: $cosmic-latte;      // Light backgrounds
+$dark: $jet;                // Dark text and backgrounds
+$body-bg: $cosmic-latte;    // Main background
+$body-color: $jet;          // Main text color
+
+// Text Colors (Mobile-First - High Contrast for Readability)
+$text-primary: $jet;
+$text-secondary: $dim-gray;
+$text-light: $cosmic-latte;
+$text-accent: $claret;
+$text-muted: $dim-gray;
+
+// Background Colors (Mobile-First)
+$bg-primary: $claret;
+$bg-secondary: $dim-gray;
+$bg-light: $cosmic-latte;
+$bg-dark: $jet;
+$bg-accent: $misty-rose;
+
+// Border Colors
+$border-color: $dim-gray;
+$border-light: rgba($dim-gray, 0.3);
+$border-dark: $jet;
+
+// Button Theme (Mobile-First - 44px minimum touch targets)
+$btn-primary-bg: $claret;
+$btn-primary-border: $claret;
+$btn-primary-color: $cosmic-latte;
+$btn-primary-hover-bg: darken($claret, 10%);
+$btn-primary-hover-border: darken($claret, 10%);
+
+$btn-secondary-bg: $dim-gray;
+$btn-secondary-border: $dim-gray;
+$btn-secondary-color: $cosmic-latte;
+$btn-secondary-hover-bg: darken($dim-gray, 10%);
+$btn-secondary-hover-border: darken($dim-gray, 10%);
+
+$btn-outline-primary-color: $claret;
+$btn-outline-primary-border: $claret;
+$btn-outline-primary-hover-bg: $claret;
+$btn-outline-primary-hover-color: $cosmic-latte;
+
+// Navigation Theme (Mobile-First)
+$navbar-dark-bg: $jet;
+$navbar-dark-color: $cosmic-latte;
+$navbar-dark-hover-color: $misty-rose;
+$navbar-dark-active-color: $claret;
+$navbar-dark-toggler-border: $dim-gray;
+
+$navbar-light-bg: $cosmic-latte;
+$navbar-light-color: $jet;
+$navbar-light-hover-color: $claret;
+$navbar-light-active-color: $claret;
+
+// Card Theme
+$card-bg: $cosmic-latte;
+$card-border-color: $border-light;
+$card-cap-bg: $misty-rose;
+
+// Form Theme (Mobile-First)
+$input-bg: $cosmic-latte;
+$input-border-color: $dim-gray;
+$input-focus-border-color: $claret;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($claret, 0.25);
+$input-color: $jet;
+
+// Link Theme
+$link-color: $claret;
+$link-hover-color: darken($claret, 15%);
+$link-decoration: none;
+
+// Gradient Definitions
+$gradient-primary: linear-gradient(135deg, $claret, darken($claret, 15%));
+$gradient-secondary: linear-gradient(135deg, $dim-gray, darken($dim-gray, 10%));
+$gradient-hero: linear-gradient(135deg, $jet, $dim-gray);
+$gradient-accent: linear-gradient(45deg, $misty-rose, $cosmic-latte);
+
+// Component-Specific Variables (Mobile-First)
+$hero-bg: $gradient-hero;
+$hero-text-color: $cosmic-latte;
+$hero-accent-color: $misty-rose;
+
+$service-card-bg: $cosmic-latte;
+$service-card-border: $border-light;
+$service-card-hover-shadow: 0 8px 25px rgba($claret, 0.15);
+
+$portfolio-card-bg: $cosmic-latte;
+$portfolio-card-overlay: rgba($jet, 0.8);
+
+$footer-bg: $jet;
+$footer-text: $cosmic-latte;
+$footer-link-color: $misty-rose;
+$footer-link-hover: $cosmic-latte;
+
+// Spacing (Mobile-First Touch Targets)
+$spacer-xs: 0.25rem;   // 4px
+$spacer-sm: 0.5rem;    // 8px
+$spacer: 1rem;         // 16px
+$spacer-lg: 1.5rem;    // 24px
+$spacer-xl: 3rem;      // 48px
+$spacer-xxl: 4.5rem;   // 72px
+
+// Touch-Friendly Sizing (Mobile-First)
+$touch-target-min: 44px;        // Minimum touch target
+$btn-padding-y: 0.75rem;        // Button vertical padding
+$btn-padding-x: 1.5rem;         // Button horizontal padding
+$btn-font-size: 1rem;           // Button font size
+$btn-border-radius: 0.375rem;   // Button border radius
+
+// Typography (Mobile-First - Readable on Small Screens)
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-base: 1rem;          // 16px - prevents mobile zoom
+$font-size-lg: 1.125rem;        // 18px
+$font-size-sm: 0.875rem;        // 14px
+
+$h1-font-size: 2rem;            // Mobile: 32px
+$h2-font-size: 1.75rem;         // Mobile: 28px  
+$h3-font-size: 1.5rem;          // Mobile: 24px
+$h4-font-size: 1.25rem;         // Mobile: 20px
+$h5-font-size: 1.125rem;        // Mobile: 18px
+$h6-font-size: 1rem;            // Mobile: 16px
+
+// Box Shadow Theme (Mobile-First)
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($jet, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba($jet, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba($jet, 0.175);
+
+// Animation & Transitions (Respect Mobile Performance)
+$transition-base: all 0.3s ease-in-out;
+$transition-fade: opacity 0.3s ease-in-out;
+$transition-collapse: height 0.35s ease;
+
+// Mixins for Mobile-First Development
+@mixin mobile-touch-target {
+  min-height: $touch-target-min;
+  min-width: $touch-target-min;
+}
+
+@mixin mobile-button {
+  @include mobile-touch-target;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  border-radius: $btn-border-radius;
+  font-weight: 500;
+  transition: $transition-base;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+@mixin card-hover-effect {
+  transition: $transition-base;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $service-card-hover-shadow;
+  }
+}
+
+@mixin responsive-typography($mobile-size, $tablet-size: null, $desktop-size: null) {
+  font-size: $mobile-size;
+  
+  @if $tablet-size {
+    @media (min-width: 768px) {
+      font-size: $tablet-size;
+    }
+  }
+  
+  @if $desktop-size {
+    @media (min-width: 1200px) {
+      font-size: $desktop-size;
+    }
+  }
+}
+
+// Responsive Breakpoint Mixins
+@mixin mobile-only {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// Respect Reduced Motion Preference
+@media (prefers-reduced-motion: reduce) {
+  $transition-base: none;
+  $transition-fade: none;
+  $transition-collapse: none;
+}

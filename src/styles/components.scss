@@ -1,0 +1,528 @@
+/* APX2Digital Component Styles with Custom Theme */
+/* Mobile-First Component Design */
+
+/* ==========================================================================
+   Custom Button Styles (Mobile-First)
+   ========================================================================== */
+
+.btn {
+  @include mobile-button;
+  
+  // Remove default button outline, add custom focus
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary, 0.25);
+  }
+}
+
+.btn-primary {
+  background: $btn-primary-bg;
+  border-color: $btn-primary-border;
+  color: $btn-primary-color;
+  
+  &:hover, &:focus {
+    background: $btn-primary-hover-bg;
+    border-color: $btn-primary-hover-border;
+    color: $btn-primary-color;
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-secondary {
+  background: $btn-secondary-bg;
+  border-color: $btn-secondary-border;
+  color: $btn-secondary-color;
+  
+  &:hover, &:focus {
+    background: $btn-secondary-hover-bg;
+    border-color: $btn-secondary-hover-border;
+    color: $btn-secondary-color;
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+}
+
+.btn-outline-primary {
+  background: transparent;
+  border-color: $btn-outline-primary-border;
+  color: $btn-outline-primary-color;
+  
+  &:hover, &:focus {
+    background: $btn-outline-primary-hover-bg;
+    border-color: $btn-outline-primary-border;
+    color: $btn-outline-primary-hover-color;
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+}
+
+.btn-gradient {
+  background: $gradient-primary;
+  border: none;
+  color: $cosmic-latte;
+  
+  &:hover, &:focus {
+    background: linear-gradient(135deg, darken($claret, 5%), darken($claret, 20%));
+    color: $cosmic-latte;
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+/* ==========================================================================
+   Navigation Styles (Mobile-First)
+   ========================================================================== */
+
+.navbar {
+  background: $navbar-dark-bg !important;
+  padding: $spacer-sm $spacer;
+  box-shadow: $box-shadow-sm;
+  
+  .navbar-brand {
+    color: $navbar-dark-color !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+    &:hover {
+      color: $navbar-dark-hover-color !important;
+    }
+  }
+  
+  .navbar-nav .nav-link {
+    color: $navbar-dark-color !important;
+    font-weight: 500;
+    padding: $spacer-sm $spacer;
+    margin: 0 $spacer-xs;
+    border-radius: $btn-border-radius;
+    transition: $transition-base;
+    @include mobile-touch-target;
+    display: flex;
+    align-items: center;
+    
+    &:hover, &:focus {
+      color: $navbar-dark-hover-color !important;
+      background: rgba($misty-rose, 0.1);
+    }
+    
+    &.active {
+      color: $navbar-dark-active-color !important;
+      background: rgba($claret, 0.1);
+    }
+  }
+  
+  .navbar-toggler {
+    border-color: $navbar-dark-toggler-border;
+    padding: $spacer-xs;
+    
+    &:focus {
+      box-shadow: 0 0 0 2px rgba($misty-rose, 0.25);
+    }
+  }
+}
+
+/* ==========================================================================
+   Card Styles (Mobile-First)
+   ========================================================================== */
+
+.card {
+  background: $card-bg;
+  border: 1px solid $card-border-color;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow-sm;
+  margin-bottom: $spacer-lg;
+  @include card-hover-effect;
+  
+  .card-header {
+    background: $card-cap-bg;
+    border-bottom: 1px solid $card-border-color;
+    padding: $spacer;
+  }
+  
+  .card-body {
+    padding: $spacer-lg;
+  }
+  
+  .card-title {
+    color: $text-primary;
+    margin-bottom: $spacer;
+  }
+  
+  .card-text {
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}
+
+/* ==========================================================================
+   Section Styles (Mobile-First)
+   ========================================================================== */
+
+.section {
+  padding: $spacer-xl 0;
+  
+  // Tablet and up spacing
+  @include tablet-up {
+    padding: $spacer-xxl 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacer-xl;
+  
+  h2 {
+    color: $text-primary;
+    margin-bottom: $spacer;
+  }
+  
+  p {
+    color: $text-secondary;
+    font-size: $font-size-lg;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   Hero Section (Mobile-First)
+   ========================================================================== */
+
+.hero {
+  background: $hero-bg;
+  color: $hero-text-color;
+  padding: $spacer-xxl 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  
+  h1 {
+    color: $hero-text-color;
+    margin-bottom: $spacer-lg;
+    @include responsive-typography(2rem, 2.5rem, 3rem);
+  }
+  
+  .lead {
+    color: $hero-accent-color;
+    font-size: $font-size-lg;
+    margin-bottom: $spacer-xl;
+  }
+  
+  .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: $spacer;
+    
+    // Tablet and up - horizontal layout
+    @include tablet-up {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
+
+/* ==========================================================================
+   Services Section (Mobile-First)
+   ========================================================================== */
+
+.services {
+  background: $bg-light;
+  
+  .service-card {
+    background: $service-card-bg;
+    border: 1px solid $service-card-border;
+    border-radius: 0.5rem;
+    padding: $spacer-lg;
+    text-align: center;
+    height: 100%;
+    @include card-hover-effect;
+    
+    .service-icon {
+      font-size: 3rem;
+      color: $primary;
+      margin-bottom: $spacer;
+    }
+    
+    .service-title {
+      color: $text-primary;
+      margin-bottom: $spacer;
+    }
+    
+    .service-description {
+      color: $text-secondary;
+      line-height: 1.6;
+    }
+    
+    .service-features {
+      list-style: none;
+      padding: 0;
+      margin-top: $spacer;
+      
+      li {
+        color: $text-secondary;
+        padding: $spacer-xs 0;
+        border-bottom: 1px solid $border-light;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        &:before {
+          content: '✓';
+          color: $primary;
+          font-weight: bold;
+          margin-right: $spacer-sm;
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Portfolio Section (Mobile-First)
+   ========================================================================== */
+
+.portfolio {
+  background: $bg-light;
+  
+  .portfolio-card {
+    background: $portfolio-card-bg;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    height: 100%;
+    @include card-hover-effect;
+    
+    .portfolio-image {
+      height: 200px;
+      background: $gradient-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $cosmic-latte;
+      font-size: 3rem;
+    }
+    
+    .portfolio-content {
+      padding: $spacer-lg;
+    }
+    
+    .portfolio-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacer-xs;
+      margin-top: $spacer;
+      
+      .tech-badge {
+        background: $primary;
+        color: $cosmic-latte;
+        padding: $spacer-xs $spacer-sm;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Footer Styles (Mobile-First)
+   ========================================================================== */
+
+.footer {
+  background: $footer-bg;
+  color: $footer-text;
+  padding: $spacer-xl 0 $spacer-lg;
+  
+  h5 {
+    color: $footer-text;
+    margin-bottom: $spacer;
+  }
+  
+  p, li {
+    color: $footer-text;
+    line-height: 1.6;
+  }
+  
+  a {
+    color: $footer-link-color;
+    
+    &:hover, &:focus {
+      color: $footer-link-hover;
+    }
+  }
+  
+  .footer-nav {
+    list-style: none;
+    padding: 0;
+    
+    li {
+      margin-bottom: $spacer-sm;
+    }
+    
+    button {
+      background: none;
+      border: none;
+      color: $footer-link-color;
+      padding: 0;
+      font-size: inherit;
+      cursor: pointer;
+      transition: $transition-base;
+      @include mobile-touch-target;
+      
+      &:hover, &:focus {
+        color: $footer-link-hover;
+      }
+    }
+  }
+  
+  .footer-divider {
+    border-color: $dim-gray;
+    margin: $spacer-lg 0;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    color: $dim-gray;
+    font-size: $font-size-sm;
+  }
+}
+
+/* ==========================================================================
+   Form Styles (Mobile-First)
+   ========================================================================== */
+
+.form-control {
+  background: $input-bg;
+  border: 2px solid $input-border-color;
+  color: $input-color;
+  font-size: $font-size-base;
+  padding: $spacer-sm $spacer;
+  @include mobile-touch-target;
+  border-radius: $btn-border-radius;
+  
+  &:focus {
+    border-color: $input-focus-border-color;
+    box-shadow: $input-focus-box-shadow;
+    background: $input-bg;
+    color: $input-color;
+  }
+  
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+.form-label {
+  color: $text-primary;
+  font-weight: 500;
+  margin-bottom: $spacer-sm;
+}
+
+/* ==========================================================================
+   Utility Classes (Mobile-First)
+   ========================================================================== */
+
+.text-primary-custom { color: $text-primary !important; }
+.text-secondary-custom { color: $text-secondary !important; }
+.text-accent { color: $text-accent !important; }
+.text-light-custom { color: $text-light !important; }
+
+.bg-primary-custom { background-color: $bg-primary !important; }
+.bg-secondary-custom { background-color: $bg-secondary !important; }
+.bg-light-custom { background-color: $bg-light !important; }
+.bg-dark-custom { background-color: $bg-dark !important; }
+.bg-accent { background-color: $bg-accent !important; }
+
+.bg-gradient-primary { background: $gradient-primary !important; }
+.bg-gradient-secondary { background: $gradient-secondary !important; }
+.bg-gradient-hero { background: $gradient-hero !important; }
+.bg-gradient-accent { background: $gradient-accent !important; }
+
+.border-primary-custom { border-color: $border-color !important; }
+.border-light-custom { border-color: $border-light !important; }
+
+// Touch-friendly spacing utilities
+.p-touch { padding: $spacer !important; }
+.m-touch { margin: $spacer !important; }
+.mb-touch { margin-bottom: $spacer !important; }
+.mt-touch { margin-top: $spacer !important; }
+
+// Hide on mobile, show on tablet+
+.d-mobile-none {
+  display: none;
+  
+  @include tablet-up {
+    display: block;
+  }
+}
+
+// Show on mobile, hide on tablet+
+.d-mobile-only {
+  display: block;
+  
+  @include tablet-up {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Animation & Transitions (Mobile Performance Optimized)
+   ========================================================================== */
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+// Respect reduced motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-in {
+    animation: none;
+  }
+  
+  .btn:hover,
+  .card:hover,
+  .portfolio-card:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Mobile-First Responsive Adjustments
+   ========================================================================== */
+
+// Touch-optimized spacing for mobile
+@include mobile-only {
+  .container {
+    padding-left: $spacer;
+    padding-right: $spacer;
+  }
+  
+  .section {
+    padding: $spacer-lg 0;
+  }
+  
+  .hero {
+    padding: $spacer-xl 0;
+    min-height: 80vh;
+  }
+}
