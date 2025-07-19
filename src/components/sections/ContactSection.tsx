@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { ContactInfoItem } from '../common'
 
 export const ContactSection: React.FC = () => {
@@ -48,9 +47,9 @@ export const ContactSection: React.FC = () => {
             </div>
             
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-              <Link to="/register" className="btn btn-primary btn-lg px-5 py-3">
+              <button className="btn btn-primary btn-lg px-5 py-3">
                 Start Free Consultation
-              </Link>
+              </button>
               <a 
                 href="mailto:hello@apx2digital.com" 
                 className="btn btn-outline-primary btn-lg px-5 py-3"

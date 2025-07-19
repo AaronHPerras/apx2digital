@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
 
 type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
 
@@ -60,6 +59,14 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <button 
+                className={`nav-link btn btn-link text-decoration-none ${activeSection === 'hero' ? 'active' : ''}`}
+                onClick={() => handleNavigateAndClose('hero')}
+              >
+                Home
+              </button>
+            </li>
+            <li className="nav-item">
+              <button 
                 className={`nav-link btn btn-link text-decoration-none ${activeSection === 'services' ? 'active' : ''}`}
                 onClick={() => handleNavigateAndClose('services')}
               >
@@ -92,12 +99,9 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
             </li>
           </ul>
           <div className="d-flex flex-column flex-lg-row gap-2">
-            <Link to="/login" className="btn btn-outline-primary" onClick={closeMobileMenu}>
-              Sign In
-            </Link>
-            <Link to="/register" className="btn btn-primary" onClick={closeMobileMenu}>
+            <button className="btn btn-primary" onClick={closeMobileMenu}>
               Get Started
-            </Link>
+            </button>
           </div>
         </div>
       </div>
