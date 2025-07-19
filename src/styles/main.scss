@@ -781,7 +781,6 @@ footer {
   //border: 1px solid $jet !important;
   box-shadow: inset 0 0 3px 2px $jet;
   border-radius: 12px;
-  min-height: 120px;
   cursor: pointer;
   outline: none;
   transform-style: preserve-3d;
@@ -844,26 +843,27 @@ footer {
   }
   
   &.nav-card-active {
-    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(145deg, lighten($claret, 45%), lighten($claret, 40%));
     border-color: $jet;
     transform: translate(0, 0.5em);
+    box-shadow: 
+      inset 0 0 3px 2px $jet,
+      0 0 15px rgba($claret, 0.6),
+      0 0 30px rgba($claret, 0.3);
     
     &::before {
-      background: linear-gradient(145deg, rgb(255, 255, 255), rgba(172, 172, 172, 0.86));
+      background: linear-gradient(145deg, lighten($claret, 50%), lighten($claret, 45%));
       box-shadow: 
         0 0 0 2px $jet,
-        0 0.25em 0 0 rgba($jet, 0.4);
+        0 0.25em 0 0 rgba($jet, 0.4),
+        0 0 10px rgba($claret, 0.4);
       transform: translate3d(0, 0.25em, -1em);
     }
     
-    .nav-card-icon {
-      transform: scale(1.02);
-      color: $primary;
-    }
-    
     .nav-card-label {
-      color: $primary;
+      color: white;
       font-weight: 600;
+      text-shadow: 0 0 8px rgba($claret, 0.3);
     }
   }
   
@@ -915,6 +915,81 @@ footer {
       }
     }
   }
+  
+  // Desktop nav-card styling
+  &.nav-card-desktop {
+    min-height: auto;
+    height: 44px;
+    border-radius: 8px;
+    width: 120px;
+    min-width: 120px;
+    
+    &::before {
+      border-radius: 8px;
+      box-shadow: 
+        0 0 0 1px $jet,
+        0 0.25em 0 0 rgba($jet, 0.3),
+        0 0.35em 4px rgba($jet, 0.15);
+      transform: translate3d(0, 0.25em, -1em);
+    }
+    
+    &:hover::before {
+      box-shadow: 
+        0 0 0 1px $jet,
+        0 0.15em 0 0 rgba($jet, 0.3),
+        0 0.25em 6px rgba($jet, 0.2);
+      transform: translate3d(0, 0.15em, -1em);
+    }
+    
+    &:active {
+      transform: translate(0, 0.25em);
+      
+      &::before {
+        box-shadow: 
+          0 0 0 1px $jet,
+          0 0 0 0 rgba($jet, 0.3);
+        transform: translate3d(0, 0, -1em);
+      }
+    }
+    
+    &.nav-card-active {
+      transform: translate(0, 0.15em);
+      background: linear-gradient(145deg, lighten($claret, 45%), lighten($claret, 40%));
+      box-shadow: 
+        inset 0 0 3px 2px $jet,
+        0 0 10px rgba($claret, 0.5),
+        0 0 20px rgba($claret, 0.2);
+      
+      &::before {
+        background: linear-gradient(145deg, lighten($claret, 50%), lighten($claret, 45%));
+        box-shadow: 
+          0 0 0 1px $jet,
+          0 0.1em 0 0 rgba($jet, 0.4),
+          0 0 8px rgba($claret, 0.3);
+        transform: translate3d(0, 0.1em, -1em);
+      }
+      
+      .nav-card-label {
+        color: white;
+        font-weight: 600;
+        text-shadow: 0 0 6px rgba($claret, 0.3);
+      }
+    }
+    
+    &.nav-card-cta::before {
+      box-shadow: 
+        0 0 0 1px $jet,
+        0 0.25em 0 0 rgba($jet, 0.3),
+        0 0.35em 4px rgba($jet, 0.15);
+    }
+    
+    &.nav-card-cta:hover::before {
+      box-shadow: 
+        0 0 0 1px $jet,
+        0 0.15em 0 0 rgba($jet, 0.3),
+        0 0.25em 6px rgba($jet, 0.2);
+    }
+  }
 }
 
 .nav-card-icon {
@@ -923,6 +998,10 @@ footer {
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  
+  .nav-card-desktop & {
+    font-size: 1.1rem;
+  }
 }
 
 .nav-card-label {
@@ -934,17 +1013,30 @@ footer {
   text-align: center;
   font-weight: 500;
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  
+  .nav-card-desktop & {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
 }
 
 /* Ensure mobile navigation cards are properly sized */
 @media (max-width: 991.98px) {
   .navbar-collapse .row .col-6 {
-    aspect-ratio: 1;
-    display: flex;
+    aspect-ratio: 1 !important;
+    display: flex !important;
+    padding: 0.5rem; // Add spacing between cards
   }
   
   .nav-card {
-    min-height: 100px;
+    aspect-ratio: 1 !important; // Force 1:1 ratio with !important
+    height: auto !important; // Override any conflicting height rules
+    min-height: auto !important; // Remove any min-height constraints
+    max-height: none !important; // Remove any max-height constraints
+    width: 100% !important; // Ensure full width of container
+    flex: 1 !important; // Make the button fill the container
   }
   
   .nav-card-icon {

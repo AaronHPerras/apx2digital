@@ -56,49 +56,41 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
         </button>
         
         <div className="collapse navbar-collapse" id="navbarNav" ref={navbarCollapseRef}>
-          {/* Desktop Navigation */}
-          <ul className="navbar-nav me-auto d-none d-lg-flex">
-            <li className="nav-item">
+          {/* Desktop Card Navigation */}
+          <div className="d-none d-lg-flex me-auto">
+            <div className="d-flex gap-3">
               <button 
-                className={`nav-link btn btn-link text-decoration-none ${activeSection === 'hero' ? 'active' : ''}`}
+                className={`nav-card nav-card-desktop d-flex flex-row align-items-center justify-content-center px-3 py-2 border-0 ${activeSection === 'hero' ? 'nav-card-active' : ''}`}
                 onClick={() => handleNavigateAndClose('hero')}
               >
-                Home
+                <span className="nav-card-label fw-semibold">Home</span>
               </button>
-            </li>
-            <li className="nav-item">
               <button 
-                className={`nav-link btn btn-link text-decoration-none ${activeSection === 'services' ? 'active' : ''}`}
+                className={`nav-card nav-card-desktop d-flex flex-row align-items-center justify-content-center px-3 py-2 border-0 ${activeSection === 'services' ? 'nav-card-active' : ''}`}
                 onClick={() => handleNavigateAndClose('services')}
               >
-                Services
+                <span className="nav-card-label fw-semibold">Services</span>
               </button>
-            </li>
-            <li className="nav-item">
               <button 
-                className={`nav-link btn btn-link text-decoration-none ${activeSection === 'about' ? 'active' : ''}`}
+                className={`nav-card nav-card-desktop d-flex flex-row align-items-center justify-content-center px-3 py-2 border-0 ${activeSection === 'about' ? 'nav-card-active' : ''}`}
                 onClick={() => handleNavigateAndClose('about')}
               >
-                About
+                <span className="nav-card-label fw-semibold">About</span>
               </button>
-            </li>
-            <li className="nav-item">
               <button 
-                className={`nav-link btn btn-link text-decoration-none ${activeSection === 'portfolio' ? 'active' : ''}`}
+                className={`nav-card nav-card-desktop d-flex flex-row align-items-center justify-content-center px-3 py-2 border-0 ${activeSection === 'portfolio' ? 'nav-card-active' : ''}`}
                 onClick={() => handleNavigateAndClose('portfolio')}
               >
-                Portfolio
+                <span className="nav-card-label fw-semibold">Portfolio</span>
               </button>
-            </li>
-            <li className="nav-item">
               <button 
-                className={`nav-link btn btn-link text-decoration-none ${activeSection === 'contact' ? 'active' : ''}`}
+                className={`nav-card nav-card-desktop d-flex flex-row align-items-center justify-content-center px-3 py-2 border-0 ${activeSection === 'contact' ? 'nav-card-active' : ''}`}
                 onClick={() => handleNavigateAndClose('contact')}
               >
-                Contact
+                <span className="nav-card-label fw-semibold">Contact</span>
               </button>
-            </li>
-          </ul>
+            </div>
+          </div>
 
           {/* Mobile Card Navigation */}
           <div className="d-lg-none w-100">
@@ -108,7 +100,6 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
                   className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'hero' ? 'nav-card-active' : ''}`}
                   onClick={() => handleNavigateAndClose('hero')}
                 >
-                  <div className="nav-card-icon mb-2">🏠</div>
                   <span className="nav-card-label fw-semibold">Home</span>
                 </button>
               </div>
@@ -117,7 +108,6 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
                   className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'services' ? 'nav-card-active' : ''}`}
                   onClick={() => handleNavigateAndClose('services')}
                 >
-                  <div className="nav-card-icon mb-2">⚡</div>
                   <span className="nav-card-label fw-semibold">Services</span>
                 </button>
               </div>
@@ -126,7 +116,6 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
                   className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'about' ? 'nav-card-active' : ''}`}
                   onClick={() => handleNavigateAndClose('about')}
                 >
-                  <div className="nav-card-icon mb-2">💼</div>
                   <span className="nav-card-label fw-semibold">About</span>
                 </button>
               </div>
@@ -135,7 +124,6 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
                   className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'portfolio' ? 'nav-card-active' : ''}`}
                   onClick={() => handleNavigateAndClose('portfolio')}
                 >
-                  <div className="nav-card-icon mb-2">🎨</div>
                   <span className="nav-card-label fw-semibold">Portfolio</span>
                 </button>
               </div>
@@ -144,7 +132,6 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
                   className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'contact' ? 'nav-card-active' : ''}`}
                   onClick={() => handleNavigateAndClose('contact')}
                 >
-                  <div className="nav-card-icon mb-2">📞</div>
                   <span className="nav-card-label fw-semibold">Contact</span>
                 </button>
               </div>
@@ -153,7 +140,6 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
                   className="nav-card nav-card-cta w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3"
                   onClick={closeMobileMenu}
                 >
-                  <div className="nav-card-icon mb-2">🚀</div>
                   <span className="nav-card-label fw-semibold">Get Started</span>
                 </button>
               </div>
@@ -162,8 +148,11 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
 
           {/* Desktop CTA Button */}
           <div className="d-none d-lg-flex">
-            <button className="btn btn-primary" onClick={closeMobileMenu}>
-              Get Started
+            <button 
+              className="nav-card nav-card-cta nav-card-desktop d-flex flex-row align-items-center justify-content-center px-3 py-2 border-0"
+              onClick={closeMobileMenu}
+            >
+              <span className="nav-card-label fw-semibold">Get Started</span>
             </button>
           </div>
         </div>
