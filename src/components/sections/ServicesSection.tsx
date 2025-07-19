@@ -3,7 +3,7 @@ import { ServiceCard, SectionHeader } from '../common'
 
 export const ServicesSection: React.FC = () => {
   return (
-    <section className="py-5 py-lg-6">
+    <section className="py-5 py-lg-6 bg-light">
       <div className="container">
         <SectionHeader 
           title="Our Services"

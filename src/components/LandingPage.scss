@@ -1,5 +1,6 @@
 /* Landing Page Specific Styles */
 /* Using APX2Digital Theme System */
+@import '../styles/theme';
 
 .landing-page {
   min-height: 100vh;
@@ -186,7 +187,7 @@
 
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 8px 25px rgba($jet, 0.15) !important;
 }
 
 .backdrop-filter {

@@ -8,6 +8,7 @@ import {
   FooterSection,
   NavigationSection
 } from './sections'
+import { useScrollToTop } from '../hooks/useScrollToTop'
 import './LandingPage.scss'
 
 type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
@@ -15,6 +16,7 @@ type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
 export const LandingPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>('hero')
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const { scrollToTop } = useScrollToTop()
 
   const handleNavClick = (section: Section) => {
     if (section === activeSection) return
@@ -23,6 +25,9 @@ export const LandingPage: React.FC = () => {
     setTimeout(() => {
       setActiveSection(section)
       setIsTransitioning(false)
+      
+      // Scroll to top using custom hook
+      scrollToTop()
     }, 150) // Half transition duration
   }
 

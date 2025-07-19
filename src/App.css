@@ -112,7 +112,7 @@
 /* High Contrast Support */
 @media (prefers-contrast: high) {
   .loading-spinner {
-    border-color: #000;
+    border-color: var(--dark);
     border-top-color: #fff;
   }
 }

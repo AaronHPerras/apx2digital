@@ -8,25 +8,25 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   return (
-    <section className="bg-gradient-primary text-white py-5 py-lg-6">
+    <section className="bg-light text-dark py-5 py-lg-6">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 text-center text-lg-start">
-            <h1 className="display-4 fw-bold mb-4">
+            <h1 className="display-4 fw-bold mb-4 text-dark">
               Transform Your Business with 
-              <span className="text-warning"> Modern Web Solutions</span>
+              <span className="text-primary"> Modern Web Solutions</span>
             </h1>
-            <p className="lead mb-4 fs-5">
+            <p className="lead mb-4 fs-5 text-secondary">
               We build powerful, scalable web applications that drive growth. 
               From SaaS platforms to e-commerce solutions, we turn your vision into reality.
             </p>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-              <Link to="/register" className="btn btn-warning btn-lg px-4 py-3">
+              <Link to="/register" className="btn btn-primary btn-lg px-4 py-3">
                 Start Your Project
               </Link>
               <button 
                 onClick={() => onNavigate('portfolio')} 
-                className="btn btn-outline-light btn-lg px-4 py-3"
+                className="btn btn-outline-primary btn-lg px-4 py-3"
               >
                 View Our Work
               </button>

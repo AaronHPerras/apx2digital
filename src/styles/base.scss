@@ -219,10 +219,10 @@ a:focus {
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
   :root {
-    --primary: #000;
-    --text-primary: #000;
+    --primary: #{$jet};
+    --text-primary: #{$jet};
     --bg-light: #fff;
-    --border-color: #000;
+    --border-color: #{$jet};
   }
 }
 

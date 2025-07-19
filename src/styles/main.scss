@@ -408,12 +408,19 @@ $transition-fade: opacity 0.3s ease-in-out;
 .text-secondary-custom { color: $text-secondary !important; }
 .text-accent { color: $text-accent !important; }
 .text-light-custom { color: $text-light !important; }
+.text-jet { color: $jet !important; }
 
 .bg-primary-custom { background-color: $bg-primary !important; }
 .bg-secondary-custom { background-color: $bg-secondary !important; }
 .bg-light-custom { background-color: $bg-light !important; }
 .bg-dark-custom { background-color: $bg-dark !important; }
 .bg-accent { background-color: $bg-accent !important; }
+
+// Section background consistency
+section.bg-light {
+  background-color: $cosmic-latte !important;
+  color: $jet !important;
+}
 
 .bg-gradient-primary { 
   background: linear-gradient(135deg, $primary, color.adjust($primary, $lightness: -15%)) !important; 
@@ -460,6 +467,11 @@ $transition-fade: opacity 0.3s ease-in-out;
    Gap Prevention Utilities
    ========================================================================== */
 
+// Enable smooth scrolling globally
+html {
+  scroll-behavior: smooth;
+}
+
 // Eliminate any unwanted gaps in layout
 .no-gap {
   margin: 0 !important;
@@ -492,6 +504,15 @@ footer {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
+  
+  // Ensure section content is properly positioned relative to sticky navbar
+  .section-wrapper {
+    scroll-margin-top: 80px; // Account for navbar height
+    
+    section {
+      scroll-margin-top: 80px; // Smooth scroll offset
+    }
+  }
 }
 
 // Navbar brand consistent color (darker grey)
@@ -515,6 +536,50 @@ footer {
   &:active {
     background-color: $jet !important;
     color: $light !important;
+  }
+}
+
+// Mobile menu improvements
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+  
+  // Smoother mobile menu animation
+  &.collapsing {
+    transition: height 0.35s ease;
+  }
+  
+  // Ensure mobile menu closes properly
+  &:not(.show) {
+    display: none;
+  }
+  
+  @media (max-width: 991.98px) {
+    // Mobile specific styling
+    .navbar-nav {
+      padding: $spacer-sm 0;
+      
+      .nav-item {
+        margin-bottom: $spacer-xs;
+      }
+      
+      .nav-link {
+        padding: $spacer-sm $spacer;
+        border-radius: $btn-border-radius;
+        margin: 0 $spacer-xs;
+        
+        &:hover,
+        &:focus {
+          background-color: rgba($primary, 0.1);
+        }
+      }
+    }
+    
+    // Mobile CTA buttons
+    .d-flex {
+      padding-top: $spacer;
+      border-top: 1px solid rgba($dim-gray, 0.2);
+      margin-top: $spacer;
+    }
   }
 }
 

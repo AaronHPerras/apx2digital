@@ -7,7 +7,7 @@ interface PortfolioSectionProps {
 
 export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onNavigate }) => {
   return (
-    <section className="py-5 py-lg-6">
+    <section className="py-5 py-lg-6 bg-light">
       <div className="container">
         <SectionHeader 
           title="Our Portfolio"
