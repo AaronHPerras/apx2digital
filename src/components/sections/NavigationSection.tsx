@@ -56,7 +56,8 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
         </button>
         
         <div className="collapse navbar-collapse" id="navbarNav" ref={navbarCollapseRef}>
-          <ul className="navbar-nav me-auto">
+          {/* Desktop Navigation */}
+          <ul className="navbar-nav me-auto d-none d-lg-flex">
             <li className="nav-item">
               <button 
                 className={`nav-link btn btn-link text-decoration-none ${activeSection === 'hero' ? 'active' : ''}`}
@@ -98,7 +99,69 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
               </button>
             </li>
           </ul>
-          <div className="d-flex flex-column flex-lg-row gap-2">
+
+          {/* Mobile Card Navigation */}
+          <div className="d-lg-none w-100">
+            <div className="row g-4 p-3">
+              <div className="col-6">
+                <button 
+                  className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'hero' ? 'nav-card-active' : ''}`}
+                  onClick={() => handleNavigateAndClose('hero')}
+                >
+                  <div className="nav-card-icon mb-2">🏠</div>
+                  <span className="nav-card-label fw-semibold">Home</span>
+                </button>
+              </div>
+              <div className="col-6">
+                <button 
+                  className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'services' ? 'nav-card-active' : ''}`}
+                  onClick={() => handleNavigateAndClose('services')}
+                >
+                  <div className="nav-card-icon mb-2">⚡</div>
+                  <span className="nav-card-label fw-semibold">Services</span>
+                </button>
+              </div>
+              <div className="col-6">
+                <button 
+                  className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'about' ? 'nav-card-active' : ''}`}
+                  onClick={() => handleNavigateAndClose('about')}
+                >
+                  <div className="nav-card-icon mb-2">💼</div>
+                  <span className="nav-card-label fw-semibold">About</span>
+                </button>
+              </div>
+              <div className="col-6">
+                <button 
+                  className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'portfolio' ? 'nav-card-active' : ''}`}
+                  onClick={() => handleNavigateAndClose('portfolio')}
+                >
+                  <div className="nav-card-icon mb-2">🎨</div>
+                  <span className="nav-card-label fw-semibold">Portfolio</span>
+                </button>
+              </div>
+              <div className="col-6">
+                <button 
+                  className={`nav-card w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3 ${activeSection === 'contact' ? 'nav-card-active' : ''}`}
+                  onClick={() => handleNavigateAndClose('contact')}
+                >
+                  <div className="nav-card-icon mb-2">📞</div>
+                  <span className="nav-card-label fw-semibold">Contact</span>
+                </button>
+              </div>
+              <div className="col-6">
+                <button 
+                  className="nav-card nav-card-cta w-100 h-100 d-flex flex-column align-items-center justify-content-center p-4 border-0 rounded-3"
+                  onClick={closeMobileMenu}
+                >
+                  <div className="nav-card-icon mb-2">🚀</div>
+                  <span className="nav-card-label fw-semibold">Get Started</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop CTA Button */}
+          <div className="d-none d-lg-flex">
             <button className="btn btn-primary" onClick={closeMobileMenu}>
               Get Started
             </button>
