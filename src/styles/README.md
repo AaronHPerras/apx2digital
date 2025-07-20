@@ -21,6 +21,7 @@ src/styles/
 ├── base.scss           # Base styles and CSS custom properties  
 ├── components.scss     # Component-specific styles
 ├── main.scss           # Main entry point (imports all)
+├── apx2-title.scss     # APx2 Digital branded title components
 └── scss.d.ts           # TypeScript declarations
 ```
 

@@ -1,0 +1,285 @@
+/* ==========================================================================
+   APx2 Digital Logo/Title Styling (Mobile-First)
+   ========================================================================== */
+
+/* Import sass:color for color functions */
+@use "sass:color";
+
+// Using same color variables as main.scss for consistency
+$jet: #2a2b2a;
+$dim-gray: #706c61;
+$cosmic-latte: #f8f4e3;
+$claret: #6c0f26;
+$misty-rose: #ffe0d6;
+
+// Typography
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+.apx2-digital-title {
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(145deg, $cosmic-latte, color.adjust($cosmic-latte, $lightness: -5%));
+  color: $jet;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 
+    inset 0 0 3px 2px $jet,
+    0 4px 8px rgba($jet, 0.2);
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  // Mobile-first sizing
+  font-size: 1.25rem;
+  
+  // Tablet and up
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    letter-spacing: 3px;
+  }
+  
+  // Desktop and up
+  @media (min-width: 1200px) {
+    font-size: 1.75rem;
+    padding: 1.25rem 2.5rem;
+    letter-spacing: 4px;
+  }
+  
+  // 3D depth effect
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(172, 172, 172, 0.5));
+    border-radius: inherit;
+    box-shadow: 
+      0 0 0 1px $jet,
+      0 0.375em 0 0 rgba($jet, 0.3),
+      0 0.5em 6px rgba($jet, 0.15);
+    transform: translate3d(0, 0.375em, -0.5em);
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+  
+  // Highlight the "x2" part
+  .apx2-highlight {
+    color: $claret;
+    font-weight: 800;
+    text-shadow: 
+      0 1px 2px rgba(255, 255, 255, 0.8),
+      0 0 4px rgba($claret, 0.3);
+  }
+  
+  // Hover effect
+  &:hover {
+    transform: translate(0, 0.125em);
+    background: linear-gradient(145deg, #ffffff, color.adjust($cosmic-latte, $lightness: 2%));
+    
+    &::before {
+      box-shadow: 
+        0 0 0 1px $jet,
+        0 0.25em 0 0 rgba($jet, 0.3),
+        0 0.375em 8px rgba($jet, 0.2);
+      transform: translate3d(0, 0.25em, -0.5em);
+    }
+    
+    .apx2-highlight {
+      color: color.adjust($claret, $lightness: -5%);
+      text-shadow: 
+        0 1px 2px rgba(255, 255, 255, 0.8),
+        0 0 6px rgba($claret, 0.4);
+    }
+  }
+  
+  // Active/pressed state
+  &:active {
+    transform: translate(0, 0.375em);
+    transition: transform 100ms ease;
+    
+    &::before {
+      box-shadow: 
+        0 0 0 1px $jet,
+        0 0 0 0 rgba($jet, 0.3);
+      transform: translate3d(0, 0, -0.5em);
+    }
+  }
+}
+
+// Alternative glowing version for special occasions
+.apx2-digital-title-glow {
+  @extend .apx2-digital-title;
+  
+  background: linear-gradient(145deg, color.adjust($claret, $lightness: 45%), color.adjust($claret, $lightness: 40%));
+  color: white;
+  text-shadow: 0 0 8px rgba($claret, 0.3);
+  box-shadow: 
+    inset 0 0 3px 2px $jet,
+    0 0 15px rgba($claret, 0.6),
+    0 0 30px rgba($claret, 0.3);
+  
+  &::before {
+    background: linear-gradient(145deg, color.adjust($claret, $lightness: 50%), color.adjust($claret, $lightness: 45%));
+    box-shadow: 
+      0 0 0 1px $jet,
+      0 0.375em 0 0 rgba($jet, 0.4),
+      0 0 10px rgba($claret, 0.4);
+  }
+  
+  .apx2-highlight {
+    color: white;
+    font-weight: 900;
+    text-shadow: 
+      0 0 8px rgba(255, 255, 255, 0.5),
+      0 0 12px rgba($claret, 0.4);
+  }
+  
+  &:hover {
+    background: linear-gradient(145deg, color.adjust($claret, $lightness: 50%), color.adjust($claret, $lightness: 45%));
+    box-shadow: 
+      inset 0 0 3px 2px $jet,
+      0 0 20px rgba($claret, 0.8),
+      0 0 40px rgba($claret, 0.4);
+    
+    &::before {
+      box-shadow: 
+        0 0 0 1px $jet,
+        0 0.25em 0 0 rgba($jet, 0.4),
+        0 0 15px rgba($claret, 0.5);
+    }
+  }
+}
+
+// Compact version for smaller spaces (like navbar)
+.apx2-digital-title-compact {
+  @extend .apx2-digital-title;
+  
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  
+  @media (min-width: 768px) {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    letter-spacing: 1.5px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    letter-spacing: 2px;
+  }
+  
+  &::before {
+    box-shadow: 
+      0 0 0 1px $jet,
+      0 0.25em 0 0 rgba($jet, 0.3),
+      0 0.35em 4px rgba($jet, 0.15);
+    transform: translate3d(0, 0.25em, -0.5em);
+  }
+  
+  &:hover::before {
+    box-shadow: 
+      0 0 0 1px $jet,
+      0 0.15em 0 0 rgba($jet, 0.3),
+      0 0.25em 6px rgba($jet, 0.2);
+    transform: translate3d(0, 0.15em, -0.5em);
+  }
+  
+  &:active {
+    transform: translate(0, 0.25em);
+    
+    &::before {
+      transform: translate3d(0, 0, -0.5em);
+    }
+  }
+}
+
+// Inline version (no 3D effects, flat design)
+.apx2-digital-title-inline {
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $jet;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  // Mobile-first sizing
+  font-size: 1.1rem;
+  
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .apx2-highlight {
+    color: $claret;
+    font-weight: 800;
+    text-shadow: 
+      0 1px 2px rgba(255, 255, 255, 0.8),
+      0 0 4px rgba($claret, 0.3);
+  }
+  
+  &:hover {
+    color: color.adjust($jet, $lightness: -10%);
+    
+    .apx2-highlight {
+      color: color.adjust($claret, $lightness: -5%);
+      text-shadow: 
+        0 1px 2px rgba(255, 255, 255, 0.8),
+        0 0 6px rgba($claret, 0.4);
+    }
+  }
+}
+
+// Dark theme variant
+.apx2-digital-title-dark {
+  @extend .apx2-digital-title;
+  
+  background: linear-gradient(145deg, $jet, color.adjust($jet, $lightness: 10%));
+  color: $cosmic-latte;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    inset 0 0 3px 2px $cosmic-latte,
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  
+  &::before {
+    background: linear-gradient(145deg, color.adjust($jet, $lightness: 5%), $jet);
+    box-shadow: 
+      0 0 0 1px $cosmic-latte,
+      0 0.375em 0 0 rgba(0, 0, 0, 0.4),
+      0 0.5em 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .apx2-highlight {
+    color: $claret;
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.5),
+      0 0 4px rgba($claret, 0.3);
+  }
+  
+  &:hover {
+    background: linear-gradient(145deg, color.adjust($jet, $lightness: 5%), color.adjust($jet, $lightness: 15%));
+    
+    .apx2-highlight {
+      color: color.adjust($claret, $lightness: 10%);
+      text-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.5),
+        0 0 6px rgba($claret, 0.4);
+    }
+  }
+}

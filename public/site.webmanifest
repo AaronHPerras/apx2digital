@@ -1,0 +1,28 @@
+{
+  "name": "APX2Digital",
+  "short_name": "APX2Digital",
+  "description": "Digital transformation and technology solutions",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-16x16.svg",
+      "sizes": "16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#6c0f26",
+  "background_color": "#f8f4e3",
+  "orientation": "portrait-primary"
+}

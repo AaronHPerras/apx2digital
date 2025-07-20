@@ -1,0 +1,52 @@
+<!-- Apple touch icon version - 180x180px optimized -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c0f26"/>
+      <stop offset="50%" style="stop-color:#2a2b2a"/>
+      <stop offset="100%" style="stop-color:#706c61"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f4e3"/>
+      <stop offset="100%" style="stop-color:#ffe0d6"/>
+    </linearGradient>
+    
+    <!-- Subtle tech pattern -->
+    <pattern id="techPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <circle cx="10" cy="10" r="1" fill="#6c0f26" opacity="0.1"/>
+      <line x1="0" y1="10" x2="20" y2="10" stroke="#6c0f26" stroke-width="0.5" opacity="0.05"/>
+      <line x1="10" y1="0" x2="10" y2="20" stroke="#6c0f26" stroke-width="0.5" opacity="0.05"/>
+    </pattern>
+  </defs>
+  
+  <!-- Rounded square background -->
+  <rect width="180" height="180" rx="20" fill="url(#mainGrad)"/>
+  <rect width="180" height="180" rx="20" fill="url(#techPattern)"/>
+  
+  <!-- Main geometric design -->
+  <!-- Central diamond -->
+  <polygon points="90,25 140,75 90,125 40,75" fill="url(#accentGrad)" stroke="#2a2b2a" stroke-width="3"/>
+  
+  <!-- Inner geometric "A" formation -->
+  <polygon points="90,35 120,85 100,85 95,70 85,70 80,85 60,85" fill="#2a2b2a" opacity="0.8"/>
+  
+  <!-- Central cross/transformation symbol -->
+  <rect x="80" y="80" width="20" height="20" fill="#6c0f26" transform="rotate(45 90 90)" stroke="#f8f4e3" stroke-width="1"/>
+  
+  <!-- Digital accent elements -->
+  <circle cx="45" cy="45" r="4" fill="#6c0f26" opacity="0.7"/>
+  <circle cx="135" cy="45" r="4" fill="#6c0f26" opacity="0.7"/>
+  <circle cx="45" cy="135" r="4" fill="#6c0f26" opacity="0.7"/>
+  <circle cx="135" cy="135" r="4" fill="#6c0f26" opacity="0.7"/>
+  
+  <!-- Corner tech details -->
+  <rect x="20" y="20" width="15" height="3" rx="1" fill="#ffe0d6" opacity="0.6"/>
+  <rect x="145" y="20" width="15" height="3" rx="1" fill="#ffe0d6" opacity="0.6"/>
+  <rect x="20" y="157" width="15" height="3" rx="1" fill="#ffe0d6" opacity="0.6"/>
+  <rect x="145" y="157" width="15" height="3" rx="1" fill="#ffe0d6" opacity="0.6"/>
+  
+  <!-- Subtle outer frame -->
+  <rect width="180" height="180" rx="20" fill="none" stroke="#2a2b2a" stroke-width="2" opacity="0.3"/>
+</svg>
