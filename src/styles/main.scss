@@ -1419,7 +1419,6 @@ footer {
   z-index: 1045 !important; // Higher than offcanvas backdrop (1040)
   width: 64px !important; // Wider than standard 44px
   height: 44px !important;
-  border-radius: 12px !important;
   padding: 0 !important; // Override default btn-knoll padding for menu button
   
   // Reduce the outer shadow for hamburger button
@@ -1430,6 +1429,7 @@ footer {
     left: -0.05em !important; // Reduced from -0.15em
     opacity: 0.15 !important; // Reduced from 0.25
     filter: blur(0.008em) !important; // Reduced blur
+    border-radius: 12px !important; // Match the button's border-radius exactly
   }
   
   .button-outer {
@@ -1461,19 +1461,21 @@ footer {
     gap: 4px !important;
     
     span {
-      width: 4px !important;
-      height: 4px !important;
-      background-color: $jet !important;
+      width: 5px !important; // Increased from 4px
+      height: 5px !important; // Increased from 4px
+      background-color: #ffffff !important; // Changed to white for better contrast
       border-radius: 50% !important;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
       transform: scale(1) !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important; // Added subtle shadow
     }
   }
   
   // Hover state
   &:hover .menu-icon span {
     transform: scale(1.2) !important;
-    background-color: $jet !important;
+    background-color: #ffffff !important; // Keep white on hover
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; // Enhanced shadow on hover
   }
   
   // Menu open state
