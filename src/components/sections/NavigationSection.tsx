@@ -40,79 +40,23 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
   }
   return (
     <>
-      {/* Desktop Navigation - Full Width Horizontal Bar */}
-      <nav className="d-none d-lg-block bg-light-custom shadow-sm sticky-top">
+      {/* Unified Navigation - Hamburger Menu for All Screen Sizes */}
+      <nav className="bg-light-custom shadow-sm sticky-top">
         <div className="container">
-          <div className="d-flex justify-content-between align-items-center py-3">
-            {/* Desktop Navigation Links */}
-            <div className="d-flex gap-3">
+          <div className="d-flex justify-content-between align-items-center pb-3 pt-0 border-0 mt-lg-3">
+
+            {/* Hamburger Menu Button for All Screen Sizes */}
+            <div className="d-flex align-items-center border-0 py-0">
               <Button
-                section="hero"
-                activeSection={activeSection}
-                onClick={() => handleNavigateAndClose('hero')}
-                label="Home"
-                variant="navigation"
-                isDesktop
-              />
-              <Button
-                section="services"
-                activeSection={activeSection}
-                onClick={() => handleNavigateAndClose('services')}
-                label="Services"
-                variant="navigation"
-                isDesktop
-              />
-              <Button
-                section="about"
-                activeSection={activeSection}
-                onClick={() => handleNavigateAndClose('about')}
-                label="About"
-                variant="navigation"
-                isDesktop
-              />
-              <Button
-                section="portfolio"
-                activeSection={activeSection}
-                onClick={() => handleNavigateAndClose('portfolio')}
-                label="Portfolio"
-                variant="navigation"
-                isDesktop
-              />
-              <Button
-                section="contact"
-                activeSection={activeSection}
-                onClick={() => handleNavigateAndClose('contact')}
-                label="Contact"
-                variant="navigation"
-                isDesktop
+                variant="hamburger"
+                onClick={() => {}}
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar"
+                aria-expanded={false}
+                aria-label="Open navigation menu"
               />
             </div>
-
-            {/* Desktop CTA Button */}
-            <Button
-              onClick={closeOffcanvas}
-              label="Get Started"
-              variant="cta"
-              isDesktop
-            />
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Navigation - Hamburger Menu */}
-      <nav className="d-lg-none bg-light-custom shadow-sm sticky-top">
-        <div className="container">
-          <div className="d-flex justify-content-start align-items-center py-3">
-            {/* Mobile Hamburger Menu Button - Top Left */}
-            <Button
-              variant="hamburger"
-              onClick={() => {}}
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar"
-              aria-expanded={false}
-              aria-label="Open navigation menu"
-            />
           </div>
         </div>
       </nav>

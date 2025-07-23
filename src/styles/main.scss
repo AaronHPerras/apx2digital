@@ -1412,15 +1412,25 @@ footer {
 }
 
 /* ==========================================================================
-   Hamburger Menu Button (Mobile-First with New 3D Style)
+   Menu Button (Wider 3D Style with Grid of Dots)
    ========================================================================== */
 
 .hamburger-menu-btn.btn-knoll {
   z-index: 1045 !important; // Higher than offcanvas backdrop (1040)
-  width: 44px !important;
+  width: 64px !important; // Wider than standard 44px
   height: 44px !important;
   border-radius: 12px !important;
-  padding: 0 !important; // Override default btn-knoll padding for hamburger
+  padding: 0 !important; // Override default btn-knoll padding for menu button
+  
+  // Reduce the outer shadow for hamburger button
+  &::after {
+    width: calc(100% + 0.1em) !important; // Reduced from 0.3em
+    height: calc(100% + 0.1em) !important; // Reduced from 0.3em
+    top: -0.05em !important; // Reduced from -0.15em
+    left: -0.05em !important; // Reduced from -0.15em
+    opacity: 0.15 !important; // Reduced from 0.25
+    filter: blur(0.008em) !important; // Reduced blur
+  }
   
   .button-outer {
     width: 100% !important;
@@ -1436,44 +1446,41 @@ footer {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 !important; // Override button-inner padding for hamburger
+    padding: 0 !important; // Override button-inner padding for menu button
   }
   
-  // Hamburger icon styling
-  .hamburger-icon {
-    width: 20px !important;
+  // Menu icon styling (grid of dots)
+  .menu-icon {
+    width: 24px !important;
     height: 16px !important;
     position: relative !important;
     z-index: 1 !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 4px !important;
     
     span {
-      display: block !important;
-      height: 2px !important;
-      width: 100% !important;
+      width: 4px !important;
+      height: 4px !important;
       background-color: $jet !important;
-      border-radius: 1px !important;
-      position: absolute !important;
+      border-radius: 50% !important;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      
-      &:nth-child(1) {
-        top: 0 !important;
-      }
-      
-      &:nth-child(2) {
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-      }
-      
-      &:nth-child(3) {
-        bottom: 0 !important;
-      }
+      transform: scale(1) !important;
     }
+  }
+  
+  // Hover state
+  &:hover .menu-icon span {
+    transform: scale(1.2) !important;
+    background-color: $jet !important;
   }
   
   // Menu open state
   &.menu-open {
-    .hamburger-icon span {
+    .menu-icon span {
       background-color: $jet !important;
+      transform: scale(0.8) !important;
     }
   }
 }

@@ -75,13 +75,16 @@ export const Button: React.FC<ButtonProps> = ({
 	
 	const variantClasses = getVariantClasses()
 	
-	// Render hamburger icon for hamburger variant
+	// Render menu icon for hamburger variant
 	const renderContent = () => {
 		if (variant === 'hamburger') {
 			return (
 				<div className="button-outer">
 					<div className="button-inner">
-						<div className="hamburger-icon">
+						<div className="menu-icon">
+							<span></span>
+							<span></span>
+							<span></span>
 							<span></span>
 							<span></span>
 							<span></span>
