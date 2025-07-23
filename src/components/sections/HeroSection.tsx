@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { FeatureCard } from '../common'
+import { FeatureCard, Button } from '../common'
 
 interface HeroSectionProps {
   onNavigate: (section: 'portfolio') => void
@@ -21,15 +20,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
               From SaaS platforms to e-commerce solutions, we turn your vision into reality.
             </p>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-              <Link to="/register" className="btn btn-primary btn-lg px-4 py-3">
-                Start Your Project
-              </Link>
-              <button 
-                onClick={() => onNavigate('portfolio')} 
-                className="btn btn-outline-primary btn-lg px-4 py-3"
-              >
-                View Our Work
-              </button>
+              <Button
+                onClick={() => onNavigate('contact')}
+                label="Start Your Project"
+                variant="secondary"
+                className="btn-lg px-4 py-3"
+              />
+              <Button
+                onClick={() => onNavigate('portfolio')}
+                label="View Our Work"
+                variant="secondary"
+                className="btn-lg px-4 py-3"
+              />
             </div>
           </div>
           <div className="col-12 col-lg-6 mt-5 mt-lg-0">

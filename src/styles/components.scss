@@ -1,6 +1,8 @@
 /* APX2Digital Component Styles with Custom Theme */
 /* Mobile-First Component Design */
 
+@use "sass:color";
+
 /* ==========================================================================
    Custom Button Styles (Mobile-First)
    ========================================================================== */
@@ -67,7 +69,7 @@
   color: $cosmic-latte;
   
   &:hover, &:focus {
-    background: linear-gradient(135deg, darken($claret, 5%), darken($claret, 20%));
+    background: linear-gradient(135deg, color.adjust($claret, $lightness: -5%), color.adjust($claret, $lightness: -20%));
     color: $cosmic-latte;
     transform: translateY(-2px);
     box-shadow: $box-shadow-lg;

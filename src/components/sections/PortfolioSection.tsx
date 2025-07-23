@@ -1,5 +1,5 @@
 import React from 'react'
-import { PortfolioCard, SectionHeader } from '../common'
+import { PortfolioCard, SectionHeader, Button } from '../common'
 
 interface PortfolioSectionProps {
   onNavigate: (section: 'contact') => void
@@ -39,12 +39,12 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onNavigate }
         </div>
         
         <div className="text-center mt-5">
-          <button 
-            onClick={() => onNavigate('contact')} 
-            className="btn btn-primary btn-lg px-5 py-3"
-          >
-            Start Your Project
-          </button>
+          <Button
+            onClick={() => onNavigate('contact')}
+            label="Start Your Project"
+            variant="cta"
+            className="btn-lg px-5 py-3"
+          />
         </div>
       </div>
     </section>
