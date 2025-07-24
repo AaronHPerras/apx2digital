@@ -1416,7 +1416,7 @@ footer {
    ========================================================================== */
 
 .hamburger-menu-btn.btn-knoll {
-  z-index: 1045 !important; // Higher than offcanvas backdrop (1040)
+  z-index: 1040 !important; // Below offcanvas (1055) but above backdrop (1040)
   width: 64px !important; // Wider than standard 44px
   height: 44px !important;
   padding: 0 !important; // Override default btn-knoll padding for menu button

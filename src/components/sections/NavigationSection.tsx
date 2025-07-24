@@ -40,26 +40,18 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
   }
   return (
     <>
-      {/* Unified Navigation - Hamburger Menu for All Screen Sizes */}
-      <nav className="bg-light-custom shadow-sm sticky-top">
-        <div className="container">
-          <div className="d-flex justify-content-between align-items-center pb-3 pt-0 border-0 mt-lg-3">
-
-            {/* Hamburger Menu Button for All Screen Sizes */}
-            <div className="d-flex align-items-center border-0 py-0">
-              <Button
-                variant="hamburger"
-                onClick={() => {}}
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar"
-                aria-expanded={false}
-                aria-label="Open navigation menu"
-              />
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Hamburger Menu Button - Absolute Positioned in Top Left */}
+      <div className="position-fixed top-0 start-0 p-3" style={{ zIndex: 1040 }}>
+        <Button
+          variant="hamburger"
+          onClick={() => {}}
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-expanded={false}
+          aria-label="Open navigation menu"
+        />
+      </div>
 
     {/* Bootstrap Offcanvas */}
     <div 
