@@ -70,9 +70,6 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
       ref={offcanvasRef}
     >
       <div className="offcanvas-header border-bottom">
-        <h5 className="offcanvas-title text-accent fw-bold" id="offcanvasNavbarLabel">
-          APX2Digital
-        </h5>
         <Button
           variant="close"
           onClick={() => {}}
