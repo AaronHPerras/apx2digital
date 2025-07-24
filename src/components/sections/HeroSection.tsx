@@ -1,14 +1,25 @@
 import React from 'react'
 import { FeatureCard, Button } from '../common'
 
+type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
+
 interface HeroSectionProps {
-  onNavigate: (section: 'portfolio') => void
+  onNavigate: (section: Section) => void
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   return (
     <section className="bg-light text-dark py-5 py-lg-6">
       <div className="container">
+        {/* APx2 Digital Title - Prominent Brand Display */}
+        <div className="row mb-5">
+          <div className="col-12 text-center">
+            <div className="apx2-digital-title">
+              AP<span className="apx2-highlight">x2</span> DIGITAL
+            </div>
+          </div>
+        </div>
+        
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 text-center text-lg-start">
             <h1 className="display-4 fw-bold mb-4 text-dark">

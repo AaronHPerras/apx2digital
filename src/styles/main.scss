@@ -83,6 +83,11 @@ $transition-base: all 0.3s ease-in-out;
 $transition-fade: opacity 0.3s ease-in-out;
 
 /* ==========================================================================
+   APx2 Digital Title Component Styles
+   ========================================================================== */
+@import 'apx2-title.scss';
+
+/* ==========================================================================
    3D Button Styles - Inspired by Codepen (Mobile-First)
    Override Bootstrap defaults and index.css conflicts with !important
    ========================================================================== */
