@@ -2,7 +2,7 @@ import React from 'react'
 import { FeatureCard, Button } from '../common'
 
 interface HeroSectionProps {
-  onNavigate: (section: 'portfolio') => void
+  onNavigate: (section: 'portfolio' | 'contact') => void
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
