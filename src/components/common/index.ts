@@ -8,6 +8,7 @@ export { StatisticCard } from './StatisticCard'
 export { FooterNavigation } from './FooterNavigation'
 export { SectionHeader } from './SectionHeader'
 export { APx2DigitalTitle } from './APx2DigitalTitle'
+export { Button } from './Button'
 
 // Type exports
 export type {

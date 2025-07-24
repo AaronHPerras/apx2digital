@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContactInfoItem } from '../common'
+import { ContactInfoItem, Button } from '../common'
 
 export const ContactSection: React.FC = () => {
   return (
@@ -47,15 +47,12 @@ export const ContactSection: React.FC = () => {
             </div>
             
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-              <button className="btn btn-primary btn-lg px-5 py-3">
-                Start Free Consultation
-              </button>
-              <a 
-                href="mailto:hello@apx2digital.com" 
-                className="btn btn-outline-primary btn-lg px-5 py-3"
-              >
-                Send Email
-              </a>
+              <Button
+                onClick={() => {}}
+                label="Start Free Consultation"
+                variant="cta"
+                className="btn-lg px-5 py-3"
+              />
             </div>
           </div>
         </div>

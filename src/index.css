@@ -36,6 +36,7 @@
   --bg-light: var(--cosmic-latte);
   --bg-dark: var(--jet);
   --bg-accent: var(--misty-rose);
+  --bg-white: #ffffff;
   
   /* Spacing (Mobile-First Touch Targets) */
   --spacing-xs: 0.25rem;
@@ -115,7 +116,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--bg-light);
+  background-color: var(--bg-white);
   text-align: left;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

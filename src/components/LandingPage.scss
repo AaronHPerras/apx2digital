@@ -1,6 +1,6 @@
 /* Landing Page Specific Styles */
 /* Using APX2Digital Theme System */
-@import '../styles/theme';
+@use '../styles/theme' as *;
 
 .landing-page {
   min-height: 100vh;

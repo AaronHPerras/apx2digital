@@ -1,6 +1,8 @@
 // APX2Digital Custom Theme Variables
 // Mobile-first design with custom color palette
 
+@use "sass:color";
+
 /* ==========================================================================
    Custom Color Palette
    ========================================================================== */
@@ -19,9 +21,9 @@ $success: #28a745;          // Keep Bootstrap success green
 $danger: $claret;           // Use claret for danger/error states
 $warning: #ffc107;          // Keep Bootstrap warning yellow
 $info: $dim-gray;           // Use dim-gray for info
-$light: $cosmic-latte;      // Light backgrounds
+$light: #ffffff;            // White backgrounds
 $dark: $jet;                // Dark text and backgrounds
-$body-bg: $cosmic-latte;    // Main background
+$body-bg: #ffffff;          // White main background
 $body-color: $jet;          // Main text color
 
 // Text Colors (Mobile-First - High Contrast for Readability)
@@ -34,7 +36,7 @@ $text-muted: $dim-gray;
 // Background Colors (Mobile-First)
 $bg-primary: $claret;
 $bg-secondary: $dim-gray;
-$bg-light: $cosmic-latte;
+$bg-light: #ffffff;
 $bg-dark: $jet;
 $bg-accent: $misty-rose;
 
@@ -47,14 +49,14 @@ $border-dark: $jet;
 $btn-primary-bg: $claret;
 $btn-primary-border: $claret;
 $btn-primary-color: $cosmic-latte;
-$btn-primary-hover-bg: darken($claret, 10%);
-$btn-primary-hover-border: darken($claret, 10%);
+$btn-primary-hover-bg: color.adjust($claret, $lightness: -10%);
+$btn-primary-hover-border: color.adjust($claret, $lightness: -10%);
 
 $btn-secondary-bg: $dim-gray;
 $btn-secondary-border: $dim-gray;
 $btn-secondary-color: $cosmic-latte;
-$btn-secondary-hover-bg: darken($dim-gray, 10%);
-$btn-secondary-hover-border: darken($dim-gray, 10%);
+$btn-secondary-hover-bg: color.adjust($dim-gray, $lightness: -10%);
+$btn-secondary-hover-border: color.adjust($dim-gray, $lightness: -10%);
 
 $btn-outline-primary-color: $claret;
 $btn-outline-primary-border: $claret;
@@ -87,12 +89,12 @@ $input-color: $jet;
 
 // Link Theme
 $link-color: $claret;
-$link-hover-color: darken($claret, 15%);
+$link-hover-color: color.adjust($claret, $lightness: -15%);
 $link-decoration: none;
 
 // Gradient Definitions
-$gradient-primary: linear-gradient(135deg, $claret, darken($claret, 15%));
-$gradient-secondary: linear-gradient(135deg, $dim-gray, darken($dim-gray, 10%));
+$gradient-primary: linear-gradient(135deg, $claret, color.adjust($claret, $lightness: -15%));
+$gradient-secondary: linear-gradient(135deg, $dim-gray, color.adjust($dim-gray, $lightness: -10%));
 $gradient-hero: linear-gradient(135deg, $jet, $dim-gray);
 $gradient-accent: linear-gradient(45deg, $misty-rose, $cosmic-latte);
 
