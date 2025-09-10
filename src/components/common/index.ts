@@ -9,6 +9,8 @@ export { FooterNavigation } from './FooterNavigation'
 export { SectionHeader } from './SectionHeader'
 export { APx2DigitalTitle } from './APx2DigitalTitle'
 export { Button } from './Button'
+export { ServicePackage } from './ServicePackage'
+export { ContactForm } from './ContactForm'
 
 // Type exports
 export type {
@@ -22,11 +24,15 @@ export type {
   FooterNavigationData
 } from './types'
 
+export type { ServicePackageProps } from './ServicePackage'
+export type { ContactFormData, ContactFormProps } from './ContactForm'
+
 // Data exports
 export {
   heroFeatures,
-  services,
+  servicePackages,
   portfolioProjects,
   techStack,
-  statistics
+  statistics,
+  contactInfo
 } from './data'

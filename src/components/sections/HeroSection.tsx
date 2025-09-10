@@ -1,34 +1,52 @@
 import React from 'react'
 import { FeatureCard, Button } from '../common'
+import { heroFeatures } from '../common/data'
 
 interface HeroSectionProps {
-  onNavigate: (section: 'portfolio' | 'contact') => void
+  onNavigate?: (section: 'services' | 'contact') => void
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
+  const handleNavigate = (section: 'services' | 'contact') => {
+    if (onNavigate) {
+      onNavigate(section)
+    } else {
+      // Default behavior - scroll to section
+      const targetSection = document.getElementById(section)
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
     <section className="bg-light text-dark py-5 py-lg-6">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 text-center text-lg-start">
             <h1 className="display-4 fw-bold mb-4 text-dark">
-              Transform Your Business with 
-              <span className="text-primary"> Modern Web Solutions</span>
+              Website Design | No-Code Automation | 
+              <span className="text-primary"> Digital Growth</span>
             </h1>
             <p className="lead mb-4 fs-5 text-secondary">
-              We build powerful, scalable web applications that drive growth. 
-              From SaaS platforms to e-commerce solutions, we turn your vision into reality.
+              We deliver clean, professional, and user-friendly solutions leveraging cutting-edge AI tools 
+              to bring you exceptional results—faster.
             </p>
+            <div className="mb-4">
+              <div className="badge bg-primary text-white fs-6 px-3 py-2 mb-3">
+                🚀 1-Week Website Launch Available
+              </div>
+            </div>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
               <Button
-                onClick={() => onNavigate('contact')}
-                label="Start Your Project"
+                onClick={() => handleNavigate('contact')}
+                label="Get Your Free Consultation"
                 variant="secondary"
                 className="btn-lg px-4 py-3"
               />
               <Button
-                onClick={() => onNavigate('portfolio')}
-                label="View Our Work"
+                onClick={() => handleNavigate('services')}
+                label="View Our Services"
                 variant="secondary"
                 className="btn-lg px-4 py-3"
               />
@@ -38,26 +56,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             <div className="text-center">
               <div className="bg-white bg-opacity-10 rounded-4 p-4 backdrop-filter">
                 <div className="row g-3">
-                  <FeatureCard 
-                    icon="⚡" 
-                    title="Fast Development" 
-                    description="Rapid prototyping & deployment" 
-                  />
-                  <FeatureCard 
-                    icon="🚀" 
-                    title="Scalable Solutions" 
-                    description="Built for growth & performance" 
-                  />
-                  <FeatureCard 
-                    icon="🛡️" 
-                    title="Secure & Reliable" 
-                    description="Enterprise-grade security" 
-                  />
-                  <FeatureCard 
-                    icon="📱" 
-                    title="Mobile-First" 
-                    description="Responsive on all devices" 
-                  />
+                  {heroFeatures.map((feature, index) => (
+                    <FeatureCard 
+                      key={index}
+                      icon={feature.icon} 
+                      title={feature.title} 
+                      description={feature.description} 
+                    />
+                  ))}
                 </div>
               </div>
             </div>

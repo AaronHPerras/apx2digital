@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { Button } from '../common'
 
-type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
+type Section = 'hero' | 'services' | 'about' | 'approach' | 'portfolio' | 'contact'
 
 interface NavigationSectionProps {
   activeSection: Section
@@ -104,6 +104,15 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
                 activeSection={activeSection}
                 onClick={() => handleNavigateAndClose('about')}
                 label="About"
+                variant="mobile-nav"
+              />
+            </div>
+            <div className="col-6">
+              <Button
+                section="approach"
+                activeSection={activeSection}
+                onClick={() => handleNavigateAndClose('approach')}
+                label="Approach"
                 variant="mobile-nav"
               />
             </div>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- APX2Digital Logo 200x200 -->
+
+<svg
+   viewBox="0 0 200 200"
+   width="200"
+   height="200"
+   version="1.1"
+   id="logo-svg"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient
+       id="bg-gradient"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#6c0f26" />
+      <stop
+         offset="100%"
+         style="stop-color:#2a2b2a" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background with rounded corners -->
+  <rect
+     width="200"
+     height="200"
+     rx="25"
+     fill="url(#bg-gradient)" />
+  
+  <!-- Main geometric "A" shape - scaled up -->
+  <polygon
+     points="100,25 150,125 125,125 112.5,100 87.5,100 75,125 50,125"
+     fill="#f8f4e3" />
+  
+  <!-- "X" cross element - scaled and positioned -->
+  <rect
+     x="147.22"
+     y="25.43"
+     width="50"
+     height="12.5"
+     fill="#ffe0d6"
+     transform="rotate(44.754097 172.22 31.68)" />
+  <rect
+     x="165.97"
+     y="6.68"
+     width="12.5"
+     height="50"
+     fill="#ffe0d6"
+     transform="rotate(44.754097 172.22 31.68)" />
+  
+  <!-- Digital accent dots - scaled up -->
+  <circle
+     cx="37.5"
+     cy="37.5"
+     r="6.25"
+     fill="#f8f4e3"
+     opacity="0.8" />
+  <circle
+     cx="162.5"
+     cy="37.5"
+     r="6.25"
+     fill="#f8f4e3"
+     opacity="0.8" />
+  <circle
+     cx="37.5"
+     cy="162.5"
+     r="6.25"
+     fill="#f8f4e3"
+     opacity="0.8" />
+  <circle
+     cx="162.5"
+     cy="162.5"
+     r="6.25"
+     fill="#f8f4e3"
+     opacity="0.8" />
+  
+  <!-- Additional "2" element for APX2 -->
+  <path
+     d="M 125 140 Q 135 135 145 140 Q 150 145 145 155 L 125 170 L 150 170 L 150 180 L 115 180 L 115 170 Q 120 165 135 155 Q 140 150 135 145 Q 130 140 125 145 Z"
+     fill="#f8f4e3"
+     opacity="0.9" />
+</svg>

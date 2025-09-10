@@ -1,106 +1,130 @@
 import type { 
-  ServiceCardData, 
   PortfolioCardData, 
   TechStackData, 
   FeatureCardData, 
   StatisticData 
 } from './types'
+import type { ServicePackageProps } from './ServicePackage'
 
 // Hero section feature cards data
 export const heroFeatures: FeatureCardData[] = [
   {
     icon: "⚡",
-    title: "Fast Development",
-    description: "Rapid prototyping & deployment"
-  },
-  {
-    icon: "🚀",
-    title: "Scalable Solutions",
-    description: "Built for growth & performance"
-  },
-  {
-    icon: "🛡️",
-    title: "Secure & Reliable",
-    description: "Enterprise-grade security"
+    title: "Results-Fast Delivery",
+    description: "1-week website launches with cutting-edge tools"
   },
   {
     icon: "📱",
-    title: "Mobile-First",
-    description: "Responsive on all devices"
+    title: "Mobile-First Design",
+    description: "Responsive design optimized for all devices"
+  },
+  {
+    icon: "🤝",
+    title: "True Partnership",
+    description: "Transparent pricing and proactive communication"
+  },
+  {
+    icon: "�",
+    title: "No-Code Automation",
+    description: "Streamline workflows with modern tools"
   }
 ]
 
-// Services section data
-export const services: ServiceCardData[] = [
+// New service packages data
+export const servicePackages: Omit<ServicePackageProps, 'onCtaClick'>[] = [
   {
-    icon: "🌐",
-    title: "SaaS Development",
-    description: "Custom SaaS platforms with subscription management, user dashboards, and scalable architecture."
+    title: "Website Design & Launch",
+    timeline: "1 Week to Launch",
+    price: "$3,000",
+    currency: "CAD",
+    features: [
+      "Mobile-first modern design",
+      "Google Review widget integration", 
+      "Netlify hosting setup",
+      "Domain migration included",
+      "Beta testing & launch",
+      "API-ready architecture"
+    ],
+    isPopular: true,
+    ctaText: "Start Your Website"
   },
   {
-    icon: "🛒",
-    title: "E-commerce Solutions",
-    description: "Modern online stores with payment integration, inventory management, and conversion optimization."
+    title: "SEO & Local Marketing",
+    timeline: "8 Day Project",
+    price: "$1,800",
+    currency: "CAD",
+    features: [
+      "Local SEO optimization",
+      "Google Business Profile setup",
+      "Service area targeting",
+      "Keyword-rich content updates",
+      "Technical SEO improvements",
+      "Analytics & reporting setup"
+    ],
+    ctaText: "Boost Your Visibility"
   },
   {
-    icon: "📊",
-    title: "Business Applications",
-    description: "Custom web applications to streamline operations, manage data, and boost productivity."
-  },
-  {
-    icon: "🔗",
-    title: "API Development",
-    description: "RESTful APIs and microservices for seamless integration and data exchange."
-  },
-  {
-    icon: "☁️",
-    title: "Cloud Deployment",
-    description: "Scalable cloud hosting, DevOps setup, and continuous deployment pipelines."
-  },
-  {
-    icon: "🔧",
-    title: "Maintenance & Support",
-    description: "Ongoing maintenance, updates, and technical support to keep your applications running smoothly."
+    title: "No-Code Automation",
+    timeline: "Flexible Engagement",
+    price: "$100",
+    currency: "USD",
+    features: [
+      "Airtable & Notion workflows",
+      "Zapier integrations",
+      "Custom dashboards",
+      "Process automation",
+      "Up to 15 hours/week",
+      "Business efficiency optimization"
+    ],
+    ctaText: "Automate Your Business"
   }
 ]
 
-// Portfolio section data
+// Portfolio section data - updated with real projects
 export const portfolioProjects: PortfolioCardData[] = [
   {
-    icon: "🛍️",
+    icon: "�",
     backgroundColor: "bg-primary",
-    title: "E-commerce Platform",
-    description: "Modern e-commerce solution with real-time inventory, payment processing, and analytics dashboard.",
-    technologies: ['React', '.NET', 'SQL Server']
+    title: "Shotover Cleaning Website Modernization",
+    description: "Complete site rebuild with mobile-first design, review integration, and Netlify hosting. 1-week launch timeline achieved.",
+    technologies: ['React', 'Netlify', 'Bootstrap', 'Review Widget']
   },
   {
-    icon: "📊",
+    icon: "�",
     backgroundColor: "bg-success",
-    title: "SaaS Analytics Platform",
-    description: "Data visualization platform with real-time charts, custom dashboards, and team collaboration.",
-    technologies: ['TypeScript', 'Azure', 'PostgreSQL']
+    title: "Multi-Location SEO Optimization",
+    description: "Service area targeting with Google Business Profile management and local keyword optimization for cleaning business.",
+    technologies: ['Local SEO', 'GBP', 'Analytics', 'Content Strategy']
   },
   {
-    icon: "🏢",
+    icon: "🔄",
     backgroundColor: "bg-warning",
-    title: "Business Management System",
-    description: "Complete business management solution with CRM, project tracking, and financial reporting.",
-    technologies: ['React', 'API', 'Docker']
+    title: "Business Process Automation",
+    description: "Airtable CRM integration with Zapier workflows for lead management and automated client communication systems.",
+    technologies: ['Airtable', 'Zapier', 'Automation', 'CRM Integration']
   }
 ]
 
-// Technology stack data
+// Technology stack data - updated for current tools
 export const techStack: TechStackData[] = [
   { icon: "⚛️", label: "React" },
   { icon: "🟦", label: "TypeScript" },
-  { icon: "🔷", label: ".NET" },
-  { icon: "🐘", label: "PostgreSQL" },
-  { icon: "☁️", label: "Azure" },
-  { icon: "🐳", label: "Docker" }
+  { icon: "🥾", label: "Bootstrap" },
+  { icon: "⚡", label: "Netlify" },
+  { icon: "🔗", label: "Zapier" },
+  { icon: "�", label: "Airtable" }
 ]
 
-// Statistics data
+// Statistics data - updated with current numbers
 export const statistics: StatisticData[] = [
-  { number: "50+", label: "Projects Completed" },
-  { number: "5+", label: "Years Experience" }
+  { number: "1 Week", label: "Average Launch Time" },
+  { number: "100%", label: "Mobile-First Design" },
+  { number: "24/7", label: "Partnership Support" }
 ]
+
+// Contact information for forms and display
+export const contactInfo = {
+  serviceArea: 'Ontario, Canada',
+  tagline: 'Website Design | Digital Growth | Results—Fast',
+  businessHours: 'Monday - Friday: 9 AM - 6 PM EST'
+}

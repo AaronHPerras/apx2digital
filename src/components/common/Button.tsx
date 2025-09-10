@@ -1,6 +1,6 @@
 import React from 'react'
 
-type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
+type Section = 'hero' | 'services' | 'about' | 'approach' | 'portfolio' | 'contact'
 
 type ButtonVariant = 'primary' | 'secondary' | 'cta' | 'hamburger' | 'close' | 'navigation' | 'mobile-nav' | 'mobile-cta'
 

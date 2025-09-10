@@ -1,25 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Simplified favicon design for better visibility at small sizes -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#6c0f26"/>
-      <stop offset="100%" style="stop-color:#2a2b2a"/>
+
+<svg
+   viewBox="0 0 16 16"
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg52"
+   sodipodi:docname="favicon-16x16.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview54"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="51.8125"
+     inkscape:cx="8.0096502"
+     inkscape:cy="8.0096502"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg52" />
+  <defs
+     id="defs34">
+    <linearGradient
+       id="bg"
+       x1="0%"
+       y1="0%"
+       x2="100%"
+       y2="100%">
+      <stop
+         offset="0%"
+         style="stop-color:#6c0f26"
+         id="stop29" />
+      <stop
+         offset="100%"
+         style="stop-color:#2a2b2a"
+         id="stop31" />
     </linearGradient>
   </defs>
-  
   <!-- Background -->
-  <rect width="16" height="16" rx="2" fill="url(#bg)"/>
-  
+  <rect
+     width="16"
+     height="16"
+     rx="2"
+     fill="url(#bg)"
+     id="rect36" />
   <!-- Main geometric "A" shape -->
-  <polygon points="8,2 12,10 10,10 9,8 7,8 6,10 4,10" fill="#f8f4e3"/>
-  
+  <polygon
+     points="8,2 12,10 10,10 9,8 7,8 6,10 4,10"
+     fill="#f8f4e3"
+     id="polygon38" />
   <!-- "X" cross element -->
-  <rect x="6" y="11" width="4" height="1" fill="#ffe0d6"/>
-  <rect x="7.5" y="9.5" width="1" height="4" fill="#ffe0d6"/>
-  
+  <rect
+     x="11.777834"
+     y="2.0340288"
+     width="4"
+     height="1"
+     fill="#ffe0d6"
+     id="rect40"
+     transform="rotate(44.754097)" />
+  <rect
+     x="13.277834"
+     y="0.53402889"
+     width="1"
+     height="4"
+     fill="#ffe0d6"
+     id="rect42"
+     transform="rotate(44.754097)" />
   <!-- Digital accent dots -->
-  <circle cx="3" cy="3" r="0.5" fill="#f8f4e3" opacity="0.8"/>
-  <circle cx="13" cy="3" r="0.5" fill="#f8f4e3" opacity="0.8"/>
-  <circle cx="3" cy="13" r="0.5" fill="#f8f4e3" opacity="0.8"/>
-  <circle cx="13" cy="13" r="0.5" fill="#f8f4e3" opacity="0.8"/>
+  <circle
+     cx="3"
+     cy="3"
+     r="0.5"
+     fill="#f8f4e3"
+     opacity="0.8"
+     id="circle44" />
+  <circle
+     cx="13"
+     cy="3"
+     r="0.5"
+     fill="#f8f4e3"
+     opacity="0.8"
+     id="circle46" />
+  <circle
+     cx="3"
+     cy="13"
+     r="0.5"
+     fill="#f8f4e3"
+     opacity="0.8"
+     id="circle48" />
+  <circle
+     cx="13"
+     cy="13"
+     r="0.5"
+     fill="#f8f4e3"
+     opacity="0.8"
+     id="circle50" />
 </svg>
