@@ -4,6 +4,11 @@
 @use "sass:color";
 
 /* ==========================================================================
+   Bootstrap Icons Import
+   ========================================================================== */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* ==========================================================================
    Theme Variables (Embedded)
    ========================================================================== */
 
@@ -1574,5 +1579,120 @@ footer {
       line-height: 1.2 !important;
       font-size: 0.9rem !important;
     }
+  }
+}
+
+/* ==========================================================================
+   Hero Section Custom Styles
+   ========================================================================== */
+
+// Mobile-first cursor pointer utility
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+// Card hover effects for service drawers
+.card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Desktop drawer slide-out animation
+.hero-service-drawer {
+  .drawer-desktop {
+    overflow: hidden;
+    
+    // Always hide on small screens
+    @media (max-width: 991.98px) {
+      display: none !important;
+    }
+    
+    // Desktop animation - use visibility and opacity
+    @media (min-width: 992px) {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+      &.drawer-open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  // Enhanced mobile collapse animation
+  .collapse {
+    transition: height 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    
+    &.collapsing {
+      transition: height 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+  }
+
+  // Staggered animation for timeline points
+  .timeline-point {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    &.animate-in {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    // Stagger delay for each point
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{($i - 1) * 0.1}s;
+      }
+    }
+  }
+
+  // SVG path animation
+  .timeline-svg path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes drawPath {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+// Sin wave animation
+@keyframes waveAnimation {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sin-wave-path {
+  stroke-dasharray: 5;
+  animation: waveAnimation 3s ease-in-out infinite;
+}
+
+// Mobile-first responsive adjustments for hero drawers
+@media (min-width: 768px) {
+  .hero-drawer-desktop {
+    min-height: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-drawer-desktop {
+    min-height: 250px;
   }
 }
