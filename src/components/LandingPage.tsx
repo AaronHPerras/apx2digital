@@ -1,37 +1,36 @@
-import React, { useState } from 'react'
+import { type FC } from 'react'
 import {
   HeroSection,
   ServicesSection,
-  AboutSection,
-  ApproachSection,
   PortfolioSection,
   ContactSection,
   FooterSection,
-  NavigationSection
+  // NavigationSection // Commented out for single-page layout, keep for later
 } from './sections'
 import type { ContactFormData } from './common/ContactForm'
-import { useScrollToTop } from '../hooks/useScrollToTop'
 import './LandingPage.scss'
 
-type Section = 'hero' | 'services' | 'about' | 'approach' | 'portfolio' | 'contact'
+// Commented out navigation types and state for single-page layout
+// type Section = 'hero' | 'services' | 'about' | 'approach' | 'portfolio' | 'contact'
 
-export const LandingPage: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<Section>('hero')
-  const [isTransitioning, setIsTransitioning] = useState(false)
-  const { scrollToTop } = useScrollToTop()
+export const LandingPage: FC = () => {
+  // Removed navigation state and handlers for single-page layout
+  // const [activeSection, setActiveSection] = useState<Section>('hero')
+  // const [isTransitioning, setIsTransitioning] = useState(false)
+  // const { scrollToTop } = useScrollToTop()
 
-  const handleNavClick = (section: Section) => {
-    if (section === activeSection) return
-    
-    setIsTransitioning(true)
-    setTimeout(() => {
-      setActiveSection(section)
-      setIsTransitioning(false)
-      
-      // Scroll to top using custom hook
-      scrollToTop()
-    }, 150) // Half transition duration
-  }
+  // const handleNavClick = (section: Section) => {
+  //   if (section === activeSection) return
+  //   
+  //   setIsTransitioning(true)
+  //   setTimeout(() => {
+  //     setActiveSection(section)
+  //     setIsTransitioning(false)
+  //     
+  //     // Scroll to top using custom hook
+  //     scrollToTop()
+  //   }, 150) // Half transition duration
+  // }
 
   const handleFormSubmit = async (data: ContactFormData) => {
     try {
@@ -53,31 +52,29 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="landing-page">
-      {/* Navigation */}
-      <NavigationSection 
+      {/* Navigation - Commented out for single-page layout */}
+      {/* <NavigationSection 
         activeSection={activeSection}
         onNavigate={handleNavClick}
-      />
+      /> */}
 
-      {/* Section Container with Transitions */}
-      <div 
-        className={`section-wrapper ${isTransitioning ? 'section-fade-exit' : 'section-fade-enter'}`}
-        style={{
-          opacity: isTransitioning ? 0 : 1,
-          transition: 'opacity 0.3s ease-in-out'
-        }}
-      >
-        {/* Conditional Section Rendering */}
-        {activeSection === 'hero' && <HeroSection onNavigate={handleNavClick} />}
-        {activeSection === 'services' && <ServicesSection onServiceSelect={(_service) => handleNavClick('contact')} />}
-        {activeSection === 'about' && <AboutSection />}
-        {activeSection === 'approach' && <ApproachSection />}
-        {activeSection === 'portfolio' && <PortfolioSection onNavigate={handleNavClick} />}
-        {activeSection === 'contact' && <ContactSection onFormSubmit={handleFormSubmit} />}
+      {/* All Sections - Single Page Layout */}
+      <div className="section-wrapper">
+        {/* Hero Section */}
+        <HeroSection />
+        
+        {/* Services Section */}
+        <ServicesSection />
+        
+        {/* Portfolio Section */}
+        <PortfolioSection />
+        
+        {/* Contact Section with Form */}
+        <ContactSection onFormSubmit={handleFormSubmit} />
       </div>
 
-      {/* Footer - Always Visible */}
-      <FooterSection onNavigate={handleNavClick} />
+      {/* Footer */}
+      <FooterSection />
     </div>
   )
 }

@@ -1,20 +1,30 @@
-import React from 'react'
-import { PortfolioCard, SectionHeader, Button } from '../common'
+import { type FC } from 'react'
+import { PortfolioCard, SectionHeader, Button, SectionWrapper } from '../common'
 
 interface PortfolioSectionProps {
-  onNavigate: (section: 'contact') => void
+  onNavigate?: (section: 'contact') => void
 }
 
-export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onNavigate }) => {
+export const PortfolioSection: FC<PortfolioSectionProps> = ({ onNavigate }) => {
+  const handleNavigate = () => {
+    if (onNavigate) {
+      onNavigate('contact')
+    } else {
+      // Default behavior - scroll to contact section
+      const contactSection = document.getElementById('contact')
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
   return (
-    <section className="py-5 py-lg-6 bg-light">
-      <div className="container">
-        <SectionHeader 
-          title="Our Portfolio"
-          subtitle="Recent projects showcasing our expertise in modern web development"
-        />
-        
-        <div className="row g-4">
+    <SectionWrapper id="portfolio" className="py-5 py-lg-6 bg-light">
+      <SectionHeader 
+        title="Our Portfolio"
+        subtitle="Recent projects showcasing our expertise in modern web development"
+      />
+      
+      <div className="row g-4">
           <PortfolioCard 
             icon="🛍️"
             backgroundColor="bg-primary"
@@ -40,13 +50,12 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onNavigate }
         
         <div className="text-center mt-5">
           <Button
-            onClick={() => onNavigate('contact')}
+            onClick={handleNavigate}
             label="Start Your Project"
             variant="cta"
             className="btn-lg px-5 py-3"
           />
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   )
 }

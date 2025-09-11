@@ -23,6 +23,17 @@
   --light: var(--cosmic-latte);
   --dark: var(--jet);
   
+  /* Bootstrap CSS Custom Property Overrides */
+  --bs-primary: #6c0f26;
+  --bs-primary-rgb: 108, 15, 38;
+  --bs-primary-bg-subtle: rgba(108, 15, 38, 0.1);
+  --bs-primary-border-subtle: rgba(108, 15, 38, 0.2);
+  --bs-primary-text: #6c0f26;
+  --bs-secondary: #706c61;
+  --bs-secondary-rgb: 112, 108, 97;
+  --bs-danger: #6c0f26;
+  --bs-danger-rgb: 108, 15, 38;
+  
   /* Text Colors */
   --text-primary: var(--jet);
   --text-secondary: var(--dim-gray);
@@ -219,10 +230,10 @@ a:focus {
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
   :root {
-    --primary: #{$jet};
-    --text-primary: #{$jet};
+    --primary: #2a2b2a;
+    --text-primary: #2a2b2a;
     --bg-light: #fff;
-    --border-color: #{$jet};
+    --border-color: #2a2b2a;
   }
 }
 
@@ -234,4 +245,107 @@ a:focus {
     --text-secondary: var(--misty-rose);
     --bg-primary: var(--claret);
   }
+}
+
+/* Bootstrap Component Overrides - Force Claret Color */
+.text-primary {
+  color: #6c0f26 !important;
+}
+
+.bg-primary {
+  background-color: #6c0f26 !important;
+}
+
+.btn-primary {
+  background-color: #6c0f26 !important;
+  border-color: #6c0f26 !important;
+  color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #571328 !important;
+  border-color: #571328 !important;
+  color: #ffffff !important;
+}
+
+.badge.bg-primary {
+  background-color: #6c0f26 !important;
+  color: #ffffff !important;
+}
+
+.border-primary {
+  border-color: #6c0f26 !important;
+}
+
+.alert-primary {
+  background-color: rgba(108, 15, 38, 0.1) !important;
+  border-color: rgba(108, 15, 38, 0.2) !important;
+  color: #6c0f26 !important;
+}
+
+.list-group-item-primary {
+  color: #6c0f26 !important;
+  background-color: rgba(108, 15, 38, 0.1) !important;
+}
+
+.table-primary {
+  --bs-table-bg: rgba(108, 15, 38, 0.1);
+  --bs-table-border-color: rgba(108, 15, 38, 0.2);
+}
+
+/* Link colors */
+a {
+  color: #6c0f26;
+}
+
+a:hover,
+a:focus {
+  color: #571328;
+}
+
+/* Form Controls - Override Bootstrap Blue */
+.form-control:focus,
+.form-select:focus {
+  border-color: #6c0f26 !important;
+  box-shadow: 0 0 0 0.25rem rgba(108, 15, 38, 0.25) !important;
+  outline: none !important;
+}
+
+.form-check-input:checked {
+  background-color: #6c0f26 !important;
+  border-color: #6c0f26 !important;
+}
+
+.form-check-input:focus {
+  border-color: #6c0f26 !important;
+  box-shadow: 0 0 0 0.25rem rgba(108, 15, 38, 0.25) !important;
+}
+
+/* Button Loading Spinner */
+.spinner-border {
+  color: #ffffff !important;
+}
+
+/* Dropdown and Select */
+.dropdown-item:active,
+.dropdown-item.active {
+  background-color: #6c0f26 !important;
+  color: #ffffff !important;
+}
+
+/* Progress bars */
+.progress-bar {
+  background-color: #6c0f26 !important;
+}
+
+/* Nav pills and tabs */
+.nav-pills .nav-link.active {
+  background-color: #6c0f26 !important;
+}
+
+.nav-tabs .nav-link.active {
+  color: #6c0f26 !important;
+  border-bottom-color: #6c0f26 !important;
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import { type FC } from 'react'
 import { FooterNavigation } from '../common'
 import { contactInfo } from '../common/data'
 
@@ -8,7 +8,7 @@ interface FooterSectionProps {
   onNavigate?: (section: Section) => void
 }
 
-export const FooterSection: React.FC<FooterSectionProps> = ({ onNavigate }) => {
+export const FooterSection: FC<FooterSectionProps> = ({ onNavigate }) => {
   const handleNavigate = (section: Section) => {
     if (onNavigate) {
       onNavigate(section)

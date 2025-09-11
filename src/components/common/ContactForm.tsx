@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { type FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -54,7 +54,7 @@ export interface ContactFormProps {
   className?: string
 }
 
-export const ContactForm: React.FC<ContactFormProps> = ({
+export const ContactForm: FC<ContactFormProps> = ({
   onSubmit,
   isSubmitting = false,
   className = ""

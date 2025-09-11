@@ -1,6 +1,7 @@
 /* Landing Page Specific Styles */
 /* Using APX2Digital Theme System */
 @use '../styles/theme' as *;
+@use 'sass:color';
 
 .landing-page {
   min-height: 100vh;
@@ -202,7 +203,7 @@
 
 /* Navigation active states */
 .nav-link.active {
-  color: #0d6efd !important;
+  color: $claret !important;
   font-weight: 600;
 }
 
@@ -216,12 +217,12 @@
 }
 
 .nav-link.btn:hover {
-  background-color: rgba(13, 110, 253, 0.1) !important;
-  color: #0d6efd !important;
+  background-color: rgba(108, 15, 38, 0.1) !important;
+  color: $claret !important;
 }
 
 .nav-link.btn:focus {
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(108, 15, 38, 0.25);
 }
 
 /* Section transitions */
@@ -280,7 +281,7 @@
 
 /* Footer improvements */
 footer a:hover {
-  color: #ffc107 !important;
+  color: $misty-rose !important;
   transition: color 0.2s ease;
 }
 
@@ -291,7 +292,7 @@ html {
 
 /* Custom utility classes */
 .text-gradient {
-  background: linear-gradient(45deg, #0d6efd, #6f42c1);
+  background: linear-gradient(45deg, $claret, color.adjust($claret, $lightness: -15%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

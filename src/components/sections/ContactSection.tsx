@@ -1,5 +1,5 @@
-import React from 'react'
-import { ContactForm } from '../common/ContactForm'
+import { type FC } from 'react'
+import { ContactForm, SectionWrapper } from '../common'
 import type { ContactFormData } from '../common/ContactForm'
 import { contactInfo } from '../common/data'
 
@@ -7,7 +7,7 @@ export interface ContactSectionProps {
   onFormSubmit?: (data: ContactFormData) => void | Promise<void>
 }
 
-export const ContactSection: React.FC<ContactSectionProps> = ({
+export const ContactSection: FC<ContactSectionProps> = ({
   onFormSubmit
 }) => {
   const handleFormSubmit = async (data: ContactFormData) => {
@@ -21,18 +21,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
   }
 
   return (
-    <section id="contact" className="py-5 bg-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-12 text-center mb-5">
-            <h2 className="display-5 fw-bold text-primary mb-3">
-              Get Started Today
-            </h2>
-            <p className="lead text-muted mb-4">
-              Ready to transform your digital presence? Let's discuss your project and get you results—fast.
-            </p>
-            <div className="row justify-content-center">
-              <div className="col-12 col-md-8 col-lg-6">
+    <SectionWrapper id="contact" className="py-5 bg-light">
+      <div className="row">
+        <div className="col-12 text-center mb-5">
+          <h2 className="display-5 fw-bold text-primary mb-3">
+            Get Started Today
+          </h2>
+          <p className="lead text-muted mb-4">
+            Ready to transform your digital presence? Let's discuss your project and get you results—fast.
+          </p>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-8 col-lg-6">
                 <div className="bg-primary text-white p-4 rounded mb-4">
                   <h5 className="mb-2">🚀 1-Week Website Launch Available</h5>
                   <p className="mb-0">Mobile-first design • API-ready • Review integration</p>
@@ -87,7 +86,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   )
 }
