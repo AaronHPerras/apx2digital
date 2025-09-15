@@ -63,12 +63,6 @@ export const LandingPage: FC = () => {
         {/* Hero Section */}
         <HeroSection />
         
-        {/* Services Section */}
-        <ServicesSection />
-        
-        {/* Portfolio Section */}
-        <PortfolioSection />
-        
         {/* Contact Section with Form */}
         <ContactSection onFormSubmit={handleFormSubmit} />
       </div>
