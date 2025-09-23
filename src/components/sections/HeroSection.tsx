@@ -182,7 +182,7 @@ const ServiceDrawer: FC<ServiceDrawerProps> = ({ title, isOpen, onToggle, servic
   )
 }
 
-export const HeroSection: FC<HeroSectionProps> = ({ }) => {
+export const HeroSection: FC<HeroSectionProps> = () => {
   const [openDrawer, setOpenDrawer] = useState<string | null>(null)
 
   const handleDrawerToggle = (drawerName: string) => {

@@ -1,8 +1,6 @@
 import { type FC } from 'react'
 import {
   HeroSection,
-  ServicesSection,
-  PortfolioSection,
   ContactSection,
   FooterSection,
   // NavigationSection // Commented out for single-page layout, keep for later
