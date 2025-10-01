@@ -1,7 +1,6 @@
 import { type FC } from 'react'
 import { ContactForm, SectionWrapper } from '../common'
 import type { ContactFormData } from '../common/ContactForm'
-import { contactInfo } from '../common/data'
 
 export interface ContactSectionProps {
   onFormSubmit?: (data: ContactFormData) => void | Promise<void>

@@ -1,119 +1,197 @@
-// APX2Digital Custom Theme Variables
-// Mobile-first design with custom color palette
+// APX2Digital Art Deco Theme Variables
+// Mobile-first design with Art Deco inspired color palette
 
 @use "sass:color";
 
 /* ==========================================================================
-   Custom Color Palette
+   Art Deco Color Palette - CSS Custom Properties
    ========================================================================== */
 
-// Primary Colors (SCSS HEX)
-$jet: #2a2b2a;
-$dim-gray: #706c61;
-$cosmic-latte: #f8f4e3;
-$claret: #6c0f26;
-$misty-rose: #ffe0d6;
+:root {
+  /* Light mode - Art Deco color palette with dark red, dark grey, and white */
+  --background: #fafafa;        /* oklch(0.98 0 0) - Off-white background */
+  --foreground: #404040;        /* oklch(0.25 0 0) - Dark grey text */
+  --card: #ffffff;              /* oklch(1 0 0) - Pure white for cards */
+  --card-foreground: #404040;   /* oklch(0.25 0 0) */
+  --popover: #ffffff;           /* oklch(1 0 0) */
+  --popover-foreground: #404040; /* oklch(0.25 0 0) */
+  --primary: #662635;           /* oklch(0.35 0.15 25) - Dark red */
+  --primary-foreground: #fafafa; /* oklch(0.98 0 0) - Off-white text on dark red */
+  --secondary: #4d4d4d;         /* oklch(0.3 0 0) - Darker grey */
+  --secondary-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --muted: #ebebeb;             /* oklch(0.92 0 0) - Light grey */
+  --muted-foreground: #737373;  /* oklch(0.45 0 0) */
+  --accent: #662635;            /* oklch(0.35 0.15 25) - Dark red accent */
+  --accent-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --destructive: #8b2635;       /* oklch(0.5 0.2 25) */
+  --destructive-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --border: #d9d9d9;            /* oklch(0.85 0 0) - Light grey border */
+  --input: #d9d9d9;             /* oklch(0.85 0 0) */
+  --ring: #662635;              /* oklch(0.35 0.15 25) - Dark red ring */
+  --radius: 0.125rem;           /* Minimal radius for Art Deco geometric feel */
+  
+  /* Success and warning colors for forms */
+  --success: #28a745;
+  --success-foreground: #fafafa;
+  --warning: #ffc107;
+  --warning-foreground: #404040;
+  --info: #4d4d4d;
+  --info-foreground: #fafafa;
+}
 
-// Color Semantic Mapping (Mobile-First)
-$primary: $claret;           // Primary brand color
-$secondary: $dim-gray;       // Secondary actions
+.dark {
+  /* Dark mode with inverted Art Deco palette */
+  --background: #262626;        /* oklch(0.15 0 0) - Very dark grey background */
+  --foreground: #fafafa;        /* oklch(0.98 0 0) - Off-white text */
+  --card: #333333;              /* oklch(0.2 0 0) - Dark grey cards */
+  --card-foreground: #fafafa;   /* oklch(0.98 0 0) */
+  --popover: #333333;           /* oklch(0.2 0 0) */
+  --popover-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --primary: #7a3142;           /* oklch(0.45 0.18 25) - Brighter dark red for dark mode */
+  --primary-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --secondary: #404040;         /* oklch(0.25 0 0) */
+  --secondary-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --muted: #404040;             /* oklch(0.25 0 0) */
+  --muted-foreground: #a6a6a6;  /* oklch(0.65 0 0) */
+  --accent: #7a3142;            /* oklch(0.45 0.18 25) */
+  --accent-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --destructive: #8b2635;       /* oklch(0.5 0.2 25) */
+  --destructive-foreground: #fafafa; /* oklch(0.98 0 0) */
+  --border: #4d4d4d;            /* oklch(0.3 0 0) */
+  --input: #4d4d4d;             /* oklch(0.3 0 0) */
+  --ring: #7a3142;              /* oklch(0.45 0.18 25) */
+}
+
+/* ==========================================================================
+   SCSS Variables for Bootstrap Integration
+   ========================================================================== */
+
+// Convert CSS custom properties to SCSS variables for Bootstrap
+$background: var(--background);
+$foreground: var(--foreground);
+$card: var(--card);
+$card-foreground: var(--card-foreground);
+$primary-color: var(--primary);
+$primary-foreground: var(--primary-foreground);
+$secondary-color: var(--secondary);
+$secondary-foreground: var(--secondary-foreground);
+$muted: var(--muted);
+$muted-foreground: var(--muted-foreground);
+$accent: var(--accent);
+$accent-foreground: var(--accent-foreground);
+$destructive: var(--destructive);
+$destructive-foreground: var(--destructive-foreground);
+$border-color: var(--border);
+$input-bg: var(--input);
+$ring-color: var(--ring);
+
+// Legacy color definitions for backwards compatibility
+$jet: #404040;               // Updated to match --foreground
+$dim-gray: #4d4d4d;          // Updated to match --secondary  
+$cosmic-latte: #fafafa;      // Updated to match --background
+$claret: #662635;            // Updated to match --primary
+$misty-rose: #ebebeb;        // Updated to match --muted
+
+// Bootstrap-compatible color mappings (Mobile-First)
+$primary: #662635;           // Art Deco dark red
+$secondary: #4d4d4d;         // Dark grey
 $success: #28a745;          // Keep Bootstrap success green
-$danger: $claret;           // Use claret for danger/error states
+$danger: #8b2635;           // Art Deco destructive red
 $warning: #ffc107;          // Keep Bootstrap warning yellow
-$info: $dim-gray;           // Use dim-gray for info
-$light: #ffffff;            // White backgrounds
-$dark: $jet;                // Dark text and backgrounds
-$body-bg: #ffffff;          // White main background
-$body-color: $jet;          // Main text color
+$info: #4d4d4d;             // Dark grey for info
+$light: #fafafa;            // Off-white backgrounds
+$dark: #262626;             // Very dark backgrounds
+$body-bg: #fafafa;          // Off-white main background
+$body-color: #404040;       // Dark grey text
 
 // Text Colors (Mobile-First - High Contrast for Readability)
-$text-primary: $jet;
-$text-secondary: $dim-gray;
-$text-light: $cosmic-latte;
-$text-accent: $claret;
-$text-muted: $dim-gray;
+$text-primary: #404040;      // --foreground
+$text-secondary: #4d4d4d;    // --secondary
+$text-light: #fafafa;        // --background inverted
+$text-accent: #662635;       // --primary
+$text-muted: #737373;        // --muted-foreground
 
 // Background Colors (Mobile-First)
-$bg-primary: $claret;
-$bg-secondary: $dim-gray;
-$bg-light: #ffffff;
-$bg-dark: $jet;
-$bg-accent: $misty-rose;
+$bg-primary: #662635;        // --primary
+$bg-secondary: #4d4d4d;      // --secondary
+$bg-light: #fafafa;          // --background
+$bg-dark: #262626;           // Dark mode --background
+$bg-accent: #ebebeb;         // --muted
 
 // Border Colors
-$border-color: $dim-gray;
-$border-light: rgba($dim-gray, 0.3);
-$border-dark: $jet;
+$border-color: #d9d9d9;      // --border
+$border-light: rgba(#d9d9d9, 0.5);
+$border-dark: #4d4d4d;       // --secondary
 
 // Button Theme (Mobile-First - 44px minimum touch targets)
-$btn-primary-bg: $claret;
-$btn-primary-border: $claret;
-$btn-primary-color: $cosmic-latte;
-$btn-primary-hover-bg: color.adjust($claret, $lightness: -10%);
-$btn-primary-hover-border: color.adjust($claret, $lightness: -10%);
+$btn-primary-bg: #662635;           // --primary
+$btn-primary-border: #662635;       // --primary
+$btn-primary-color: #fafafa;        // --primary-foreground
+$btn-primary-hover-bg: color.adjust(#662635, $lightness: -10%);
+$btn-primary-hover-border: color.adjust(#662635, $lightness: -10%);
 
-$btn-secondary-bg: $dim-gray;
-$btn-secondary-border: $dim-gray;
-$btn-secondary-color: $cosmic-latte;
-$btn-secondary-hover-bg: color.adjust($dim-gray, $lightness: -10%);
-$btn-secondary-hover-border: color.adjust($dim-gray, $lightness: -10%);
+$btn-secondary-bg: #4d4d4d;         // --secondary
+$btn-secondary-border: #4d4d4d;     // --secondary
+$btn-secondary-color: #fafafa;      // --secondary-foreground
+$btn-secondary-hover-bg: color.adjust(#4d4d4d, $lightness: -10%);
+$btn-secondary-hover-border: color.adjust(#4d4d4d, $lightness: -10%);
 
-$btn-outline-primary-color: $claret;
-$btn-outline-primary-border: $claret;
-$btn-outline-primary-hover-bg: $claret;
-$btn-outline-primary-hover-color: $cosmic-latte;
+$btn-outline-primary-color: #662635;        // --primary
+$btn-outline-primary-border: #662635;       // --primary
+$btn-outline-primary-hover-bg: #662635;     // --primary
+$btn-outline-primary-hover-color: #fafafa;  // --primary-foreground
 
 // Navigation Theme (Mobile-First)
-$navbar-dark-bg: $jet;
-$navbar-dark-color: $cosmic-latte;
-$navbar-dark-hover-color: $misty-rose;
-$navbar-dark-active-color: $claret;
-$navbar-dark-toggler-border: $dim-gray;
+$navbar-dark-bg: #262626;           // Dark mode --background
+$navbar-dark-color: #fafafa;        // --foreground in dark mode
+$navbar-dark-hover-color: #ebebeb;  // --muted
+$navbar-dark-active-color: #662635; // --primary
+$navbar-dark-toggler-border: #4d4d4d; // --secondary
 
-$navbar-light-bg: $cosmic-latte;
-$navbar-light-color: $jet;
-$navbar-light-hover-color: $claret;
-$navbar-light-active-color: $claret;
+$navbar-light-bg: #fafafa;          // --background
+$navbar-light-color: #404040;       // --foreground
+$navbar-light-hover-color: #662635; // --primary
+$navbar-light-active-color: #662635; // --primary
 
 // Card Theme
-$card-bg: $cosmic-latte;
-$card-border-color: $border-light;
-$card-cap-bg: $misty-rose;
+$card-bg: #ffffff;                   // --card
+$card-border-color: #d9d9d9;         // --border
+$card-cap-bg: #ebebeb;               // --muted
 
 // Form Theme (Mobile-First)
-$input-bg: $cosmic-latte;
-$input-border-color: $dim-gray;
-$input-focus-border-color: $claret;
-$input-focus-box-shadow: 0 0 0 0.2rem rgba($claret, 0.25);
-$input-color: $jet;
+$input-bg: #fafafa;                  // --background
+$input-border-color: #d9d9d9;        // --border
+$input-focus-border-color: #662635;  // --primary
+$input-focus-box-shadow: 0 0 0 0.2rem rgba(#662635, 0.25); // --primary with alpha
+$input-color: #404040;               // --foreground
 
 // Link Theme
-$link-color: $claret;
-$link-hover-color: color.adjust($claret, $lightness: -15%);
+$link-color: #662635;                // --primary
+$link-hover-color: color.adjust(#662635, $lightness: -15%);
 $link-decoration: none;
 
-// Gradient Definitions
-$gradient-primary: linear-gradient(135deg, $claret, color.adjust($claret, $lightness: -15%));
-$gradient-secondary: linear-gradient(135deg, $dim-gray, color.adjust($dim-gray, $lightness: -10%));
-$gradient-hero: linear-gradient(135deg, $jet, $dim-gray);
-$gradient-accent: linear-gradient(45deg, $misty-rose, $cosmic-latte);
+// Gradient Definitions (Updated with Art Deco colors)
+$gradient-primary: linear-gradient(135deg, #662635, color.adjust(#662635, $lightness: -15%));
+$gradient-secondary: linear-gradient(135deg, #4d4d4d, color.adjust(#4d4d4d, $lightness: -10%));
+$gradient-hero: linear-gradient(135deg, #262626, #4d4d4d);
+$gradient-accent: linear-gradient(45deg, #ebebeb, #fafafa);
 
 // Component-Specific Variables (Mobile-First)
 $hero-bg: $gradient-hero;
-$hero-text-color: $cosmic-latte;
-$hero-accent-color: $misty-rose;
+$hero-text-color: #fafafa;          // --background inverted
+$hero-accent-color: #ebebeb;        // --muted
 
-$service-card-bg: $cosmic-latte;
-$service-card-border: $border-light;
-$service-card-hover-shadow: 0 8px 25px rgba($claret, 0.15);
+$service-card-bg: #ffffff;          // --card
+$service-card-border: #d9d9d9;      // --border
+$service-card-hover-shadow: 0 8px 25px rgba(#662635, 0.15);
 
-$portfolio-card-bg: $cosmic-latte;
-$portfolio-card-overlay: rgba($jet, 0.8);
+$portfolio-card-bg: #ffffff;        // --card
+$portfolio-card-overlay: rgba(#262626, 0.8);
 
-$footer-bg: $jet;
-$footer-text: $cosmic-latte;
-$footer-link-color: $misty-rose;
-$footer-link-hover: $cosmic-latte;
+$footer-bg: #262626;                // Dark mode --background
+$footer-text: #fafafa;              // --foreground inverted
+$footer-link-color: #ebebeb;        // --muted
+$footer-link-hover: #fafafa;        // --background inverted
 
 // Spacing (Mobile-First Touch Targets)
 $spacer-xs: 0.25rem;   // 4px

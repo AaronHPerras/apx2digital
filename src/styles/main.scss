@@ -9,54 +9,66 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
 /* ==========================================================================
-   Theme Variables (Embedded)
+   Art Deco Theme Variables
    ========================================================================== */
 
-// Primary Colors (SCSS HEX)
-$jet: #2a2b2a;
-$dim-gray: #706c61;
-$cosmic-latte: #f8f4e3;
-$claret: #6c0f26;
-$misty-rose: #ffe0d6;
+// Art Deco Color Palette (SCSS HEX - Converted from oklch)
+$champagne: #f5e6a3;     // oklch(0.897 0.076 87.53)
+$old-gold: #c5a572;      // oklch(0.725 0.086 75.59)
+$deep-gold: #b8860b;     // oklch(0.615 0.164 70.72)
+$emerald: #4cbb17;       // oklch(0.702 0.187 134.72)
+$jade: #00a86b;          // oklch(0.635 0.160 162.83)
+$teal: #006a6b;          // oklch(0.416 0.089 194.32)
+$burgundy: #800020;      // oklch(0.331 0.156 23.93)
+$charcoal: #2f2f2f;      // oklch(0.278 0.007 264.05)
+$ivory: #fffff0;         // oklch(0.995 0.016 96.08)
+$cream: #faf0e6;         // oklch(0.958 0.025 72.26)
 
-// Color Semantic Mapping (Mobile-First)
-$primary: $claret;
-$secondary: $dim-gray;
-$success: #28a745;
-$danger: $claret;
-$warning: #ffc107;
-$info: $dim-gray;
-$light: $cosmic-latte;
-$dark: $jet;
-$body-bg: #ffffff;
-$body-color: $jet;
+// Semantic Color Mapping (Mobile-First)
+$primary: $emerald;
+$secondary: $deep-gold;
+$success: $jade;
+$danger: $burgundy;
+$warning: $old-gold;
+$info: $teal;
+$light: $cream;
+$dark: $charcoal;
+$body-bg: $ivory;
+$body-color: $charcoal;
 
 // Text Colors
-$text-primary: $jet;
-$text-secondary: $dim-gray;
-$text-light: $cosmic-latte;
-$text-accent: $claret;
-$text-muted: $dim-gray;
+$text-primary: $charcoal;
+$text-secondary: $teal;
+$text-light: $cream;
+$text-accent: $emerald;
+$text-muted: $deep-gold;
 
 // Background Colors
-$bg-primary: $claret;
-$bg-secondary: $dim-gray;
-$bg-light: #ffffff;
-$bg-dark: $jet;
-$bg-accent: $misty-rose;
+$bg-primary: $emerald;
+$bg-secondary: $deep-gold;
+$bg-light: $ivory;
+$bg-dark: $charcoal;
+$bg-accent: $champagne;
 
 // Border Colors
-$border-color: $dim-gray;
-$border-light: rgba($dim-gray, 0.3);
-$border-dark: $jet;
+$border-color: $deep-gold;
+$border-light: rgba($deep-gold, 0.3);
+$border-dark: $charcoal;
 
-// Spacing
+/* ==========================================================================
+   Spacing Variables
+   ========================================================================== */
+
 $spacer-xs: 0.25rem;
 $spacer-sm: 0.5rem;
 $spacer: 1rem;
 $spacer-lg: 1.5rem;
 $spacer-xl: 3rem;
 $spacer-xxl: 4.5rem;
+
+/* ==========================================================================
+   Touch-Friendly Sizing & Typography
+   ========================================================================== */
 
 // Touch-Friendly Sizing
 $touch-target-min: 44px;
@@ -79,9 +91,9 @@ $h5-font-size: 1.125rem;
 $h6-font-size: 1rem;
 
 // Box Shadows
-$box-shadow-sm: 0 0.125rem 0.25rem rgba($jet, 0.075);
-$box-shadow: 0 0.5rem 1rem rgba($jet, 0.15);
-$box-shadow-lg: 0 1rem 3rem rgba($jet, 0.175);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($charcoal, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba($charcoal, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba($charcoal, 0.175);
 
 // Transitions
 $transition-base: all 0.3s ease-in-out;
@@ -372,7 +384,7 @@ button:active .button-inner,
 
 .btn-primary {
   background-color: #f8f9fa;
-  color: $jet;
+  color: $charcoal;
   box-shadow: 
     0 6px 16px rgba(0, 0, 0, 0.1),
     0 2px 4px rgba(0, 0, 0, 0.06);
@@ -399,7 +411,7 @@ button:active .button-inner,
 
 .btn-secondary {
   background-color: #f8f9fa;
-  color: $jet;
+  color: $charcoal;
   box-shadow: 
     0 6px 16px rgba(0, 0, 0, 0.1),
     0 2px 4px rgba(0, 0, 0, 0.06);
@@ -426,7 +438,7 @@ button:active .button-inner,
 
 .btn-outline-primary {
   background-color: transparent;
-  color: $jet;
+  color: $charcoal;
   box-shadow: 
     inset 0 0 0 2px rgba(0, 0, 0, 0.1),
     0 6px 16px rgba(0, 0, 0, 0.08);
@@ -437,7 +449,7 @@ button:active .button-inner,
   }
   
   &:hover {
-    color: $jet;
+    color: $charcoal;
     background-color: #f8f9fa;
     box-shadow: 
       inset 0 0 0 2px rgba(0, 0, 0, 0.15),
@@ -445,7 +457,7 @@ button:active .button-inner,
   }
   
   &:active {
-    color: $jet;
+    color: $charcoal;
     background-color: #f1f3f5;
     box-shadow: 
       inset 0 0 0 2px rgba(0, 0, 0, 0.1),
@@ -468,32 +480,32 @@ button:active .button-inner,
     font-size: 1.5rem;
     
     &:hover {
-      color: $misty-rose !important;
+      color: $champagne !important;
     }
   }
   
   .navbar-nav .nav-link {
-    color: $cosmic-latte !important;
+    color: $cream !important;
     font-weight: 500;
     padding: $spacer-sm $spacer;
     margin: 0 $spacer-xs;
     border-radius: $btn-border-radius;
-    border: 2px solid $jet;
+    border: 2px solid $charcoal;
     transition: $transition-base;
     min-height: $touch-target-min;
     display: flex;
     align-items: center;
     
     &:hover, &:focus {
-      color: $misty-rose !important;
-      background: rgba($misty-rose, 0.1);
-      border-color: $jet;
+      color: $champagne !important;
+      background: rgba($champagne, 0.1);
+      border-color: $charcoal;
     }
     
     &.active {
       color: $primary !important;
       background: rgba($primary, 0.1);
-      border-color: $jet;
+      border-color: $charcoal;
     }
   }
   
@@ -501,7 +513,7 @@ button:active .button-inner,
     position: relative;
     background: linear-gradient(145deg, #f8f9fa, #e9ecef) !important;
     border: none !important;
-    box-shadow: inset 0 0 2px 1px $jet;
+    box-shadow: inset 0 0 2px 1px $charcoal;
     border-radius: 8px;
     padding: $spacer-xs $spacer-sm;
     min-width: 40px;
@@ -522,9 +534,9 @@ button:active .button-inner,
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(172, 172, 172, 0.5));
       border-radius: inherit;
       box-shadow: 
-        inset 0 0 0 1px $jet,
-        0 0.375em 0 0 rgba($jet, 0.3),
-        0 0.5em 6px rgba($jet, 0.2);
+        inset 0 0 0 1px $charcoal,
+        0 0.375em 0 0 rgba($charcoal, 0.3),
+        0 0.5em 6px rgba($charcoal, 0.2);
       transform: translate3d(0, 0.5em, -0.5em);
       transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
       z-index: -1;
@@ -541,7 +553,7 @@ button:active .button-inner,
       &::before,
       &::after,
       & {
-        background-color: $jet;
+        background-color: $charcoal;
         border-radius: 1px;
         height: 2px;
         transition: all 0.2s ease;
@@ -570,9 +582,9 @@ button:active .button-inner,
       
       &::before {
         box-shadow: 
-          inset 0 0 0 1px $jet,
-          0 0.25em 0 0 rgba($jet, 0.3),
-          0 0.375em 8px rgba($jet, 0.25);
+          inset 0 0 0 1px $charcoal,
+          0 0.25em 0 0 rgba($charcoal, 0.3),
+          0 0.375em 8px rgba($charcoal, 0.25);
         transform: translate3d(0, 0.25em, -0.5em);
       }
       
@@ -592,29 +604,29 @@ button:active .button-inner,
       
       &::before {
         box-shadow: 
-          inset 0 0 0 1px $jet,
-          0 0 0 0 rgba($jet, 0.3);
+          inset 0 0 0 1px $charcoal,
+          0 0 0 0 rgba($charcoal, 0.3);
         transform: translate3d(0, 0, -0.5em);
       }
     }
     
     &:focus {
       box-shadow: 
-        inset 0 0 2px 1px $jet,
+        inset 0 0 2px 1px $charcoal,
         0 0 0 3px rgba($primary, 0.25) !important;
     }
     
     // When menu is open (collapsed class is removed)
     &:not(.collapsed) {
       background: linear-gradient(145deg, #f8f9fa, #e9ecef) !important;
-      box-shadow: inset 0 0 2px 1px $jet;
+      box-shadow: inset 0 0 2px 1px $charcoal;
       transform: translate(0, 0.25em);
       
       &::before {
         background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(172, 172, 172, 0.5));
         box-shadow: 
-          inset 0 0 0 1px $jet,
-          0 0.125em 0 0 rgba($jet, 0.4);
+          inset 0 0 0 1px $charcoal,
+          0 0.125em 0 0 rgba($charcoal, 0.4);
         transform: translate3d(0, 0.125em, -0.5em);
       }
       
@@ -647,7 +659,7 @@ button:active .button-inner,
   }
   
   .card-header {
-    background: $misty-rose;
+    background: $champagne;
     border-bottom: 1px solid $border-light;
     padding: $spacer;
   }
@@ -750,7 +762,7 @@ button:active .button-inner,
   }
   
   .lead {
-    color: $misty-rose;
+    color: $champagne;
     font-size: $font-size-lg;
     margin-bottom: $spacer-xl;
   }
@@ -787,7 +799,7 @@ button:active .button-inner,
   }
   
   a {
-    color: $misty-rose;
+    color: $champagne;
     
     &:hover, &:focus {
       color: $light;
@@ -805,7 +817,7 @@ button:active .button-inner,
     button {
       background: none;
       border: none;
-      color: $misty-rose;
+      color: $champagne;
       padding: 0;
       font-size: inherit;
       cursor: pointer;
@@ -838,7 +850,7 @@ button:active .button-inner,
 .text-secondary-custom { color: $text-secondary !important; }
 .text-accent { color: $text-accent !important; }
 .text-light-custom { color: $text-light !important; }
-.text-jet { color: $jet !important; }
+.text-charcoal { color: $charcoal !important; }
 
 .bg-primary-custom { background-color: $bg-primary !important; }
 .bg-secondary-custom { background-color: $bg-secondary !important; }
@@ -848,8 +860,8 @@ button:active .button-inner,
 
 // Section background consistency
 section.bg-light {
-  background-color: #ffffff !important;
-  color: $jet !important;
+  background-color: $ivory !important;
+  color: $charcoal !important;
 }
 
 .bg-gradient-primary { 
@@ -865,7 +877,7 @@ section.bg-light {
 }
 
 .bg-gradient-accent { 
-  background: linear-gradient(45deg, $misty-rose, $light) !important; 
+  background: linear-gradient(45deg, $champagne, $light) !important; 
 }
 
 /* ==========================================================================
@@ -947,24 +959,24 @@ footer {
 
 // Navbar brand consistent color (darker grey)
 .navbar-brand.text-secondary {
-  color: $dim-gray !important;
+  color: $deep-gold !important;
   
   &:hover,
   &:focus,
   &:active {
-    color: $dim-gray !important;
+    color: $deep-gold !important;
   }
 }
 
 // Navbar brand button dark grey background
 .navbar-brand.btn.btn-link {
-  background-color: $jet !important;
+  background-color: $charcoal !important;
   color: $light !important;
   
   &:hover,
   &:focus,
   &:active {
-    background-color: $jet !important;
+    background-color: $charcoal !important;
     color: $light !important;
   }
 }
@@ -987,11 +999,11 @@ footer {
 // Mobile navigation background styling
 @media (max-width: 991.98px) {
   #navbarNav {
-    background-color: #ffffff !important;
+    background-color: $ivory !important;
     padding: $spacer;
     border-radius: $btn-border-radius;
     margin-top: $spacer-sm;
-    border: 2px solid $jet;
+    border: 2px solid $charcoal;
   }
   
   .navbar-nav {
@@ -1016,7 +1028,7 @@ footer {
   // Mobile CTA buttons
   .d-flex {
     padding-top: $spacer;
-    border-top: 1px solid rgba($dim-gray, 0.2);
+    border-top: 1px solid rgba($deep-gold, 0.2);
     margin-top: $spacer;
   }
 }
@@ -1143,11 +1155,11 @@ footer {
     
     .nav-card-icon {
       transform: scale(1.05);
-      color: $jet;
+      color: $charcoal;
     }
     
     .nav-card-label {
-      color: $jet;
+      color: $charcoal;
     }
   }
   
@@ -1186,105 +1198,103 @@ footer {
     }
     
     .nav-card-label {
-      color: $jet;
+      color: $charcoal;
       font-weight: 600;
     }
   }
   
-  &.nav-card-cta {
-    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
-    color: $jet;
-    border-color: $jet;
-    
-    &::before {
-      background: linear-gradient(145deg, rgba($primary, 0.1), rgba($primary, 0.2));
-      border-color: $jet;
-      box-shadow: 
-        0 0 0 2px $jet,
-        0 0.625em 0 0 rgba($jet, 0.3),
-        0 0.75em 8px rgba($jet, 0.2);
-    }
-    
-    .nav-card-icon,
-    .nav-card-label {
-      color: $jet;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-    }
-    
-    &:hover {
-      background: linear-gradient(145deg, #ffffff, #f1f3f4);
+    &.nav-card-cta {
+      background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+      color: $charcoal;
+      border-color: $charcoal;
       
       &::before {
         background: linear-gradient(145deg, rgba($primary, 0.1), rgba($primary, 0.2));
+        border-color: $charcoal;
         box-shadow: 
-          0 0 0 2px $jet,
-          0 0.5em 0 0 rgba($jet, 0.3),
-          0 0.6em 12px rgba($jet, 0.25);
+          0 0 0 2px $charcoal,
+          0 0.625em 0 0 rgba($charcoal, 0.3),
+          0 0.75em 8px rgba($charcoal, 0.2);
       }
       
       .nav-card-icon,
       .nav-card-label {
-        color: $primary;
+        color: $charcoal;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
       }
-    }
-    
-    &:active {
-      background: linear-gradient(145deg, #e9ecef, #dee2e6);
       
-      &::before {
-        background: linear-gradient(145deg, rgba($primary, 0.1), rgba($primary, 0.2));
-        box-shadow: 
-          0 0 0 2px $jet,
-          0 0 0 0 rgba($jet, 0.3);
+      &:hover {
+        background: linear-gradient(145deg, #ffffff, #f1f3f4);
+        
+        &::before {
+          background: linear-gradient(145deg, rgba($primary, 0.1), rgba($primary, 0.2));
+          box-shadow: 
+            0 0 0 2px $charcoal,
+            0 0.5em 0 0 rgba($charcoal, 0.3),
+            0 0.6em 12px rgba($charcoal, 0.25);
+        }
+        
+        .nav-card-icon,
+        .nav-card-label {
+          color: $primary;
+        }
+      }
+      
+      &:active {
+        background: linear-gradient(145deg, #e9ecef, #dee2e6);
+        
+        &::before {
+          background: linear-gradient(145deg, rgba($primary, 0.1), rgba($primary, 0.2));
+          box-shadow: 
+            0 0 0 2px $charcoal,
+            0 0 0 0 rgba($charcoal, 0.3);
+        }
       }
     }
-  }
-  
-  // Secondary button variant (outline style)
-  &.btn-secondary-custom {
-    background: transparent !important;
-    border: 2px solid $claret !important;
-    color: $claret !important;
     
-    &::before {
+    // Secondary button variant (outline style)
+    &.btn-secondary-custom {
       background: transparent !important;
-      border: 2px solid $claret !important;
-      box-shadow: 
-        0 0 0 2px transparent,
-        0 0.625em 0 0 rgba($claret, 0.3),
-        0 0.75em 8px rgba($claret, 0.2) !important;
-    }
-    
-    .button-inner span {
-      color: $claret !important;
-    }
-    
-    &:hover {
-      background: rgba($claret, 0.1) !important;
-      border-color: $claret !important;
-      color: $claret !important;
+      border: 2px solid $emerald !important;
+      color: $emerald !important;
       
       &::before {
-        background: rgba($claret, 0.1) !important;
+        background: transparent !important;
+        border: 2px solid $emerald !important;
         box-shadow: 
-          0 0 0 2px $claret,
-          0 0.5em 0 0 rgba($claret, 0.3),
-          0 0.6em 12px rgba($claret, 0.25) !important;
+          0 0 0 2px transparent,
+          0 0.625em 0 0 rgba($emerald, 0.3),
+          0 0.75em 8px rgba($emerald, 0.2) !important;
       }
-    }
-    
-    &:active {
-      background: rgba($claret, 0.2) !important;
       
-      &::before {
-        box-shadow: 
-          0 0 0 2px $claret,
-          0 0 0 0 rgba($claret, 0.3) !important;
+      .button-inner span {
+        color: $emerald !important;
       }
-    }
-  }
-  
-  // Desktop nav-card styling
+      
+      &:hover {
+        background: rgba($emerald, 0.1) !important;
+        border-color: $emerald !important;
+        color: $emerald !important;
+        
+        &::before {
+          background: rgba($emerald, 0.1) !important;
+          box-shadow: 
+            0 0 0 2px $emerald,
+            0 0.5em 0 0 rgba($emerald, 0.3),
+            0 0.6em 12px rgba($emerald, 0.25) !important;
+        }
+      }
+      
+      &:active {
+        background: rgba($emerald, 0.2) !important;
+        
+        &::before {
+          box-shadow: 
+            0 0 0 2px $emerald,
+            0 0 0 0 rgba($emerald, 0.3) !important;
+        }
+      }
+    }  // Desktop nav-card styling
   &.nav-card-desktop {
     min-height: auto;
     height: 44px;
@@ -1295,17 +1305,17 @@ footer {
     &::before {
       border-radius: 8px;
       box-shadow: 
-        0 0 0 1px $jet,
-        0 0.25em 0 0 rgba($jet, 0.3),
-        0 0.35em 4px rgba($jet, 0.15);
+        0 0 0 1px $charcoal,
+        0 0.25em 0 0 rgba($charcoal, 0.3),
+        0 0.35em 4px rgba($charcoal, 0.15);
       transform: translate3d(0, 0.25em, -1em);
     }
     
     &:hover::before {
       box-shadow: 
-        0 0 0 1px $jet,
-        0 0.15em 0 0 rgba($jet, 0.3),
-        0 0.25em 6px rgba($jet, 0.2);
+        0 0 0 1px $charcoal,
+        0 0.15em 0 0 rgba($charcoal, 0.3),
+        0 0.25em 6px rgba($charcoal, 0.2);
       transform: translate3d(0, 0.15em, -1em);
     }
     
@@ -1314,48 +1324,48 @@ footer {
       
       &::before {
         box-shadow: 
-          0 0 0 1px $jet,
-          0 0 0 0 rgba($jet, 0.3);
+          0 0 0 1px $charcoal,
+          0 0 0 0 rgba($charcoal, 0.3);
         transform: translate3d(0, 0, -1em);
       }
     }
     
     &.nav-card-active {
       transform: translate(0, 0.15em);
-      background: linear-gradient(145deg, color.adjust($claret, $lightness: 45%), color.adjust($claret, $lightness: 40%));
+      background: linear-gradient(145deg, color.adjust($emerald, $lightness: 45%), color.adjust($emerald, $lightness: 40%));
       box-shadow: 
-        inset 0 0 3px 2px $jet,
-        0 0 10px rgba($claret, 0.5),
-        0 0 20px rgba($claret, 0.2);
+        inset 0 0 3px 2px $charcoal,
+        0 0 10px rgba($emerald, 0.5),
+        0 0 20px rgba($emerald, 0.2);
       
       &::before {
-        background: linear-gradient(145deg, color.adjust($claret, $lightness: 50%), color.adjust($claret, $lightness: 45%));
+        background: linear-gradient(145deg, color.adjust($emerald, $lightness: 50%), color.adjust($emerald, $lightness: 45%));
         box-shadow: 
-          0 0 0 1px $jet,
-          0 0.1em 0 0 rgba($jet, 0.4),
-          0 0 8px rgba($claret, 0.3);
+          0 0 0 1px $charcoal,
+          0 0.1em 0 0 rgba($charcoal, 0.4),
+          0 0 8px rgba($emerald, 0.3);
         transform: translate3d(0, 0.1em, -1em);
       }
       
       .nav-card-label {
         color: white;
         font-weight: 600;
-        text-shadow: 0 0 6px rgba($claret, 0.3);
+        text-shadow: 0 0 6px rgba($emerald, 0.3);
       }
     }
     
     &.nav-card-cta::before {
       box-shadow: 
-        0 0 0 1px $jet,
-        0 0.25em 0 0 rgba($jet, 0.3),
-        0 0.35em 4px rgba($jet, 0.15);
+        0 0 0 1px $charcoal,
+        0 0.25em 0 0 rgba($charcoal, 0.3),
+        0 0.35em 4px rgba($charcoal, 0.15);
     }
     
     &.nav-card-cta:hover::before {
       box-shadow: 
-        0 0 0 1px $jet,
-        0 0.15em 0 0 rgba($jet, 0.3),
-        0 0.25em 6px rgba($jet, 0.2);
+        0 0 0 1px $charcoal,
+        0 0.15em 0 0 rgba($charcoal, 0.3),
+        0 0.25em 6px rgba($charcoal, 0.2);
     }
   }
 }
@@ -1374,7 +1384,7 @@ footer {
 
 .nav-card-label {
   font-size: 0.9rem !important;
-  color: $jet !important;
+  color: $charcoal !important;
   transition: all 0.2s ease !important;
   position: relative !important;
   z-index: 1 !important;
@@ -1486,7 +1496,7 @@ footer {
   // Menu open state
   &.menu-open {
     .menu-icon span {
-      background-color: $jet !important;
+      background-color: $charcoal !important;
       transform: scale(0.8) !important;
     }
   }
@@ -1500,8 +1510,8 @@ footer {
   --bs-offcanvas-width: 320px;
   
   .offcanvas-header {
-    background-color: #ffffff !important;
-    border-bottom: 2px solid $jet !important;
+    background-color: $ivory !important;
+    border-bottom: 2px solid $charcoal !important;
     padding: $spacer-lg !important;
     
     .offcanvas-title {
@@ -1519,18 +1529,18 @@ footer {
         position: relative !important;
         z-index: 2 !important;
         transform: translateZ(10px) !important;
-        color: $jet !important;
+        color: $charcoal !important;
       }
       
       &:hover i {
         transform: translateZ(10px) translateX(-2px) !important;
-        color: $jet !important;
+        color: $charcoal !important;
       }
     }
   }
   
   .offcanvas-body {
-    background-color: #ffffff !important;
+    background-color: $ivory !important;
     
     // Ensure nav-cards work properly in offcanvas
     .nav-card {
