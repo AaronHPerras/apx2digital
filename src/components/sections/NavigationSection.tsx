@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from '../common'
 
 type Section = 'hero' | 'services' | 'about' | 'approach' | 'portfolio' | 'contact'
@@ -12,60 +12,67 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
   activeSection, 
   onNavigate 
 }) => {
-  const offcanvasRef = useRef<HTMLDivElement>(null)
+  const [isOpen, setIsOpen] = useState(false)
 
-  // Function to close offcanvas menu
-  const closeOffcanvas = () => {
-    if (offcanvasRef.current) {
-      // Remove 'show' class to hide the offcanvas
-      offcanvasRef.current.classList.remove('show')
-      
-      // Remove backdrop
-      const backdrop = document.querySelector('.offcanvas-backdrop')
-      if (backdrop) {
-        backdrop.remove()
-      }
-      
-      // Remove modal-open class from body
-      document.body.classList.remove('modal-open')
-      document.body.style.removeProperty('overflow')
-      document.body.style.removeProperty('padding-right')
+  // Handle body scroll lock when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
     }
+    
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
+
+  const handleOpen = () => {
+    setIsOpen(true)
   }
 
-  // Enhanced navigation handler that closes offcanvas menu
-  const handleNavigateAndClose = (section: Section) => {
-    onNavigate(section)
-    closeOffcanvas()
+  const handleClose = () => {
+    setIsOpen(false)
   }
+
+  const handleNavigateAndClose = (section: Section) => {
+    setIsOpen(false)
+    onNavigate(section)
+  }
+
   return (
     <>
       {/* Hamburger Menu Button - Absolute Positioned in Top Left */}
       <div className="position-fixed top-0 start-0 p-3" style={{ zIndex: 1040 }}>
         <Button
           variant="hamburger"
-          onClick={() => {}}
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-expanded={false}
+          onClick={handleOpen}
           aria-label="Open navigation menu"
         />
       </div>
 
-    {/* Bootstrap Offcanvas */}
+      {/* Backdrop */}
+      {isOpen && (
+        <div 
+          className="offcanvas-backdrop fade show"
+          onClick={handleClose}
+          style={{ zIndex: 1039 }}
+        />
+      )}
+
+    {/* Offcanvas Menu */}
     <div 
-      className="offcanvas offcanvas-start bg-light-custom" 
-      tabIndex={-1} 
-      id="offcanvasNavbar" 
-      aria-labelledby="offcanvasNavbarLabel"
-      ref={offcanvasRef}
+      className={`offcanvas offcanvas-start bg-light-custom ${isOpen ? 'show' : ''}`}
+      tabIndex={-1}
+      style={{ 
+        visibility: isOpen ? 'visible' : 'hidden',
+        zIndex: 1040
+      }}
     >
       <div className="offcanvas-header border-bottom">
         <Button
           variant="close"
-          onClick={() => {}}
-          data-bs-dismiss="offcanvas"
+          onClick={handleClose}
           aria-label="Close"
           className="d-flex align-items-center justify-content-center p-2 rounded-circle"
           style={{ width: '22px', height: '22px' }}
@@ -136,7 +143,7 @@ export const NavigationSection: React.FC<NavigationSectionProps> = ({
             </div>
             <div className="col-6">
               <Button
-                onClick={closeOffcanvas}
+                onClick={handleClose}
                 label="Get Started"
                 variant="mobile-cta"
               />

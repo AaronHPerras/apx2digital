@@ -25,28 +25,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 text-center text-lg-start">
             <h1 className="display-4 fw-bold mb-4 text-dark">
-              Website Design | No-Code Automation | 
-              <span className="text-primary"> Digital Growth</span>
+              APx2 Digital —
+              <span className="text-primary"> Innovation Partner</span>
             </h1>
             <p className="lead mb-4 fs-5 text-secondary">
-              We deliver clean, professional, and user-friendly solutions leveraging cutting-edge AI tools 
-              to bring you exceptional results—faster.
+              Turn Ideas + Pain Points into Testable MVPs, Fast
             </p>
-            <div className="mb-4">
-              <div className="badge bg-primary text-white fs-6 px-3 py-2 mb-3">
-                🚀 1-Week Website Launch Available
-              </div>
-            </div>
+            <p className="mb-4 text-muted">
+              Are you a founder, creator, or small business owner with a big idea or a nagging workflow problem?<br />
+              I'm here to help you go <strong>from concept to working MVP</strong>—in days, not months.
+            </p>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
               <Button
                 onClick={() => handleNavigate('contact')}
-                label="Get Your Free Consultation"
+                label="Book a Free Call"
                 variant="secondary"
                 className="btn-lg px-4 py-3"
               />
               <Button
                 onClick={() => handleNavigate('services')}
-                label="View Our Services"
+                label="What I Offer"
                 variant="secondary"
                 className="btn-lg px-4 py-3"
               />

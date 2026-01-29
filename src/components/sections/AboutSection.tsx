@@ -7,32 +7,32 @@ export const AboutSection: React.FC = () => {
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-6">
-            <h2 className="display-5 fw-bold text-dark mb-4">About APX2Digital</h2>
-            <p className="lead text-muted mb-4">
-              We're a team of passionate developers and designers who specialize in creating 
-              modern web applications that solve real business problems.
-            </p>
-            <p className="text-muted mb-4">
-              With years of experience in full-stack development, we've helped businesses 
-              of all sizes transform their operations through custom web solutions. From 
-              startups looking to build their first SaaS platform to enterprises needing 
-              scalable applications, we deliver results that drive growth.
-            </p>
-            <div className="row g-4">
-              <StatisticCard number="50+" label="Projects Completed" />
-              <StatisticCard number="5+" label="Years Experience" />
+            <h2 className="display-5 fw-bold text-dark mb-4">🌟 Why Me?</h2>
+            <div className="mb-4">
+              <p className="text-muted mb-3">
+                <strong className="text-dark">20+ years</strong> of creative, hands-on problem solving in software & product
+              </p>
+              <p className="text-muted mb-3">
+                <strong className="text-dark">Deep experience</strong> in cutting-edge AI tools—deliver more, faster
+              </p>
+              <p className="text-muted mb-3">
+                <strong className="text-dark">Process focused:</strong> zero "dev agency" headaches, zero ongoing commitments
+              </p>
+              <p className="text-muted mb-0">
+                <strong className="text-dark">You own what's built</strong>—all code & assets handed off
+              </p>
             </div>
           </div>
           <div className="col-12 col-lg-6 mt-5 mt-lg-0">
             <div className="text-center">
-              <h4 className="fw-bold text-dark mb-4">Modern Technology Stack</h4>
+              <h4 className="fw-bold text-dark mb-4">Tech I Work With</h4>
               <div className="row g-4">
                 <TechStackItem icon="⚛️" label="React" />
                 <TechStackItem icon="🟦" label="TypeScript" />
-                <TechStackItem icon="🔷" label=".NET" />
-                <TechStackItem icon="🐘" label="PostgreSQL" />
-                <TechStackItem icon="☁️" label="Azure" />
-                <TechStackItem icon="🐳" label="Docker" />
+                <TechStackItem icon="🤖" label="AI Tools" />
+                <TechStackItem icon="🔗" label="APIs" />
+                <TechStackItem icon="⚡" label="No-Code" />
+                <TechStackItem icon="🚀" label="Rapid Dev" />
               </div>
             </div>
           </div>

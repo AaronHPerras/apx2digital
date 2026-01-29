@@ -10,8 +10,8 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onNavigate }
     <section className="py-5 py-lg-6 bg-light">
       <div className="container">
         <SectionHeader 
-          title="Our Portfolio"
-          subtitle="Recent projects showcasing our expertise in modern web development"
+          title="Recent Projects"
+          subtitle="Want your problem solved next? Let's chat!"
         />
         
         <div className="row g-4">
@@ -41,7 +41,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onNavigate }
         <div className="text-center mt-5">
           <Button
             onClick={() => onNavigate('contact')}
-            label="Start Your Project"
+            label="Book a Free Call"
             variant="cta"
             className="btn-lg px-5 py-3"
           />

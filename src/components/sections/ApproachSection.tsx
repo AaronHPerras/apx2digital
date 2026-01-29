@@ -14,30 +14,30 @@ export interface ApproachSectionProps {
 
 const defaultApproaches: ApproachItem[] = [
   {
-    icon: "bi-phone",
-    title: "Mobile First",
-    description: "Everything is mobile-first. We design and test rigorously across all devices—smartphones, tablets, and desktops."
+    icon: "bi-chat-dots",
+    title: "1. Free Brainstorm Call",
+    description: "We clarify your idea or problem; no commitment required."
   },
   {
-    icon: "bi-arrow-up-right-circle",
-    title: "API-Ready & Future-Proofed", 
-    description: "Your site is structured to easily support advanced features as your needs evolve, without costly rebuilds."
+    icon: "bi-hammer",
+    title: "2. Prototyping (2–7 Days)", 
+    description: "I design & build a functional MVP—with frequent checkpoints—tailored to your needs."
   },
   {
-    icon: "bi-handshake",
-    title: "True Partnership",
-    description: "We're invested in your success and always looking for ways to help you grow online."
+    icon: "bi-rocket-takeoff",
+    title: "3. Test & Iterate",
+    description: "You play with the solution, get feedback from users, and decide on next steps."
   },
   {
-    icon: "bi-eye",
-    title: "No Surprises",
-    description: "Transparent pricing, clear communication, and proactive service every step of the way."
+    icon: "bi-check-circle",
+    title: "You Own Everything",
+    description: "All code and assets are handed off to you. No ongoing commitments or lock-in."
   }
 ]
 
 export const ApproachSection: React.FC<ApproachSectionProps> = ({
-  title = "Our Approach",
-  subtitle = "This is your brand. We're here to make it happen.",
+  title = "🤝 How It Works",
+  subtitle = "Simple, transparent process from idea to working MVP",
   approaches = defaultApproaches
 }) => {
   return (

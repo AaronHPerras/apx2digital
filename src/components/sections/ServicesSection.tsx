@@ -27,10 +27,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className="row">
           <div className="col-12 text-center mb-5">
             <h2 className="display-5 fw-bold text-primary mb-3">
-              Our Services
+              🚀 What I Offer
             </h2>
             <p className="lead text-muted">
-              Complete digital solutions designed for growing businesses
+              From concept to working MVP—in days, not months
             </p>
           </div>
         </div>
@@ -48,10 +48,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className="row mt-5">
           <div className="col-12 text-center">
             <p className="text-muted mb-3">
-              <strong>All prices in respective currencies. Monthly maintenance packages available.</strong>
+              <strong>Let's start with a free brainstorm call—no commitment required.</strong>
             </p>
             <p className="text-muted small">
-              Need a custom solution? We offer flexible engagement models and can tailor our services to your specific requirements.
+              Every project is unique. Pricing is based on scope and complexity. Let's discuss your needs!
             </p>
           </div>
         </div>

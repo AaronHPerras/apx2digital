@@ -9,99 +9,99 @@ import type { ServicePackageProps } from './ServicePackage'
 // Hero section feature cards data
 export const heroFeatures: FeatureCardData[] = [
   {
-    icon: "⚡",
-    title: "Results-Fast Delivery",
-    description: "1-week website launches with cutting-edge tools"
+    icon: "🚀",
+    title: "Rapid MVP Sprints",
+    description: "Working solutions in under a week"
   },
   {
-    icon: "📱",
-    title: "Mobile-First Design",
-    description: "Responsive design optimized for all devices"
+    icon: "💡",
+    title: "Innovation Jams",
+    description: "Collaborative problem-solving sessions"
   },
   {
-    icon: "🤝",
-    title: "True Partnership",
-    description: "Transparent pricing and proactive communication"
+    icon: "🤖",
+    title: "AI-Accelerated",
+    description: "Modern tools for speed & creativity"
   },
   {
-    icon: "�",
-    title: "No-Code Automation",
-    description: "Streamline workflows with modern tools"
+    icon: "✅",
+    title: "Zero Commitment",
+    description: "You own what's built, no strings"
   }
 ]
 
 // New service packages data
 export const servicePackages: Omit<ServicePackageProps, 'onCtaClick'>[] = [
   {
-    title: "Website Design & Launch",
-    timeline: "1 Week to Launch",
-    price: "$3,000",
-    currency: "CAD",
+    title: "Rapid MVP Sprints",
+    timeline: "2-7 Days",
+    price: "Custom",
+    currency: "",
     features: [
-      "Mobile-first modern design",
-      "Google Review widget integration", 
-      "Netlify hosting setup",
-      "Domain migration included",
-      "Beta testing & launch",
-      "API-ready architecture"
+      "You bring the idea, I build",
+      "Working solution in under a week",
+      "Frequent checkpoints",
+      "Test with real users quickly",
+      "Full code & asset handoff",
+      "Zero ongoing commitments"
     ],
     isPopular: true,
-    ctaText: "Start Your Website"
+    ctaText: "Start Building"
   },
   {
-    title: "SEO & Local Marketing",
-    timeline: "8 Day Project",
-    price: "$1,800",
-    currency: "CAD",
+    title: "Innovation Jams",
+    timeline: "Half-Day to 2 Days",
+    price: "Custom",
+    currency: "",
     features: [
-      "Local SEO optimization",
-      "Google Business Profile setup",
-      "Service area targeting",
-      "Keyword-rich content updates",
-      "Technical SEO improvements",
-      "Analytics & reporting setup"
+      "Collaborative brainstorming",
+      "High-energy problem solving",
+      "Tackle real business challenges",
+      "Rapid prototyping session",
+      "Actionable next steps",
+      "Creative breakthrough focus"
     ],
-    ctaText: "Boost Your Visibility"
+    ctaText: "Book a Jam Session"
   },
   {
-    title: "No-Code Automation",
-    timeline: "Flexible Engagement",
-    price: "$100",
-    currency: "USD",
+    title: "AI-Accelerated Prototyping",
+    timeline: "Ongoing Partnership",
+    price: "Custom",
+    currency: "",
     features: [
-      "Airtable & Notion workflows",
-      "Zapier integrations",
-      "Custom dashboards",
-      "Process automation",
-      "Up to 15 hours/week",
-      "Business efficiency optimization"
+      "Leveraging cutting-edge AI tools",
+      "Faster delivery, lower costs",
+      "Creative solutions at speed",
+      "Modern tech stack",
+      "Iterative development",
+      "You own everything built"
     ],
-    ctaText: "Automate Your Business"
+    ctaText: "Explore AI Solutions"
   }
 ]
 
 // Portfolio section data - updated with real projects
 export const portfolioProjects: PortfolioCardData[] = [
   {
-    icon: "�",
+    icon: "💪",
     backgroundColor: "bg-primary",
-    title: "Shotover Cleaning Website Modernization",
-    description: "Complete site rebuild with mobile-first design, review integration, and Netlify hosting. 1-week launch timeline achieved.",
-    technologies: ['React', 'Netlify', 'Bootstrap', 'Review Widget']
+    title: "Fitness Tracker MVP",
+    description: "Idea → working app in 72 hours. Core tracking features, user dashboard, and data visualization.",
+    technologies: ['React', 'Firebase', 'Charts', 'Mobile-First']
   },
   {
-    icon: "�",
+    icon: "🛍️",
     backgroundColor: "bg-success",
-    title: "Multi-Location SEO Optimization",
-    description: "Service area targeting with Google Business Profile management and local keyword optimization for cleaning business.",
-    technologies: ['Local SEO', 'GBP', 'Analytics', 'Content Strategy']
+    title: "Workflow Automation for Small Retail",
+    description: "Manual task to automated dashboard in a weekend. Inventory tracking, order processing, customer management.",
+    technologies: ['Airtable', 'Zapier', 'Custom Dashboard', 'APIs']
   },
   {
-    icon: "🔄",
+    icon: "📊",
     backgroundColor: "bg-warning",
-    title: "Business Process Automation",
-    description: "Airtable CRM integration with Zapier workflows for lead management and automated client communication systems.",
-    technologies: ['Airtable', 'Zapier', 'Automation', 'CRM Integration']
+    title: "Custom CRM for Solopreneur",
+    description: "Prototype delivered in 5 days. Lead tracking, pipeline management, email integration, and reporting.",
+    technologies: ['React', 'TypeScript', 'CRM', 'Email API']
   }
 ]
 
