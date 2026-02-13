@@ -1,8 +1,7 @@
 import React from 'react'
 import { FooterNavigation } from '../common'
-import { contactInfo } from '../common/data'
 
-type Section = 'hero' | 'services' | 'about' | 'approach' | 'portfolio' | 'contact'
+type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
 
 interface FooterSectionProps {
   onNavigate?: (section: Section) => void
@@ -28,39 +27,39 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavigate }) => {
           <div className="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
             <h5 className="fw-bold text-warning mb-3">APx2Digital</h5>
             <p className="text-light mb-3">
-              {contactInfo.tagline}
+              Workflow automation and integration specialist
             </p>
             <p className="text-light small mb-3">
-              We're committed to transparent pricing, clear communication, and delivering results that drive your business forward.
+              I help automation agencies and growing businesses solve the integration, reliability, and edge-case problems that appear when complexity surfaces.
             </p>
           </div>
           
           <FooterNavigation 
-            title="Services"
+            title="Specializations"
             items={[
-              { label: 'Website Design & Launch', onClick: () => handleNavigate('services') },
-              { label: 'SEO & Local Marketing', onClick: () => handleNavigate('services') },
-              { label: 'No-Code Automation', onClick: () => handleNavigate('services') },
-              { label: 'Monthly Maintenance', onClick: () => handleNavigate('services') }
+              { label: 'Workflow Automation', onClick: () => handleNavigate('services') },
+              { label: 'Integration & Reliability', onClick: () => handleNavigate('services') },
+              { label: 'AI Workflow Design', onClick: () => handleNavigate('services') },
+              { label: 'Debugging & Rescue', onClick: () => handleNavigate('services') }
             ]}
           />
           
           <FooterNavigation 
-            title="Company"
+            title="Resources"
             items={[
-              { label: 'Our Approach', onClick: () => handleNavigate('about') },
-              { label: 'Portfolio', onClick: () => handleNavigate('portfolio') },
-              { label: 'Get Started', onClick: () => handleNavigate('contact') }
+              { label: 'Who I Work With', onClick: () => handleNavigate('about') },
+              { label: 'Case Studies', onClick: () => handleNavigate('portfolio') },
+              { label: 'Get In Touch', onClick: () => handleNavigate('contact') }
             ]}
           />
           
           <FooterNavigation 
-            title="Service Area"
+            title="Approach"
             items={[
-              { label: `� ${contactInfo.serviceArea}` },
-              { label: '� 1-Week Launch Timeline' },
-              { label: '📱 Mobile-First Design' },
-              { label: '🤝 Partnership Approach' }
+              { label: '🔧 Fix Silent Failures' },
+              { label: '🛡️ Handle Edge Cases' },
+              { label: '🔄 Ensure Reliability' },
+              { label: '🎯 Technical Escalation' }
             ]}
           />
         </div>

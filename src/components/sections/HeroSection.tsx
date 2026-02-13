@@ -25,26 +25,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         <div className="row align-items-center">
           <div className="col-12 col-lg-6 text-center text-lg-start">
             <h1 className="display-4 fw-bold mb-4 text-dark">
-              APx2 Digital —
-              <span className="text-primary"> Innovation Partner</span>
+              When automation and AI workflows get complicated,
+              <span className="text-primary"> I step in.</span>
             </h1>
             <p className="lead mb-4 fs-5 text-secondary">
-              Turn Ideas + Pain Points into Testable MVPs, Fast
+              I help automation agencies and growing businesses solve the integration, reliability, and edge-case problems that appear after the simple solutions stop working.
             </p>
             <p className="mb-4 text-muted">
-              Are you a founder, creator, or small business owner with a big idea or a nagging workflow problem?<br />
-              I'm here to help you go <strong>from concept to working MVP</strong>—in days, not months.
+              Low-code tools move fast.<br />
+              But real business systems are messy.
+            </p>
+            <p className="mb-4 text-muted">
+              <strong>That's where I work.</strong>
             </p>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
               <Button
                 onClick={() => handleNavigate('contact')}
-                label="Book a Free Call"
+                label="Discuss Your Challenge"
                 variant="secondary"
                 className="btn-lg px-4 py-3"
               />
               <Button
                 onClick={() => handleNavigate('services')}
-                label="What I Offer"
+                label="What I Do"
                 variant="secondary"
                 className="btn-lg px-4 py-3"
               />

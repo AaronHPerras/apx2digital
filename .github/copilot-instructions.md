@@ -41,7 +41,7 @@
 
 APX2Digital is a modern, full-stack web application starter template with production-ready features:
 
-- **Frontend**: React 19 + Vite + TypeScript + Bootstrap 5.2
+- **Frontend**: React 19 + Vite + TypeScript + Bootstrap 5.3
 - **Backend**: .NET 8 Web API + Entity Framework Core + SQL Server
 - **Authentication**: JWT-based with refresh token support and ASP.NET Identity
 - **State Management**: React Context API with custom hooks
@@ -90,7 +90,8 @@ APX2Digital is a modern, full-stack web application starter template with produc
 
 #### Styling & UI
 - **Mobile-First Approach**: Always design and build for mobile devices first, then enhance for larger screens
-- Follow Bootstrap 5.2 utility classes and component patterns with mobile-first breakpoints
+- Follow Bootstrap 5.3 utility classes and component patterns with mobile-first breakpoints
+- **Modern Sass**: Use `@use` and `@forward` instead of deprecated `@import`
 - Use Bootstrap's responsive grid system starting with base (mobile) styles: `col-12 col-md-6 col-lg-4`
 - **Bootstrap JavaScript**: Import and use Bootstrap JS components for interactive elements:
   - Import specific components: `import { Modal, Dropdown, Tooltip, Popover, Collapse, Carousel } from 'bootstrap'`
@@ -203,8 +204,8 @@ backend/WebAppApi/
 ### Development Workflow
 
 #### Environment Setup
-- Frontend runs on port 3000 with Vite dev server
-- Backend runs on https://localhost:7071
+- Frontend runs on port 5000 with Vite dev server
+- Backend runs on https://localhost:5001 (HTTPS) and http://localhost:5002 (HTTP)
 - Use proxy configuration in vite.config.ts for API calls
 - Database connection string in appsettings.Development.json
 
@@ -437,6 +438,44 @@ export class SomeService {
 }
 ```
 
+### DRY Principles (Don't Repeat Yourself)
+
+#### Code Reusability
+- **Extract Common Logic**: Move repeated code into reusable functions, hooks, or components
+- **Shared Components**: Create components in `src/components/common/` for UI patterns used 2+ times
+- **Custom Hooks**: Extract stateful logic into custom hooks (useAuth, useApi, useForm)
+- **Utility Functions**: Place shared utilities in dedicated files (formatters, validators, helpers)
+- **Constants & Configuration**: Store magic numbers, strings, and config in constant files
+- **Type Definitions**: Share TypeScript interfaces/types across files via `types.ts` files
+
+#### Component Composition
+- **Composition over Duplication**: Build complex components from smaller reusable ones
+- **Props for Customization**: Use props to make components flexible instead of duplicating
+- **Render Props & Children**: Use children and render props patterns for flexible composition
+- **Higher-Order Components**: Use sparingly - prefer hooks for shared logic
+
+#### Style Management
+- **SCSS Variables**: Define colors, spacing, and breakpoints once in theme files
+- **SCSS Mixins**: Create mixins for repeated style patterns (mobile-touch-target, card-hover)
+- **Bootstrap Utilities**: Use Bootstrap utility classes instead of custom CSS when possible
+- **CSS Modules**: Scope styles to prevent global conflicts and accidental duplication
+
+#### API & Services
+- **Centralized API Client**: Single axios instance with interceptors (no duplicate fetch logic)
+- **Service Layer**: Group related API calls in service classes/modules
+- **Error Handling**: Centralized error handling logic, not per-component
+- **Type Sharing**: Share request/response types between frontend and backend
+
+#### Configuration Management
+- **Environment Variables**: Use .env files, never hardcode URLs or secrets
+- **Single Source of Truth**: One place for API endpoints, feature flags, constants
+- **Theme Configuration**: Single Bootstrap configuration using `@use...with()` syntax
+
+#### Testing
+- **Test Utilities**: Shared test helpers, mocks, and fixtures
+- **Setup Files**: Common test setup in dedicated files, not per test file
+- **Mock Factories**: Reusable factory functions for test data
+
 ### Code Organization Rules
 
 #### File Naming
@@ -466,3 +505,128 @@ export class SomeService {
   - Use prop-based navigation callbacks for section communication
   - Keep sections self-contained but allow cross-section interaction
   - Support conditional rendering for single-page applications
+
+### Accessibility (a11y) Guidelines
+
+#### Core Principles
+- **Semantic HTML**: Use proper HTML5 elements (header, nav, main, footer, article, section)
+- **ARIA Labels**: Add aria-label, aria-labelledby, aria-describedby where needed
+- **Keyboard Navigation**: All interactive elements must be keyboard accessible
+- **Focus Management**: Visible focus indicators, logical tab order
+- **Color Contrast**: Minimum 4.5:1 ratio for text, 3:1 for large text (WCAG AA)
+
+#### Implementation
+- **Alt Text**: All images must have meaningful alt text
+- **Form Labels**: Every input must have an associated label element
+- **Button vs Link**: Use `<button>` for actions, `<a>` for navigation
+- **Skip Links**: Implement skip-to-content links for keyboard users
+- **Screen Reader Testing**: Test with NVDA (Windows) or VoiceOver (Mac)
+- **Responsive Touch Targets**: Minimum 44px × 44px for mobile (already in guidelines)
+
+#### Bootstrap Accessibility
+- Use Bootstrap's built-in accessibility features:
+  - `sr-only` class for screen reader only text
+  - Proper modal focus management
+  - ARIA attributes on dropdowns, tabs, accordions
+  - Form validation with proper ARIA error messages
+
+### Security & Dependency Management
+
+#### Dependency Updates
+- **Regular Audits**: Run `npm audit` and `dotnet list package --vulnerable` regularly
+- **Fix Vulnerabilities**: Address security issues immediately with `npm audit fix`
+- **Keep Dependencies Updated**: Update packages monthly, test thoroughly
+- **Dependabot**: Use GitHub Dependabot for automated security updates
+- **Lock Files**: Commit package-lock.json and package-lock.json for reproducible builds
+
+#### Security Scanning
+- **Pre-commit Hooks**: Run security checks before committing
+- **CI/CD Pipeline**: Automated security scanning in build pipeline
+- **SAST Tools**: Static analysis security testing for code vulnerabilities
+- **Secrets Detection**: Never commit API keys, tokens, or passwords
+
+#### Secure Coding Practices
+- **Input Validation**: Validate all user input on both client and server
+- **Output Encoding**: Encode data before rendering to prevent XSS
+- **SQL Injection Prevention**: Use parameterized queries (EF Core handles this)
+- **CSRF Protection**: Implement anti-forgery tokens for state-changing operations
+- **Content Security Policy**: Set proper CSP headers in production
+
+### Git Workflow & Code Review
+
+#### Branch Strategy
+- **main**: Production-ready code only
+- **develop**: Integration branch for features
+- **feature/***: Feature branches from develop
+- **hotfix/***: Emergency fixes from main
+- **release/***: Release preparation branches
+
+#### Commit Standards
+- **Conventional Commits**: Use format: `type(scope): description`
+  - Types: feat, fix, docs, style, refactor, test, chore
+  - Example: `feat(auth): add refresh token rotation`
+- **Meaningful Messages**: Explain why, not just what
+- **Atomic Commits**: One logical change per commit
+- **Reference Issues**: Include issue numbers: `fixes #123`
+
+#### Code Review Checklist
+- **Functionality**: Code works as intended, edge cases handled
+- **Tests**: New code has appropriate test coverage
+- **DRY**: No unnecessary duplication
+- **Performance**: No obvious performance issues
+- **Security**: No security vulnerabilities introduced
+- **Accessibility**: Meets a11y standards
+- **Documentation**: Code is self-documenting or has comments
+- **Style**: Follows project conventions, passes linter
+- **Mobile-First**: Responsive design implemented correctly
+
+#### Pull Request Guidelines
+- **Small PRs**: Keep changes focused and reviewable (< 400 lines when possible)
+- **Description**: Explain what, why, and how
+- **Screenshots**: Include for UI changes
+- **Testing Notes**: Describe how to test changes
+- **Breaking Changes**: Clearly document any breaking changes
+
+### Modern Sass (@use syntax)
+
+#### Migration from @import
+- **Use @use instead of @import**: Modern module system with proper scoping
+- **Configure with `with()`**: Pass variables when importing Bootstrap
+- **Namespace**: Use `as *` to avoid prefixing or `as name` for explicit namespace
+- **Forward**: Use `@forward` to re-export modules
+
+#### Bootstrap 5.3 Configuration
+```scss
+// Correct way to configure Bootstrap 5.3+
+@use "sass:color";
+@use './theme' as *;
+
+@use "bootstrap/scss/bootstrap" with (
+  $primary: $claret,
+  $secondary: $dim-gray,
+  // ... other overrides
+);
+```
+
+#### Avoid Deprecated Patterns
+- ❌ `@import "bootstrap/scss/bootstrap";`
+- ✅ `@use "bootstrap/scss/bootstrap" with ($primary: $claret);`
+- ❌ Global color functions: `red()`, `green()`, `blue()`
+- ✅ Namespaced functions: `color.channel($color, "red")`
+- ❌ Global `mix()`, `lighten()`, `darken()`
+- ✅ `color.mix()`, `color.adjust()`, `color.scale()`
+
+### Environment & Configuration Management
+
+#### Environment Variables
+- **Never commit secrets**: Use .env files, add to .gitignore
+- **Multiple environments**: .env.development, .env.production, .env.test
+- **Validation**: Validate required env vars on app startup
+- **Type Safety**: Use TypeScript to type environment variables
+- **Documentation**: Document all required env vars in README
+
+#### Configuration Files
+- **Frontend**: vite.config.ts for build settings
+- **Backend**: appsettings.json hierarchy (base → Development/Production)
+- **Database**: Connection strings in environment-specific config
+- **Feature Flags**: Use config for toggling features without code changes

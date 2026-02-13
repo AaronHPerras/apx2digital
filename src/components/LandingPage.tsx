@@ -3,7 +3,6 @@ import {
   HeroSection,
   ServicesSection,
   AboutSection,
-  ApproachSection,
   PortfolioSection,
   ContactSection,
   FooterSection,
@@ -13,7 +12,7 @@ import type { ContactFormData } from './common/ContactForm'
 import { useScrollToTop } from '../hooks/useScrollToTop'
 import './LandingPage.scss'
 
-type Section = 'hero' | 'services' | 'about' | 'approach' | 'portfolio' | 'contact'
+type Section = 'hero' | 'services' | 'about' | 'portfolio' | 'contact'
 
 export const LandingPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>('hero')
@@ -71,7 +70,6 @@ export const LandingPage: React.FC = () => {
         {activeSection === 'hero' && <HeroSection onNavigate={handleNavClick} />}
         {activeSection === 'services' && <ServicesSection onServiceSelect={(_service) => handleNavClick('contact')} />}
         {activeSection === 'about' && <AboutSection />}
-        {activeSection === 'approach' && <ApproachSection />}
         {activeSection === 'portfolio' && <PortfolioSection onNavigate={handleNavClick} />}
         {activeSection === 'contact' && <ContactSection onFormSubmit={handleFormSubmit} />}
       </div>

@@ -16,22 +16,22 @@ const defaultApproaches: ApproachItem[] = [
   {
     icon: "bi-chat-dots",
     title: "1. Free Brainstorm Call",
-    description: "We clarify your idea or problem; no commitment required."
+    description: "We identify your pain points and explore alternatives to expensive SaaS tools. No commitment required."
   },
   {
     icon: "bi-hammer",
     title: "2. Prototyping (2–7 Days)", 
-    description: "I design & build a functional MVP—with frequent checkpoints—tailored to your needs."
+    description: "I design & build a custom solution—with frequent checkpoints—tailored exactly to your workflow."
   },
   {
     icon: "bi-rocket-takeoff",
     title: "3. Test & Iterate",
-    description: "You play with the solution, get feedback from users, and decide on next steps."
+    description: "You play with the solution, get feedback from users, and decide on next steps. No subscription required."
   },
   {
     icon: "bi-check-circle",
     title: "You Own Everything",
-    description: "All code and assets are handed off to you. No ongoing commitments or lock-in."
+    description: "All code and assets handed off. Cancel those subscriptions—this is yours forever."
   }
 ]
 

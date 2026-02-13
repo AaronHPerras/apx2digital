@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ErrorBoundary } from './components/common/ErrorBoundary'
 import { LandingPage } from './components/LandingPage'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles/_bootstrap-custom.scss'
 import './styles/main.scss'
 import './App.css'
 

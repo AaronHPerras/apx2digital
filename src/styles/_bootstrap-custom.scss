@@ -1,0 +1,35 @@
+// Custom Bootstrap Theme with Claret Primary Color
+// This file uses modern Sass @use syntax with Bootstrap 5.3+
+
+@use "sass:color";
+
+// Import our theme variables
+@use './theme' as *;
+
+// Configure Bootstrap before importing
+@use "bootstrap/scss/bootstrap" with (
+  // Override Bootstrap's default colors with our custom palette
+  $primary: $claret,
+  $secondary: $dim-gray,
+  $success: #28a745,
+  $danger: $claret,
+  $warning: #ffc107,
+  $info: $dim-gray,
+  $light: #f8f9fa,
+  $dark: $jet,
+  
+  // Button and link colors
+  $btn-link-color: $claret,
+  $link-color: $claret,
+  $link-hover-color: color.adjust($claret, $lightness: -15%),
+  
+  // Form controls
+  $input-focus-border-color: $claret,
+  $form-check-input-checked-bg-color: $claret,
+  
+  // Component focus colors
+  $component-active-bg: $claret,
+  $component-active-color: #fff
+);
+
+

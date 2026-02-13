@@ -9,99 +9,96 @@ import type { ServicePackageProps } from './ServicePackage'
 // Hero section feature cards data
 export const heroFeatures: FeatureCardData[] = [
   {
-    icon: "🚀",
-    title: "Rapid MVP Sprints",
-    description: "Working solutions in under a week"
+    icon: "🔧",
+    title: "Integration Reliability",
+    description: "Fix silent failures and data sync issues"
   },
   {
-    icon: "💡",
-    title: "Innovation Jams",
-    description: "Collaborative problem-solving sessions"
+    icon: "🛡️",
+    title: "Edge Case Handling",
+    description: "Prepare for messy real-world data"
   },
   {
-    icon: "🤖",
-    title: "AI-Accelerated",
-    description: "Modern tools for speed & creativity"
+    icon: "🔄",
+    title: "Workflow Hardening",
+    description: "Make automation dependable and recoverable"
   },
   {
-    icon: "✅",
-    title: "Zero Commitment",
-    description: "You own what's built, no strings"
+    icon: "🎯",
+    title: "Technical Escalation",
+    description: "When projects hit complexity limits"
   }
 ]
 
-// New service packages data
+// Service specializations data
 export const servicePackages: Omit<ServicePackageProps, 'onCtaClick'>[] = [
   {
-    title: "Rapid MVP Sprints",
-    timeline: "2-7 Days",
+    title: "Workflow Automation Architecture",
+    timeline: "Project-Based",
     price: "Custom",
     currency: "",
     features: [
-      "You bring the idea, I build",
-      "Working solution in under a week",
-      "Frequent checkpoints",
-      "Test with real users quickly",
-      "Full code & asset handoff",
-      "Zero ongoing commitments"
+      "Design reliable automation systems",
+      "Anticipate and handle failure points",
+      "Build for messy real-world data",
+      "Make workflows observable and recoverable",
+      "Scale beyond low-code defaults"
     ],
     isPopular: true,
-    ctaText: "Start Building"
+    ctaText: "Discuss Your Workflow"
   },
   {
-    title: "Innovation Jams",
-    timeline: "Half-Day to 2 Days",
+    title: "Integration & Reliability",
+    timeline: "Project-Based",
     price: "Custom",
     currency: "",
     features: [
-      "Collaborative brainstorming",
-      "High-energy problem solving",
-      "Tackle real business challenges",
-      "Rapid prototyping session",
-      "Actionable next steps",
-      "Creative breakthrough focus"
+      "Fix silent integration failures",
+      "Stabilize data synchronization",
+      "CRM and multi-platform sync",
+      "Prevent data loss scenarios",
+      "Safe reprocessing of failed records"
     ],
-    ctaText: "Book a Jam Session"
+    ctaText: "Fix Integration Issues"
   },
   {
-    title: "AI-Accelerated Prototyping",
-    timeline: "Ongoing Partnership",
+    title: "AI Workflow Design",
+    timeline: "Project-Based",
     price: "Custom",
     currency: "",
     features: [
-      "Leveraging cutting-edge AI tools",
-      "Faster delivery, lower costs",
-      "Creative solutions at speed",
-      "Modern tech stack",
-      "Iterative development",
-      "You own everything built"
+      "AI-assisted automation workflows",
+      "Prevent inconsistent outputs",
+      "Build safety rails for AI systems",
+      "Custom scripting for complex logic",
+      "Platform extensions and debugging"
     ],
-    ctaText: "Explore AI Solutions"
+    ctaText: "Harden AI Workflows"
   }
 ]
 
-// Portfolio section data - updated with real projects
+// Portfolio section data - case studies
 export const portfolioProjects: PortfolioCardData[] = [
   {
-    icon: "💪",
+    icon: "🔄",
     backgroundColor: "bg-primary",
-    title: "Fitness Tracker MVP",
-    description: "Idea → working app in 72 hours. Core tracking features, user dashboard, and data visualization.",
-    technologies: ['React', 'Firebase', 'Charts', 'Mobile-First']
+    title: "Multi-Platform CRM Synchronization",
+    description: "Designed and stabilized a multi-platform CRM synchronization workflow that prevented silent data loss and enabled safe reprocessing of failed records.",
+    technologies: ['Zapier', 'HubSpot', 'Salesforce', 'Error Recovery']
   },
   {
-    icon: "🛍️",
+    icon: "🛡️",
     backgroundColor: "bg-success",
-    title: "Workflow Automation for Small Retail",
-    description: "Manual task to automated dashboard in a weekend. Inventory tracking, order processing, customer management.",
-    technologies: ['Airtable', 'Zapier', 'Custom Dashboard', 'APIs']
+    title: "AI Workflow Safety Layer",
+    description: "Built validation and safety rails for AI-powered content workflows, preventing inconsistent outputs and ensuring brand compliance across automated communications.",
+    technologies: ['OpenAI API', 'Make.com', 'Custom Logic', 'Error Handling']
   },
   {
-    icon: "📊",
+    icon: "🔧",
     backgroundColor: "bg-warning",
-    title: "Custom CRM for Solopreneur",
-    description: "Prototype delivered in 5 days. Lead tracking, pipeline management, email integration, and reporting.",
-    technologies: ['React', 'TypeScript', 'CRM', 'Email API']
+    title: "Integration Debugging & Rescue",
+    description: "Diagnosed and fixed silent failures in complex automation workflows, implementing proper error logging and recovery mechanisms for long-term reliability.",
+    technologies: ['Airtable', 'API Integration', 'Debugging', 'Monitoring']
   }
 ]
 
