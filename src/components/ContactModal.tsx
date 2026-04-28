@@ -223,9 +223,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               <p style={s.error}>Something went wrong. Please try again or email me directly.</p>
             )}
 
-            <form onSubmit={handleSubmit} noValidate data-netlify="true" name="contact">
+            <form onSubmit={handleSubmit} noValidate name="contact">
               <input type="hidden" name="form-name" value="contact" />
-              <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
               <label style={s.label} htmlFor="name">Name</label>
               <input
                 ref={firstInputRef}
