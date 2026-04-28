@@ -36,7 +36,7 @@ export const servicePackages: Omit<ServicePackageProps, 'onCtaClick'>[] = [
     title: "Workflow Automation Architecture",
     timeline: "Project-Based",
     price: "Custom",
-    currency: "",
+    currency: "USD",
     features: [
       "Design reliable automation systems",
       "Anticipate and handle failure points",
@@ -51,7 +51,7 @@ export const servicePackages: Omit<ServicePackageProps, 'onCtaClick'>[] = [
     title: "Integration & Reliability",
     timeline: "Project-Based",
     price: "Custom",
-    currency: "",
+    currency: "USD",
     features: [
       "Fix silent integration failures",
       "Stabilize data synchronization",
@@ -65,7 +65,7 @@ export const servicePackages: Omit<ServicePackageProps, 'onCtaClick'>[] = [
     title: "AI Workflow Design",
     timeline: "Project-Based",
     price: "Custom",
-    currency: "",
+    currency: "USD",
     features: [
       "AI-assisted automation workflows",
       "Prevent inconsistent outputs",
