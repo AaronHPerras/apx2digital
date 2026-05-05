@@ -18,9 +18,9 @@ const values = [
     body: "Not every problem needs AI. I help you figure out where it makes sense, then build practical integrations that deliver real results.",
   },
   {
-    icon: '⏱',
-    title: 'Time Savings, Measured',
-    body: 'Every hour saved on manual work is an hour reinvested in growth. I focus on the automations that move the needle, not just the ones that look impressive.',
+    icon: '🛠️',
+    title: 'Custom Software, Built for You',
+    body: "Off-the-shelf tools don't always fit. I build lightweight, tailored applications for small businesses; practical solutions designed around your workflow, not the other way around.",
   },
 ]
 
