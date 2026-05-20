@@ -16,7 +16,7 @@ const values: { icon: string; title: string; body: React.ReactNode }[] = [
   {
     icon: '🛠️',
     title: 'Stop Running on Spreadsheets and Gut Instinct',
-    body: 'Better systems. Flat monthly. No agency markup. No shelfware. Just someone who builds it and keeps it working.'
+    body: 'Better systems. Flat monthly. No agency markup. No expensive tools. Just a team that builds it and keeps it working.'
   },
   {
     icon: '🤖',
