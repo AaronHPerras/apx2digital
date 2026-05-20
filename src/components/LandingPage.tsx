@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ContactModal } from './ContactModal'
+import logo from '../assets/logo.png'
 
 const RED = '#7b1225'
 const GREY = '#3a3a3a'
@@ -33,7 +34,7 @@ const s: Record<string, React.CSSProperties> = {
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  logo: { fontWeight: 700, fontSize: '1.1rem', color: RED, letterSpacing: '-0.02em' },
+  logo: { height: '45px', width: 'auto', display: 'block' },
   headerBtn: {
     padding: '0.5rem 1.25rem',
     background: 'none',
@@ -156,7 +157,7 @@ export const LandingPage: React.FC = () => {
   return (
     <div style={s.page}>
       <header style={s.header}>
-        <span style={s.logo}>APX2Digital</span>
+        <img src={logo} alt="APX2Digital" style={s.logo} />
         <button
           style={s.headerBtn}
           onClick={() => setModalOpen(true)}
