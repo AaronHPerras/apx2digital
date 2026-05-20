@@ -6,21 +6,21 @@ const GREY = '#3a3a3a'
 const GREY_LIGHT = '#6b6b6b'
 const GREY_BG = '#f5f5f5'
 
-const values = [
+const values: { icon: string; title: string; body: React.ReactNode }[] = [
   {
     icon: '⚙️',
-    title: 'Process Automation',
-    body: 'Eliminate repetitive work with custom workflows. From data syncing to multi-step pipelines, I build automations that run in the background while you focus on what matters.',
+    title: 'Close the deal. We\'ll build the rest.',
+    body: "Grow what you deliver without growing your overhead. Get the results of expensive tooling without buying it.",
+  },
+  {
+    icon: '🛠️',
+    title: 'Stop Running on Spreadsheets and Gut Instinct',
+    body: 'Better systems. Flat monthly. No agency markup. No shelfware. Just someone who builds it and keeps it working.'
   },
   {
     icon: '🤖',
     title: 'Is AI Right for Your Project?',
     body: "Not every problem needs AI. I help you figure out where it makes sense, then build practical integrations that deliver real results.",
-  },
-  {
-    icon: '🛠️',
-    title: 'Custom Software, Built for You',
-    body: "Off-the-shelf tools don't always fit. I build lightweight, tailored applications for small businesses; practical solutions designed around your workflow, not the other way around.",
   },
 ]
 
@@ -172,12 +172,10 @@ export const LandingPage: React.FC = () => {
         <section style={s.hero}>
           <span style={s.tag}>Automation & AI Consulting</span>
           <h1 style={s.h1}>
-            Stop doing things manually.<br />
-            <span style={s.accent}>Start scaling smarter.</span>
+            Your systems should run without you.
           </h1>
           <p style={s.lead}>
-            I help businesses save time and grow by building reliable automation workflows
-            and figuring out where AI genuinely fits — no hype, just practical solutions.
+             I build and manage the automations, integrations, and dashboards your business needs. You can stop being the glue holding everything together.
           </p>
           <button
             style={s.cta}
@@ -196,7 +194,7 @@ export const LandingPage: React.FC = () => {
               <div key={v.title} style={s.card}>
                 <div style={s.cardIcon}>{v.icon}</div>
                 <div style={s.cardTitle}>{v.title}</div>
-                <p style={s.cardBody}>{v.body}</p>
+                <div style={s.cardBody}>{v.body}</div>
               </div>
             ))}
           </div>
