@@ -325,3 +325,6 @@ backend/*/FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Internal-only reference docs (not part of the public site)
+docs/internal/

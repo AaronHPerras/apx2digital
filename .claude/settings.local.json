@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python -c \"from PIL import Image; print\\('Pillow OK'\\)\")"
+      "Bash(python -c \"from PIL import Image; print\\('Pillow OK'\\)\")",
+      "Bash(start docs/internal/rates-overview-customer.pdf)",
+      "Bash(powershell -c \"Start-Process 'docs\\\\internal\\\\rates-overview-customer.pdf'\")"
     ]
   }
 }
