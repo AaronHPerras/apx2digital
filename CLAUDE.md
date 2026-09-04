@@ -46,6 +46,29 @@ src/
 - Use barrel exports: `import { X, Y } from '../common'` — never deep-import within common/.
 - Same for sections: `import { HeroSection } from '../sections'`.
 
+### Route Splitting (bundle size)
+- Every top-level route component **must** be lazy-loaded with `React.lazy()`. Wrap the route tree in a single `<Suspense>` with a blank fallback — no spinner libraries.
+- The `<Suspense>` lives in `AppRoutes` (or wherever `<Routes>` is defined), not scattered per-route.
+
+```tsx
+// WRONG — static import bloats the initial bundle
+import { Dashboard } from './components/Dashboard'
+<Route path="/dashboard" element={<Dashboard />} />
+
+// RIGHT — lazy import creates a separate chunk
+const Dashboard = lazy(() =>
+  import('./components/Dashboard').then((m) => ({ default: m.Dashboard }))
+)
+// single Suspense wrapping the whole Routes tree
+<Suspense fallback={<div className="min-vh-100" />}>
+  <Routes>
+    <Route path="/dashboard" element={<Dashboard />} />
+  </Routes>
+</Suspense>
+```
+
+- Run `npm run build` after adding a route and confirm no JS chunk exceeds 500 kB. If one does, check for a shared dependency being duplicated before reaching for `manualChunks`.
+
 ### SCSS / Styling
 - **Never use inline `style={}`** except for truly dynamic computed values (e.g., a hex color from data).
 - Theme tokens live in `src/styles/theme.scss` — use `$claret`, `$jet`, etc. Never hard-code hex.
