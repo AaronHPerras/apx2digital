@@ -28,10 +28,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               Working Together
             </h2>
             <p className="lead text-muted mb-4">
-              If your automation or AI workflows are becoming complex, fragile, or difficult to maintain, I can help.
+              If your automation or AI workflows are becoming complex, fragile, or difficult to maintain, we can help.
             </p>
             <p className="text-muted">
-              Tell me a bit about your workflow or integration challenge and I'll let you know if I'm a good fit.
+              Tell us a bit about your workflow or integration challenge and we'll let you know if we're a good fit.
             </p>
           </div>
         </div>

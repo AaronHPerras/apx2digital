@@ -21,7 +21,7 @@ const defaultApproaches: ApproachItem[] = [
   {
     icon: "bi-hammer",
     title: "2. Prototyping (2–7 Days)", 
-    description: "I design & build a custom solution—with frequent checkpoints—tailored exactly to your workflow."
+    description: "We design & build a custom solution—with frequent checkpoints—tailored exactly to your workflow."
   },
   {
     icon: "bi-rocket-takeoff",

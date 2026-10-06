@@ -27,10 +27,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         <div className="row">
           <div className="col-12 text-center mb-5">
             <h2 className="display-5 fw-bold text-primary mb-3">
-              What I Do
+              What We Do
             </h2>
             <p className="lead text-muted">
-              I specialize in solving problems that usually show up when:
+              We specialize in solving problems that usually show up when:
             </p>
             <ul className="list-unstyled text-muted text-start mx-auto" style={{maxWidth: '600px'}}>
               <li className="mb-2">• Integrations start failing silently</li>
@@ -41,7 +41,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
               <li className="mb-2">• Teams need custom logic layered into existing systems</li>
             </ul>
             <p className="text-muted mt-4">
-              I'm typically brought in when projects are already underway and complexity begins to surface.
+              We're typically brought in when projects are already underway and complexity begins to surface.
             </p>
           </div>
         </div>

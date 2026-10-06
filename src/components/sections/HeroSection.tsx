@@ -26,17 +26,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           <div className="col-12 col-lg-6 text-center text-lg-start">
             <h1 className="display-4 fw-bold mb-4 text-dark">
               When automation and AI workflows get complicated,
-              <span className="text-primary"> I step in.</span>
+              <span className="text-primary"> We step in.</span>
             </h1>
             <p className="lead mb-4 fs-5 text-secondary">
-              I help automation agencies and growing businesses solve the integration, reliability, and edge-case problems that appear after the simple solutions stop working.
+              We help automation agencies and growing businesses solve the integration, reliability, and edge-case problems that appear after the simple solutions stop working.
             </p>
             <p className="mb-4 text-muted">
               Low-code tools move fast.<br />
               But real business systems are messy.
             </p>
             <p className="mb-4 text-muted">
-              <strong>That's where I work.</strong>
+              <strong>That's where we work.</strong>
             </p>
             <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
               <Button
@@ -47,7 +47,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
               />
               <Button
                 onClick={() => handleNavigate('services')}
-                label="What I Do"
+                label="What We Do"
                 variant="secondary"
                 className="btn-lg px-4 py-3"
               />

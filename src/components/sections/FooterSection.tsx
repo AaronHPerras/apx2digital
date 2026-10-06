@@ -30,7 +30,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavigate }) => {
               Workflow automation and integration specialist
             </p>
             <p className="text-light small mb-3">
-              I help automation agencies and growing businesses solve the integration, reliability, and edge-case problems that appear when complexity surfaces.
+              We help automation agencies and growing businesses solve the integration, reliability, and edge-case problems that appear when complexity surfaces.
             </p>
           </div>
           
@@ -47,7 +47,7 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ onNavigate }) => {
           <FooterNavigation 
             title="Resources"
             items={[
-              { label: 'Who I Work With', onClick: () => handleNavigate('about') },
+              { label: 'Who We Work With', onClick: () => handleNavigate('about') },
               { label: 'Case Studies', onClick: () => handleNavigate('portfolio') },
               { label: 'Get In Touch', onClick: () => handleNavigate('contact') }
             ]}

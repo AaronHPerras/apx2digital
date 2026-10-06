@@ -6,7 +6,7 @@ export const AboutSection: React.FC = () => {
       <div className="container">
         <div className="row align-items-center mb-5">
           <div className="col-12 col-lg-6">
-            <h2 className="display-5 fw-bold text-dark mb-4">Who I Work With</h2>
+            <h2 className="display-5 fw-bold text-dark mb-4">Who We Work With</h2>
             <div className="mb-4">
               <h4 className="text-primary mb-3">Automation & AI Agencies</h4>
               <p className="text-muted mb-4">
@@ -20,12 +20,12 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
           <div className="col-12 col-lg-6 mt-5 mt-lg-0">
-            <h2 className="display-5 fw-bold text-dark mb-4">How I Fit Into Projects</h2>
+            <h2 className="display-5 fw-bold text-dark mb-4">How We Fit Into Projects</h2>
             <p className="text-muted mb-3">
-              I'm not usually the first builder on a project.
+              We're not usually the first builder on a project.
             </p>
             <p className="text-muted mb-3">
-              <strong className="text-dark">I'm the specialist teams call when:</strong>
+              <strong className="text-dark">We're the specialist teams call when:</strong>
             </p>
             <ul className="text-muted">
               <li className="mb-2">Edge cases appear</li>
@@ -34,14 +34,14 @@ export const AboutSection: React.FC = () => {
               <li className="mb-2">Automation logic needs to be hardened for real-world usage</li>
             </ul>
             <p className="text-muted fst-italic mt-4">
-              Think of me as back-of-house technical support for complex workflow systems.
+              Think of us as back-of-house technical support for complex workflow systems.
             </p>
           </div>
         </div>
         
         <div className="row mt-5">
           <div className="col-12">
-            <h3 className="fw-bold text-dark mb-4 text-center">Areas I Commonly Work In</h3>
+            <h3 className="fw-bold text-dark mb-4 text-center">Areas We Commonly Work In</h3>
             <div className="row g-4">
               <div className="col-12 col-md-6 col-lg-4">
                 <div className="p-3 bg-white rounded shadow-sm">
@@ -85,12 +85,12 @@ export const AboutSection: React.FC = () => {
         <div className="row mt-5">
           <div className="col-12 col-lg-8 mx-auto">
             <div className="bg-white p-4 rounded shadow">
-              <h3 className="fw-bold text-dark mb-3 text-center">My Approach</h3>
+              <h3 className="fw-bold text-dark mb-3 text-center">Our Approach</h3>
               <p className="text-muted text-center mb-4">
                 Most automation failures aren't tool problems — they're reliability and assumption problems.
               </p>
               <div className="text-muted">
-                <p className="mb-2"><strong>My work focuses on:</strong></p>
+                <p className="mb-2"><strong>Our work focuses on:</strong></p>
                 <ul>
                   <li className="mb-2">Anticipating failure points</li>
                   <li className="mb-2">Designing for messy real-world data</li>
