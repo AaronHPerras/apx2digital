@@ -17,7 +17,7 @@ const values: { icon: string; title: string; body: React.ReactNode }[] = [
   {
     icon: '🤖',
     title: 'Is AI Right for Your Workplace?',
-    body: "Not every problem needs AI. I help you figure out where it makes sense, then build practical integrations that deliver real results.",
+    body: "Not every problem needs AI. We help you figure out where it makes sense, then build practical integrations that deliver real results.",
   },
   {
     icon: '📊',
@@ -43,7 +43,7 @@ export const LandingPage: React.FC = () => {
           <span className="lp-tag">Automation & AI Consulting</span>
           <h1 className="lp-h1">Your systems should run without you.</h1>
           <p className="lp-lead">
-            I build and manage the automations, integrations, and dashboards your business needs. You can stop being the glue holding everything together.
+            We build and manage the automations, integrations, and dashboards your business needs. You can stop being the glue holding everything together.
           </p>
           <button className="lp-cta" onClick={() => setModalOpen(true)}>
             Let's Talk About Your Project
@@ -64,7 +64,7 @@ export const LandingPage: React.FC = () => {
 
         <section className="lp-cta-section">
           <h2 className="lp-cta-h2">Ready to reclaim your time?</h2>
-          <p className="lp-cta-sub">Tell me what you're working on. No obligation — just a conversation.</p>
+          <p className="lp-cta-sub">Tell us what you're working on. No obligation — just a conversation.</p>
           <button className="lp-cta" onClick={() => setModalOpen(true)}>
             Start the Conversation
           </button>

@@ -211,16 +211,16 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           <div style={s.success}>
             <div style={s.successIcon}>✓</div>
             <p style={s.successText}>Message sent!</p>
-            <p style={s.successSub}>I'll be in touch within 1–2 business days.</p>
+            <p style={s.successSub}>We'll be in touch within 1–2 business days.</p>
             <button style={s.doneBtn} onClick={onClose}>Done</button>
           </div>
         ) : (
           <>
             <h2 style={s.heading}>Let's talk about your project</h2>
-            <p style={s.sub}>Tell me what you're working on and I'll reach out to set up a time to chat.</p>
+            <p style={s.sub}>Tell us what you're working on and we'll reach out to set up a time to chat.</p>
 
             {status === 'error' && (
-              <p style={s.error}>Something went wrong. Please try again or email me directly.</p>
+              <p style={s.error}>Something went wrong. Please try again or email us directly.</p>
             )}
 
             <form onSubmit={handleSubmit} noValidate name="contact">
